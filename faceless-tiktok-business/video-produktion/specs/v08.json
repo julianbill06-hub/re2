@@ -1,0 +1,217 @@
+{
+ "id": "v08-wasserkocher",
+ "speed": 1.08,
+ "hook": "Dieser Fehler kostet<br>dich <b>Wasserkocher.</b>",
+ "scenes": [
+  {
+   "say": "Dieser Fehler kostet dich früher oder später einen neuen Wasserkocher.",
+   "hl": [
+    "neuen Wasserkocher."
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "☕",
+    "label": "Kalk im Wasserkocher"
+   }
+  },
+  {
+   "say": "Kalk sieht nicht nur eklig aus. Er legt sich wie eine Isolierschicht auf die Heizplatte.",
+   "hl": [
+    "Isolierschicht"
+   ],
+   "tag": "Das Problem",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "⏳",
+      "t": "Braucht länger"
+     },
+     {
+      "i": "⚡",
+      "t": "Mehr Strom"
+     },
+     {
+      "i": "🔥",
+      "t": "Heizelement leidet"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Dann braucht das Wasser länger, du verbrauchst mehr Strom, und das Heizelement wird belastet.",
+   "hl": [
+    "mehr Strom,"
+   ]
+  },
+  {
+   "say": "Und in vielen Regionen in Deutschland ist das Wasser ziemlich hart.",
+   "hl": [
+    "hart."
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Der typische Fehler: Man nimmt Essig.",
+   "hl": [
+    "Essig."
+   ],
+   "tag": "Der Fehler",
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "Essig",
+     "label": "stinkt"
+    },
+    "b": {
+     "num": "Säure",
+     "label": "geruchlos"
+    }
+   }
+  },
+  {
+   "say": "Er riecht stark und kann auf Dauer Dichtungen angreifen.",
+   "hl": [
+    "Dichtungen"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Besser ist Zitronensäure. Zwei Esslöffel auf fünfhundert Milliliter Wasser.",
+   "hl": [
+    "Zitronensäure."
+   ],
+   "show": "Besser ist Zitronensäure. 2 Esslöffel auf 500 ml Wasser.",
+   "tag": "So geht's richtig",
+   "panel": {
+    "type": "stat",
+    "num": "2 EL",
+    "label": "Zitronensäure auf 500 ml",
+    "count": false
+   }
+  },
+  {
+   "say": "Aber Achtung: nur lauwarmes Wasser, nicht kochen.",
+   "hl": [
+    "nicht kochen."
+   ],
+   "tag": "Achtung",
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "✕",
+     "label": "kochend"
+    },
+    "b": {
+     "num": "✓",
+     "label": "lauwarm"
+    }
+   }
+  },
+  {
+   "say": "Wird Zitronensäure zu heiß, kann sich ein neuer, schwer löslicher Belag bilden.",
+   "hl": [
+    "Belag"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Dann zwanzig Minuten stehen lassen und ausgießen.",
+   "hl": [
+    "20 Minuten"
+   ],
+   "show": "Dann 20 Minuten stehen lassen und ausgießen.",
+   "tag": "Danach",
+   "panel": {
+    "type": "stat",
+    "num": "20",
+    "label": "Minuten einwirken"
+   }
+  },
+  {
+   "say": "Auch der Kalkfilter am Ausguss darf gleich mit in die Lösung.",
+   "hl": [
+    "Kalkfilter"
+   ]
+  },
+  {
+   "say": "Zum Schluss zweimal mit klarem Wasser aufkochen und das Wasser wegschütten.",
+   "hl": [
+    "2×",
+    "wegschütten."
+   ],
+   "show": "Zum Schluss 2× mit klarem Wasser aufkochen und das Wasser wegschütten.",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "💧",
+      "t": "Klar aufkochen"
+     },
+     {
+      "i": "🔁",
+      "t": "Zweimal wiederholen"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So schmeckt der nächste Tee nicht sauer.",
+   "hl": [
+    "nicht sauer."
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Wenn du es bequemer willst: Entkalker-Tabs. Einfach nach Packungsangabe verwenden.",
+   "hl": [
+    "Entkalker-Tabs."
+   ],
+   "tag": "Bequem",
+   "panel": {
+    "type": "cta",
+    "e": "💊",
+    "label": "Entkalker-Tabs"
+   }
+  },
+  {
+   "say": "Und je nach Wasserhärte reicht es, das alle paar Wochen zu machen.",
+   "hl": [
+    "alle paar Wochen"
+   ]
+  },
+  {
+   "say": "Die Tabs findest du unten im Warenkorb.",
+   "hl": [
+    "Warenkorb."
+   ],
+   "tag": "",
+   "panel": {
+    "type": "cta",
+    "e": "🛒",
+    "label": "Link im Warenkorb"
+   }
+  },
+  {
+   "say": "Und folg mir für Teil zwei. Da geht's um den Duschkopf.",
+   "hl": [
+    "Teil 2.",
+    "Duschkopf."
+   ],
+   "show": "Und folg mir für Teil 2. Da geht's um den Duschkopf.",
+   "panel": {
+    "type": "cta",
+    "e": "🚿",
+    "label": "Teil 2: Duschkopf"
+   }
+  }
+ ],
+ "caption": "Wasserkocher entkalken: Warum Essig nicht die beste Wahl ist. Wie oft entkalkst du?",
+ "hashtags": [
+  "#entkalken",
+  "#haushaltstipps",
+  "#putzhacks",
+  "#wasserkocher",
+  "#cleantok"
+ ]
+}

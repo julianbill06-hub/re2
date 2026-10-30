@@ -1,0 +1,231 @@
+{
+ "id": "v09-top3-gadgets",
+ "speed": 1.08,
+ "hook": "<b>3</b> Küchengadgets<br>unter 20 €.",
+ "scenes": [
+  {
+   "say": "Drei Küchengadgets unter zwanzig Euro, die im Alltag wirklich etwas bringen.",
+   "hl": [
+    "unter 20 €,"
+   ],
+   "show": "3 Küchengadgets unter 20 €, die im Alltag wirklich etwas bringen.",
+   "panel": {
+    "type": "stat",
+    "num": "3",
+    "label": "Gadgets unter 20 €"
+   }
+  },
+  {
+   "say": "Keins davon ist ein Teil, das nur in der Schublade liegt.",
+   "hl": [
+    "Schublade"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Platz drei: die Kräuterschere mit fünf Klingen.",
+   "hl": [
+    "Kräuterschere"
+   ],
+   "show": "Platz 3: die Kräuterschere mit 5 Klingen.",
+   "tag": "Platz 3",
+   "panel": {
+    "type": "stat",
+    "num": "5",
+    "label": "Klingen auf einmal"
+   }
+  },
+  {
+   "say": "Für Petersilie, Schnittlauch oder Frühlingszwiebeln.",
+   "hl": [
+    "Schnittlauch"
+   ],
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🌿",
+      "t": "Petersilie"
+     },
+     {
+      "i": "🌱",
+      "t": "Schnittlauch"
+     },
+     {
+      "i": "🧅",
+      "t": "Frühlingszwiebeln"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Ein Schnitt mit ihr ist wie fünf Schnitte mit einer normalen Schere.",
+   "hl": [
+    "5 Schnitte"
+   ],
+   "show": "1 Schnitt mit ihr ist wie 5 Schnitte mit einer normalen Schere."
+  },
+  {
+   "say": "Am besten schneidest du direkt über dem Topf oder der Pfanne.",
+   "hl": [
+    "über dem Topf"
+   ]
+  },
+  {
+   "say": "Mit dem kleinen Kamm holst du die Reste aus den Klingen.",
+   "hl": [
+    "Kamm"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Platz zwei: die Öl-Sprühflasche.",
+   "hl": [
+    "Öl-Sprühflasche."
+   ],
+   "show": "Platz 2: die Öl-Sprühflasche.",
+   "tag": "Platz 2",
+   "panel": {
+    "type": "cta",
+    "e": "🫒",
+    "label": "Öl-Sprühflasche"
+   }
+  },
+  {
+   "say": "Das Öl wird fein verteilt, statt in einer Pfütze zu landen.",
+   "hl": [
+    "fein verteilt,"
+   ]
+  },
+  {
+   "say": "Dadurch brauchst du meistens deutlich weniger Öl.",
+   "hl": [
+    "weniger Öl."
+   ],
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "Gießen",
+     "label": "Pfütze"
+    },
+    "b": {
+     "num": "Sprühen",
+     "label": "dünn"
+    }
+   }
+  },
+  {
+   "say": "Befüllen kannst du sie mit deinem ganz normalen Speiseöl.",
+   "hl": [
+    "Speiseöl."
+   ]
+  },
+  {
+   "say": "Für die Heißluftfritteuse ist das besonders praktisch.",
+   "hl": [
+    "Heißluftfritteuse"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Und Platz eins: das Clip-Sieb.",
+   "hl": [
+    "Clip-Sieb."
+   ],
+   "show": "Und Platz 1: das Clip-Sieb.",
+   "tag": "Platz 1",
+   "panel": {
+    "type": "cta",
+    "e": "🍝",
+    "label": "Clip-Sieb für den Topf"
+   }
+  },
+  {
+   "say": "Einfach an den Topfrand klemmen, kippen, fertig.",
+   "hl": [
+    "klemmen,",
+    "fertig."
+   ],
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "1",
+      "t": "Anklemmen"
+     },
+     {
+      "i": "2",
+      "t": "Kippen"
+     },
+     {
+      "i": "3",
+      "t": "Fertig"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Kein großes Sieb mehr in der Spüle. Und die Nudeln bleiben im Topf.",
+   "hl": [
+    "im Topf."
+   ]
+  },
+  {
+   "say": "Das funktioniert genauso bei Kartoffeln oder Gemüse.",
+   "hl": [
+    "Kartoffeln"
+   ]
+  },
+  {
+   "say": "Achte beim Kauf darauf, dass es zu deinen Topfgrößen passt.",
+   "hl": [
+    "Topfgrößen"
+   ],
+   "tag": "Tipp",
+   "panel": {
+    "type": "cta",
+    "e": "📏",
+    "label": "Auf Topfgröße achten"
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Zusammen kosten alle drei oft weniger als ein einziges großes Küchengerät.",
+   "hl": [
+    "weniger"
+   ],
+   "show": "Zusammen kosten alle 3 oft weniger als ein einziges großes Küchengerät."
+  },
+  {
+   "say": "Alle drei findest du unten im Warenkorb.",
+   "hl": [
+    "Warenkorb."
+   ],
+   "tag": "",
+   "panel": {
+    "type": "cta",
+    "e": "🛒",
+    "label": "Alle 3 im Warenkorb"
+   }
+  },
+  {
+   "say": "Welches wäre dein Favorit? Schreib es mir in die Kommentare.",
+   "hl": [
+    "Favorit?"
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "💬",
+    "label": "Dein Favorit?"
+   }
+  }
+ ],
+ "caption": "3 Küchengadgets unter 20 €, die wirklich was bringen. Welches wäre dein Favorit?",
+ "hashtags": [
+  "#küchengadgets",
+  "#küchenhacks",
+  "#tiktokshopfinds",
+  "#kochen",
+  "#tiktokshop"
+ ]
+}

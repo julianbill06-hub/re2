@@ -1,0 +1,231 @@
+{
+ "id": "v06-chaos-schublade",
+ "speed": 1.08,
+ "hook": "<b>Tag 1</b> von 30:<br>die Chaos-Schublade.",
+ "scenes": [
+  {
+   "say": "Tag eins von dreißig. Ich mach jeden Tag eine Ecke der Wohnung perfekt.",
+   "hl": [
+    "Tag 1 von 30."
+   ],
+   "show": "Tag 1 von 30. Ich mach jeden Tag eine Ecke der Wohnung perfekt.",
+   "panel": {
+    "type": "stat",
+    "num": "1/30",
+    "label": "Eine Ecke pro Tag",
+    "count": false
+   }
+  },
+  {
+   "say": "Heute: die Schublade, die wirklich jeder hat.",
+   "hl": [
+    "jeder"
+   ],
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🔋",
+      "t": "Batterien"
+     },
+     {
+      "i": "🔑",
+      "t": "Ein fremder Schlüssel"
+     },
+     {
+      "i": "🔥",
+      "t": "Drei Feuerzeuge"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Batterien, Gummibänder, drei Feuerzeuge und ein Schlüssel, von dem keiner weiß, wofür er ist.",
+   "hl": [
+    "Schlüssel,"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Schritt eins: alles raus. Komplett leer machen ist der wichtigste Schritt.",
+   "hl": [
+    "alles raus.",
+    "wichtigste"
+   ],
+   "show": "Schritt 1: alles raus. Komplett leer machen ist der wichtigste Schritt.",
+   "tag": "Schritt 1",
+   "panel": {
+    "type": "cta",
+    "e": "📤",
+    "label": "Komplett leer machen"
+   }
+  },
+  {
+   "say": "Nur so siehst du, was wirklich drin ist.",
+   "hl": [
+    "wirklich"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Schritt zwei: drei Haufen.",
+   "hl": [
+    "3 Haufen."
+   ],
+   "show": "Schritt 2: 3 Haufen.",
+   "tag": "Schritt 2",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "✓",
+      "t": "Behalten",
+      "s": "ok"
+     },
+     {
+      "i": "↪️",
+      "t": "Gehört woanders hin"
+     },
+     {
+      "i": "✕",
+      "t": "Müll",
+      "s": "no"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Behalten. Gehört woanders hin. Und Müll.",
+   "hl": [
+    "Müll."
+   ]
+  },
+  {
+   "say": "Die Regel: Was kaputt ist oder ein Jahr nicht benutzt wurde, kommt weg.",
+   "hl": [
+    "ein Jahr"
+   ],
+   "panel": {
+    "type": "stat",
+    "num": "1",
+    "label": "Jahr nicht benutzt = weg"
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Alles, was woanders hingehört, bringst du sofort weg. Nicht später, sondern jetzt.",
+   "hl": [
+    "sofort weg."
+   ]
+  },
+  {
+   "say": "Schritt drei: Fächer.",
+   "hl": [
+    "Fächer."
+   ],
+   "show": "Schritt 3: Fächer.",
+   "tag": "Schritt 3",
+   "panel": {
+    "type": "cta",
+    "e": "🗂️",
+    "label": "Schubladen-Einsätze"
+   }
+  },
+  {
+   "say": "Verstellbare Einsätze sind am einfachsten. Aber alte Handy- oder Pralinenschachteln gehen genauso.",
+   "hl": [
+    "Pralinenschachteln"
+   ]
+  },
+  {
+   "say": "Kleinkram, den du oft brauchst, nach vorne. Seltenes nach hinten.",
+   "hl": [
+    "nach vorne.",
+    "nach hinten."
+   ],
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "vorne",
+     "label": "oft"
+    },
+    "b": {
+     "num": "hinten",
+     "label": "selten"
+    }
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Schritt vier: beschriften.",
+   "hl": [
+    "beschriften."
+   ],
+   "show": "Schritt 4: beschriften.",
+   "tag": "Schritt 4",
+   "panel": {
+    "type": "cta",
+    "e": "🏷️",
+    "label": "Alles beschriften"
+   }
+  },
+  {
+   "say": "Klingt übertrieben. Aber nur so weiß jeder im Haushalt, wo was hingehört.",
+   "hl": [
+    "jeder"
+   ]
+  },
+  {
+   "say": "Und genau deshalb bleibt es dann auch ordentlich.",
+   "hl": [
+    "ordentlich."
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Das Ganze dauert übrigens nur ungefähr zwanzig Minuten.",
+   "hl": [
+    "20 Minuten."
+   ],
+   "show": "Das Ganze dauert übrigens nur ungefähr 20 Minuten.",
+   "panel": {
+    "type": "stat",
+    "num": "20",
+    "label": "Minuten für die Schublade"
+   }
+  },
+  {
+   "say": "Die Einsätze verlinke ich dir unten im Warenkorb.",
+   "hl": [
+    "Warenkorb."
+   ],
+   "tag": "",
+   "panel": {
+    "type": "cta",
+    "e": "🛒",
+    "label": "Einsätze im Warenkorb"
+   }
+  },
+  {
+   "say": "Folg mir, damit du Tag zwei nicht verpasst. Morgen ist der Kleiderschrank dran.",
+   "hl": [
+    "Tag 2",
+    "Kleiderschrank"
+   ],
+   "show": "Folg mir, damit du Tag 2 nicht verpasst. Morgen ist der Kleiderschrank dran.",
+   "panel": {
+    "type": "cta",
+    "e": "👉",
+    "label": "Morgen: Kleiderschrank"
+   }
+  }
+ ],
+ "caption": "Tag 1/30: Chaos-Schublade aufräumen in 4 Schritten. Welche Ecke soll an Tag 2 dran sein?",
+ "hashtags": [
+  "#ordnung",
+  "#aufräumen",
+  "#declutter",
+  "#30tagechallenge",
+  "#haushaltstipps"
+ ]
+}

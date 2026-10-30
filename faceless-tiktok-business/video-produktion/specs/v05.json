@@ -1,0 +1,215 @@
+{
+ "id": "v05-backofen",
+ "speed": 1.08,
+ "hook": "Dein Backofen<br>wieder <b>wie neu.</b>",
+ "scenes": [
+  {
+   "say": "Dein Backofen sieht innen so aus? Dann gibt's jetzt zwei Wege, die wirklich funktionieren.",
+   "hl": [
+    "2 Wege,"
+   ],
+   "show": "Dein Backofen sieht innen so aus? Dann gibt's jetzt 2 Wege, die wirklich funktionieren.",
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "Weg 1",
+     "label": "Hausmittel"
+    },
+    "b": {
+     "num": "Weg 2",
+     "label": "Spezialgel"
+    }
+   }
+  },
+  {
+   "say": "Einen mit Hausmitteln, wenn du Zeit hast. Und einen mit Gel, wenn es schnell gehen soll.",
+   "hl": [
+    "Zeit",
+    "schnell"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Weg eins: Natron-Paste.",
+   "hl": [
+    "Natron-Paste."
+   ],
+   "show": "Weg 1: Natron-Paste.",
+   "tag": "Weg 1 · Hausmittel",
+   "panel": {
+    "type": "stat",
+    "num": "½",
+    "label": "Päckchen Natron + Wasser",
+    "count": false
+   }
+  },
+  {
+   "say": "Ein halbes Päckchen Natron mit Wasser zu einer streichfähigen Paste anrühren.",
+   "hl": [
+    "Paste"
+   ],
+   "show": "½ Päckchen Natron mit Wasser zu einer streichfähigen Paste anrühren."
+  },
+  {
+   "say": "Überall dick auftragen, aber nicht auf die Heizstäbe.",
+   "hl": [
+    "nicht auf die Heizstäbe."
+   ],
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "✓",
+      "t": "Wände & Boden",
+      "s": "ok"
+     },
+     {
+      "i": "✓",
+      "t": "Glastür",
+      "s": "ok"
+     },
+     {
+      "i": "✕",
+      "t": "Heizstäbe",
+      "s": "no"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Dann über Nacht einwirken lassen.",
+   "hl": [
+    "über Nacht"
+   ],
+   "panel": {
+    "type": "stat",
+    "num": "🌙",
+    "label": "Über Nacht einwirken",
+    "count": false
+   }
+  },
+  {
+   "say": "Am nächsten Morgen mit Schaber und feuchtem Tuch abtragen. Funktioniert gut, dauert aber.",
+   "hl": [
+    "Schaber"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Weg zwei: ein Backofen-Reinigungsgel.",
+   "hl": [
+    "Reinigungsgel."
+   ],
+   "show": "Weg 2: ein Backofen-Reinigungsgel.",
+   "tag": "Weg 2 · Schnell",
+   "panel": {
+    "type": "cta",
+    "e": "🧴",
+    "label": "Backofen-Gel"
+   }
+  },
+  {
+   "say": "Auftragen und so lange einwirken lassen, wie es auf der Packung steht.",
+   "hl": [
+    "auf der Packung"
+   ]
+  },
+  {
+   "say": "Danach löst sich der Fettfilm mit dem Schaber meist ganz leicht.",
+   "hl": [
+    "ganz leicht."
+   ]
+  },
+  {
+   "say": "Wichtig: Handschuhe tragen und gut lüften. Das ist ein starkes Mittel.",
+   "hl": [
+    "Handschuhe",
+    "lüften."
+   ],
+   "tag": "Achtung",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🧤",
+      "t": "Handschuhe"
+     },
+     {
+      "i": "🪟",
+      "t": "Fenster auf"
+     }
+    ]
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Bonus für die Glasscheibe: ein Glasschaber.",
+   "hl": [
+    "Glasschaber."
+   ],
+   "tag": "Bonus",
+   "panel": {
+    "type": "cta",
+    "e": "🪟",
+    "label": "Glasschaber, flacher Winkel"
+   }
+  },
+  {
+   "say": "In flachem Winkel drüberziehen. So gehen eingebrannte Flecken ab, ohne zu kratzen.",
+   "hl": [
+    "flachem Winkel",
+    "ohne zu kratzen."
+   ]
+  },
+  {
+   "say": "Und für verkrustete Backbleche funktioniert übrigens die gleiche Natron-Paste.",
+   "hl": [
+    "Backbleche"
+   ]
+  },
+  {
+   "say": "Und damit es nicht wieder so schlimm wird: Spritzer sofort wegwischen, solange der Ofen noch lauwarm ist.",
+   "hl": [
+    "sofort",
+    "lauwarm"
+   ],
+   "tag": "Profi-Tipp",
+   "panel": {
+    "type": "cta",
+    "e": "⏱️",
+    "label": "Spritzer sofort wegwischen"
+   }
+  },
+  {
+   "say": "Gel und Schaber findest du unten im Warenkorb.",
+   "hl": [
+    "Warenkorb."
+   ],
+   "tag": "",
+   "panel": {
+    "type": "cta",
+    "e": "🛒",
+    "label": "Link im Warenkorb"
+   }
+  },
+  {
+   "say": "Speicher dir das für den nächsten Großputz.",
+   "hl": [
+    "Speicher"
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "🔖",
+    "label": "Für den Großputz speichern"
+   }
+  }
+ ],
+ "caption": "Backofen reinigen ohne Schrubben – Hausmittel oder Gel? Welchen Weg nimmst du?",
+ "hashtags": [
+  "#backofenreinigen",
+  "#putztipps",
+  "#cleantok",
+  "#haushaltstipps",
+  "#tiktokshopfinds"
+ ]
+}
