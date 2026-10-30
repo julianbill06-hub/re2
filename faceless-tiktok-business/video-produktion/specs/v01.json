@@ -1,0 +1,235 @@
+{
+ "id": "v01-gelbe-fugen",
+ "hook": "Gelbe Fugen?<br><b>Nicht</b> neu machen!",
+ "scenes": [
+  {
+   "say": "Deine Fugen sind gelb? Bitte nicht neu machen lassen.",
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "€€€",
+     "label": "Neu verfugen"
+    },
+    "b": {
+     "num": "1 €",
+     "label": "Natron"
+    }
+   }
+  },
+  {
+   "say": "Ich zeig dir, wie sie in drei Schritten wieder weiß werden.",
+   "show": "Ich zeig dir, wie sie in 3 Schritten wieder weiß werden.",
+   "hl": [
+    "3 Schritten",
+    "weiß"
+   ]
+  },
+  {
+   "say": "Gelbe Fugen sind meistens kein Dreck.",
+   "hl": [
+    "kein Dreck."
+   ],
+   "tag": "Warum gelb?",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "💧",
+      "t": "Kalk"
+     },
+     {
+      "i": "🧼",
+      "t": "Seifenreste"
+     },
+     {
+      "i": "✋",
+      "t": "Hautfett"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Es ist eine Mischung aus Kalk, Seifenresten und Hautfett.",
+   "hl": [
+    "Kalk,",
+    "Hautfett."
+   ]
+  },
+  {
+   "say": "Die frisst sich in die Poren vom Fugenmörtel. Deshalb bringt normales Wischen nichts.",
+   "hl": [
+    "Poren",
+    "nichts."
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Schritt eins: zwei Esslöffel Natron mit etwas Wasser zu einer dicken Paste.",
+   "show": "Schritt 1: 2 Esslöffel Natron mit etwas Wasser zu einer dicken Paste.",
+   "hl": [
+    "Natron"
+   ],
+   "tag": "Schritt 1",
+   "panel": {
+    "type": "stat",
+    "num": "2 EL",
+    "label": "Natron + etwas Wasser",
+    "count": false
+   }
+  },
+  {
+   "say": "Kein Essig dazu! Das schäumt zwar, aber die beiden heben sich gegenseitig auf.",
+   "hl": [
+    "Kein Essig"
+   ],
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "✓",
+      "t": "Natron-Paste",
+      "s": "ok"
+     },
+     {
+      "i": "✕",
+      "t": "Natron + Essig",
+      "s": "no"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Paste auftragen und fünf Minuten einwirken lassen.",
+   "show": "Paste auftragen und 5 Minuten einwirken lassen.",
+   "hl": [
+    "5 Minuten"
+   ],
+   "panel": {
+    "type": "stat",
+    "num": "5",
+    "label": "Minuten einwirken"
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Schritt zwei: bürsten. Mit einer Zahnbürste dauert ein ganzes Bad gut eine Stunde.",
+   "show": "Schritt 2: bürsten. Mit einer Zahnbürste dauert ein ganzes Bad gut 1 Stunde.",
+   "hl": [
+    "Zahnbürste",
+    "1 Stunde."
+   ],
+   "tag": "Schritt 2",
+   "panel": {
+    "type": "stat",
+    "num": "60",
+    "label": "Minuten mit der Zahnbürste"
+   }
+  },
+  {
+   "say": "Mit einer elektrischen Fugenbürste geht es deutlich schneller. Du führst sie nur noch an der Fuge entlang.",
+   "hl": [
+    "elektrischen",
+    "schneller."
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "🪥",
+    "label": "Elektrische Fugenbürste"
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Schritt drei: mit klarem Wasser abwischen und trocken reiben.",
+   "show": "Schritt 3: mit klarem Wasser abwischen und trocken reiben.",
+   "hl": [
+    "klarem Wasser"
+   ],
+   "tag": "Schritt 3",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "💦",
+      "t": "Klar abwischen"
+     },
+     {
+      "i": "🧻",
+      "t": "Trocken reiben"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Wichtig: Bei Naturstein wie Marmor die Paste vorher an einer unauffälligen Stelle testen.",
+   "hl": [
+    "Naturstein",
+    "testen."
+   ],
+   "tag": "Achtung",
+   "panel": {
+    "type": "cta",
+    "e": "⚠️",
+    "label": "Naturstein: erst testen"
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Und damit es nicht wiederkommt: nach dem Duschen einmal mit dem Abzieher drüber.",
+   "hl": [
+    "Abzieher"
+   ],
+   "tag": "Profi-Tipp",
+   "panel": {
+    "type": "cta",
+    "e": "🚿",
+    "label": "Nach jedem Duschen: abziehen"
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Wenn du das alle drei Monate machst, bleiben deine Fugen dauerhaft weiß.",
+   "show": "Wenn du das alle 3 Monate machst, bleiben deine Fugen dauerhaft weiß.",
+   "hl": [
+    "3 Monate",
+    "weiß."
+   ],
+   "panel": {
+    "type": "stat",
+    "num": "3",
+    "label": "Monate Abstand reichen"
+   }
+  },
+  {
+   "say": "Die Fugenbürste findest du unten im Warenkorb.",
+   "hl": [
+    "Warenkorb."
+   ],
+   "tag": "",
+   "panel": {
+    "type": "cta",
+    "e": "🛒",
+    "label": "Link im Warenkorb"
+   }
+  },
+  {
+   "say": "Und folg mir. Morgen zeig ich dir die Silikonfugen. Die sind nämlich eine ganz andere Geschichte.",
+   "hl": [
+    "Silikonfugen."
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "👉",
+    "label": "Morgen: Silikonfugen"
+   }
+  }
+ ],
+ "caption": "Gelbe Fugen wieder weiß – 3 Schritte ohne Schrubben. Was ist bei dir das größte Putzproblem im Bad?",
+ "hashtags": [
+  "#putzhacks",
+  "#haushaltstipps",
+  "#badezimmer",
+  "#cleantok",
+  "#fugenreinigen"
+ ],
+ "speed": 1.03
+}

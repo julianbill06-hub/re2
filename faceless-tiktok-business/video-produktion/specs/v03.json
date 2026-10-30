@@ -1,0 +1,226 @@
+{
+ "id": "v03-zwiebel-schneider",
+ "speed": 1.08,
+ "hook": "Zwiebeln schneiden<br><b>ohne Tränen.</b>",
+ "scenes": [
+  {
+   "say": "Zwiebeln schneiden, ohne zu weinen. Das geht wirklich.",
+   "hl": [
+    "ohne zu weinen."
+   ],
+   "panel": {
+    "type": "stat",
+    "num": "🧅",
+    "label": "Ohne Tränen",
+    "count": false
+   }
+  },
+  {
+   "say": "Aber erst mal: Warum tränen deine Augen überhaupt?",
+   "hl": [
+    "Warum"
+   ],
+   "tag": "Warum?"
+  },
+  {
+   "say": "Beim Schneiden werden Zellen zerstört. Dabei entsteht ein Gas, das in den Augen reizt.",
+   "hl": [
+    "Gas,"
+   ],
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🔪",
+      "t": "Zellen werden zerstört"
+     },
+     {
+      "i": "💨",
+      "t": "Reizgas entsteht"
+     },
+     {
+      "i": "😢",
+      "t": "Augen tränen"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Je mehr Zellen kaputtgehen, desto mehr Tränen.",
+   "hl": [
+    "desto mehr Tränen."
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Tipp eins: ein richtig scharfes Messer. Ein stumpfes Messer quetscht die Zwiebel.",
+   "hl": [
+    "scharfes Messer.",
+    "quetscht"
+   ],
+   "show": "Tipp 1: ein richtig scharfes Messer. Ein stumpfes Messer quetscht die Zwiebel.",
+   "tag": "Tipp 1",
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "stumpf",
+     "label": "quetscht"
+    },
+    "b": {
+     "num": "scharf",
+     "label": "schneidet"
+    }
+   }
+  },
+  {
+   "say": "Tipp zwei: die Zwiebel zehn Minuten in den Kühlschrank. Kalt entsteht weniger Gas.",
+   "hl": [
+    "10 Minuten",
+    "weniger Gas."
+   ],
+   "show": "Tipp 2: die Zwiebel 10 Minuten in den Kühlschrank. Kalt entsteht weniger Gas.",
+   "tag": "Tipp 2",
+   "panel": {
+    "type": "stat",
+    "num": "10",
+    "label": "Minuten kühlen"
+   }
+  },
+  {
+   "say": "Tipp drei: die Wurzel bis zum Schluss dranlassen. Dort sitzt besonders viel davon.",
+   "hl": [
+    "Wurzel"
+   ],
+   "show": "Tipp 3: die Wurzel bis zum Schluss dranlassen. Dort sitzt besonders viel davon.",
+   "tag": "Tipp 3",
+   "panel": {
+    "type": "cta",
+    "e": "🌱",
+    "label": "Wurzel zuletzt abschneiden"
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Und die bequemste Lösung: ein geschlossener Gemüseschneider.",
+   "hl": [
+    "Gemüseschneider."
+   ],
+   "tag": "Die Abkürzung",
+   "panel": {
+    "type": "cta",
+    "e": "🧰",
+    "label": "Geschlossener Gemüseschneider"
+   }
+  },
+  {
+   "say": "Zwiebel halbieren, auflegen, Deckel einmal runterdrücken. Fertig gewürfelt.",
+   "hl": [
+    "einmal",
+    "Fertig"
+   ],
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "1",
+      "t": "Halbieren"
+     },
+     {
+      "i": "2",
+      "t": "Auflegen"
+     },
+     {
+      "i": "3",
+      "t": "Runterdrücken"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Weil das Gerät geschlossen ist, kommt das Gas kaum an deine Augen.",
+   "hl": [
+    "geschlossen"
+   ]
+  },
+  {
+   "say": "Die Würfel landen direkt im Auffangbehälter.",
+   "hl": [
+    "Auffangbehälter."
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Es geht auch mit Paprika, Gurke oder Kartoffeln. Je nach Einsatz fein oder grob.",
+   "hl": [
+    "fein oder grob."
+   ],
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🫑",
+      "t": "Paprika"
+     },
+     {
+      "i": "🥒",
+      "t": "Gurke"
+     },
+     {
+      "i": "🥔",
+      "t": "Kartoffeln"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Ehrlich gesagt: Bei sehr harten Sachen wie roher Karotte musst du ordentlich drücken.",
+   "hl": [
+    "Ehrlich",
+    "drücken."
+   ],
+   "tag": "Ehrlich",
+   "panel": {
+    "type": "cta",
+    "e": "🥕",
+    "label": "Harte Sachen: kräftig drücken"
+   }
+  },
+  {
+   "say": "Zum Reinigen nimmst du ihn einfach auseinander. Die Teile spülst du dann einzeln ab.",
+   "hl": [
+    "auseinander."
+   ]
+  },
+  {
+   "say": "Den Gemüseschneider findest du unten im Warenkorb.",
+   "hl": [
+    "Warenkorb."
+   ],
+   "tag": "",
+   "panel": {
+    "type": "cta",
+    "e": "🛒",
+    "label": "Link im Warenkorb"
+   }
+  },
+  {
+   "say": "Und schreib mir: Welchen Küchentrick soll ich als Nächstes erklären?",
+   "hl": [
+    "Küchentrick"
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "💬",
+    "label": "Welcher Trick als Nächstes?"
+   }
+  }
+ ],
+ "caption": "Zwiebeln schneiden ohne Tränen – 3 Tipps und eine Abkürzung. Welcher Küchentrick als Nächstes?",
+ "hashtags": [
+  "#küchenhacks",
+  "#zwiebeln",
+  "#kochtipps",
+  "#küchengadget",
+  "#tiktokshop"
+ ]
+}

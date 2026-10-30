@@ -1,0 +1,203 @@
+{
+ "id": "v04-hotel-bett",
+ "speed": 1.08,
+ "hook": "Hotels machen das<br>mit <b>jedem</b> Bett.",
+ "scenes": [
+  {
+   "say": "Hotels machen das mit jedem Bett. Und fast kein Gast weiß es.",
+   "hl": [
+    "jedem Bett."
+   ],
+   "panel": {
+    "type": "stat",
+    "num": "🛏️",
+    "label": "Der Hotel-Look",
+    "count": false
+   }
+  },
+  {
+   "say": "Warum sieht ein Hotelbett immer straff und frisch aus? Und deins nach einer Nacht wie ein Schlachtfeld?",
+   "hl": [
+    "straff und frisch"
+   ]
+  },
+  {
+   "say": "Es liegt nicht an teurer Bettwäsche. Es sind drei Handgriffe.",
+   "hl": [
+    "3 Handgriffe."
+   ],
+   "show": "Es liegt nicht an teurer Bettwäsche. Es sind 3 Handgriffe.",
+   "panel": {
+    "type": "stat",
+    "num": "3",
+    "label": "Handgriffe"
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Erstens: die Krankenhausecke.",
+   "hl": [
+    "Krankenhausecke."
+   ],
+   "tag": "Handgriff 1",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "1",
+      "t": "Laken unten einschlagen"
+     },
+     {
+      "i": "2",
+      "t": "Seite als Dreieck hoch"
+     },
+     {
+      "i": "3",
+      "t": "Unten einschlagen"
+     },
+     {
+      "i": "4",
+      "t": "Dreieck fallen lassen"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Das Laken am Fußende unter die Matratze stecken. Dann die Seite wie ein Dreieck hochklappen.",
+   "hl": [
+    "Dreieck"
+   ]
+  },
+  {
+   "say": "Den unteren Teil einschlagen und das Dreieck wieder runterfallen lassen.",
+   "hl": [
+    "runterfallen"
+   ]
+  },
+  {
+   "say": "So verrutscht das Laken die ganze Nacht nicht.",
+   "hl": [
+    "verrutscht"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Zweitens: der Burrito-Trick für den Bettbezug.",
+   "hl": [
+    "Burrito-Trick"
+   ],
+   "tag": "Handgriff 2",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "↩️",
+      "t": "Bezug auf links"
+     },
+     {
+      "i": "🛏️",
+      "t": "Decke drauflegen"
+     },
+     {
+      "i": "🌯",
+      "t": "Zusammenrollen"
+     },
+     {
+      "i": "🔄",
+      "t": "Enden umstülpen"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Bezug auf links drehen, die Decke drauflegen und von oben zusammenrollen.",
+   "hl": [
+    "auf links"
+   ]
+  },
+  {
+   "say": "Dann die Enden umstülpen und ausrollen. Das dauert nur dreißig Sekunden.",
+   "hl": [
+    "30 Sekunden."
+   ],
+   "show": "Dann die Enden umstülpen und ausrollen. Das dauert nur 30 Sekunden.",
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "5 Min",
+     "label": "Kampf"
+    },
+    "b": {
+     "num": "30 s",
+     "label": "Burrito"
+    }
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Drittens: Kissen nicht einfach hinlegen.",
+   "hl": [
+    "Kissen"
+   ],
+   "tag": "Handgriff 3",
+   "panel": {
+    "type": "cta",
+    "e": "✋",
+    "label": "Schütteln, aufstellen, Delle"
+   }
+  },
+  {
+   "say": "Einmal kräftig schütteln, aufstellen und oben mit der Handkante eine kleine Delle reindrücken.",
+   "hl": [
+    "Delle"
+   ]
+  },
+  {
+   "say": "Das ist genau der Look aus dem Hotel.",
+   "hl": [
+    "Hotel."
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Und lüfte dein Bett morgens zehn Minuten, bevor du es machst. Das hält es frischer.",
+   "hl": [
+    "10 Minuten,"
+   ],
+   "show": "Und lüfte dein Bett morgens 10 Minuten, bevor du es machst. Das hält es frischer."
+  },
+  {
+   "say": "Bonus: Leg die Decke einmal quer gefaltet ans Fußende. Sieht sofort aufgeräumt aus.",
+   "hl": [
+    "quer gefaltet"
+   ],
+   "tag": "Bonus",
+   "panel": {
+    "type": "cta",
+    "e": "✨",
+    "label": "Decke quer ans Fußende"
+   }
+  },
+  {
+   "say": "Probier es heute Abend aus. Und folg mir, wenn du mehr Tricks willst, die sonst nur Profis kennen.",
+   "hl": [
+    "heute Abend",
+    "nur Profis"
+   ],
+   "tag": "",
+   "panel": {
+    "type": "cta",
+    "e": "👉",
+    "label": "Folgen für mehr Profi-Tricks"
+   }
+  }
+ ],
+ "caption": "Bett machen wie im Hotel – 3 Handgriffe. Kanntest du den Burrito-Trick?",
+ "hashtags": [
+  "#haushaltstipps",
+  "#lifehacks",
+  "#bettmachen",
+  "#ordnung",
+  "#hoteltrick"
+ ]
+}

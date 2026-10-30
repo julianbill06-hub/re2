@@ -1,0 +1,254 @@
+{
+ "id": "v02-kuehlschrank",
+ "speed": 1.08,
+ "hook": "<b>90 %</b> räumen ihren<br>Kühlschrank falsch ein.",
+ "scenes": [
+  {
+   "say": "Die meisten räumen ihren Kühlschrank falsch ein. Und werfen deshalb Essen weg.",
+   "hl": [
+    "falsch",
+    "Essen weg."
+   ],
+   "panel": {
+    "type": "stat",
+    "num": "🧊",
+    "label": "Falsch eingeräumt = schneller schlecht",
+    "count": false
+   }
+  },
+  {
+   "say": "Denn dein Kühlschrank ist nicht überall gleich kalt.",
+   "hl": [
+    "nicht überall"
+   ],
+   "tag": "Temperatur-Zonen",
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "8 °C",
+     "label": "oben"
+    },
+    "b": {
+     "num": "2 °C",
+     "label": "unten"
+    }
+   }
+  },
+  {
+   "say": "Oben ist es am wärmsten. Ganz unten, direkt über dem Gemüsefach, am kältesten.",
+   "hl": [
+    "am wärmsten.",
+    "am kältesten."
+   ]
+  },
+  {
+   "say": "Ganz unten auf die Glasplatte gehören Fleisch und Fisch.",
+   "hl": [
+    "Fleisch und Fisch."
+   ],
+   "tag": "Unten",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🥩",
+      "t": "Fleisch"
+     },
+     {
+      "i": "🐟",
+      "t": "Fisch"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Das ist die kälteste Zone, und dort tropft nichts auf andere Lebensmittel.",
+   "hl": [
+    "kälteste Zone,"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "In die Mitte kommen Milchprodukte. Also Joghurt, Käse und Quark.",
+   "hl": [
+    "Milchprodukte."
+   ],
+   "tag": "Mitte",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🥛",
+      "t": "Joghurt"
+     },
+     {
+      "i": "🧀",
+      "t": "Käse"
+     },
+     {
+      "i": "🥄",
+      "t": "Quark"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Ganz nach oben: Reste, Gekochtes und alles, was schon offen ist.",
+   "hl": [
+    "Reste,",
+    "offen"
+   ],
+   "tag": "Oben",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🍲",
+      "t": "Reste & Gekochtes"
+     },
+     {
+      "i": "🫙",
+      "t": "Offene Gläser"
+     }
+    ]
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Die Tür ist der wärmste Ort von allen.",
+   "hl": [
+    "wärmste Ort"
+   ],
+   "tag": "Tür",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🥤",
+      "t": "Getränke",
+      "s": "ok"
+     },
+     {
+      "i": "🌭",
+      "t": "Senf & Ketchup",
+      "s": "ok"
+     },
+     {
+      "i": "🥛",
+      "t": "Milch",
+      "s": "no"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Da gehören Getränke, Senf und Ketchup hin. Aber nicht die Milch, auch wenn es dafür ein Fach gibt.",
+   "hl": [
+    "nicht die Milch,"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Ins Gemüsefach: Gurken, Paprika und Salat.",
+   "hl": [
+    "Gemüsefach:"
+   ],
+   "tag": "Gemüsefach",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🥒",
+      "t": "Gurke",
+      "s": "ok"
+     },
+     {
+      "i": "🫑",
+      "t": "Paprika",
+      "s": "ok"
+     },
+     {
+      "i": "🍅",
+      "t": "Tomaten",
+      "s": "no"
+     },
+     {
+      "i": "🍌",
+      "t": "Bananen",
+      "s": "no"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Tomaten, Bananen und Avocados bleiben lieber draußen.",
+   "hl": [
+    "draußen."
+   ]
+  },
+  {
+   "say": "Sie geben ein Reifegas ab. Das lässt anderes Gemüse schneller welk werden.",
+   "hl": [
+    "Reifegas",
+    "welk"
+   ],
+   "panel": {
+    "type": "stat",
+    "num": "💨",
+    "label": "Reifegas = schneller welk",
+    "count": false
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Und noch ein Fehler: den Kühlschrank zu voll packen.",
+   "hl": [
+    "zu voll"
+   ],
+   "tag": "Bonus",
+   "panel": {
+    "type": "cta",
+    "e": "📦",
+    "label": "Luft lassen, damit Kälte zirkuliert"
+   }
+  },
+  {
+   "say": "Die kalte Luft muss zirkulieren können. Sonst wird es in den Ecken zu warm.",
+   "hl": [
+    "zirkulieren"
+   ]
+  },
+  {
+   "say": "Wenn du das umsetzt, landet deutlich weniger Essen im Müll.",
+   "hl": [
+    "weniger Essen"
+   ],
+   "tag": "",
+   "panel": {
+    "type": "cta",
+    "e": "♻️",
+    "label": "Weniger wegwerfen"
+   }
+  },
+  {
+   "say": "Speicher dir das Video für den nächsten Einkauf. Und schreib mir: Was wird bei dir immer zuerst schlecht?",
+   "hl": [
+    "Speicher",
+    "zuerst schlecht?"
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "💬",
+    "label": "Was wird bei dir zuerst schlecht?"
+   }
+  }
+ ],
+ "caption": "Kühlschrank richtig einräumen – welche Zone ist wofür? Was wird bei dir immer zuerst schlecht?",
+ "hashtags": [
+  "#kühlschrank",
+  "#küchenhacks",
+  "#lebensmittelretten",
+  "#haushaltstipps",
+  "#ordnung"
+ ]
+}

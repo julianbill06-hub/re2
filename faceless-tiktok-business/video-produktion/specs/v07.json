@@ -1,0 +1,216 @@
+{
+ "id": "v07-silikondeckel",
+ "speed": 1.08,
+ "hook": "Hör auf, Frischhalte-<br>folie zu <b>kaufen.</b>",
+ "scenes": [
+  {
+   "say": "Hör auf, ständig Frischhaltefolie zu kaufen.",
+   "hl": [
+    "Frischhaltefolie"
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "🗑️",
+    "label": "Folie: einmal benutzt, weg"
+   }
+  },
+  {
+   "say": "Sie klebt nie da, wo sie soll. Und nach einmal Benutzen landet sie im Müll.",
+   "hl": [
+    "Müll."
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Die Alternative: Deckel aus Silikon, die man dehnen kann.",
+   "hl": [
+    "Silikon-Stretchdeckel,"
+   ],
+   "show": "Die Alternative: Silikon-Stretchdeckel, die man dehnen kann.",
+   "tag": "Die Alternative",
+   "panel": {
+    "type": "cta",
+    "e": "🟢",
+    "label": "Silikon-Stretchdeckel"
+   }
+  },
+  {
+   "say": "Die gibt es meistens im Set mit mehreren Größen.",
+   "hl": [
+    "mehreren Größen."
+   ],
+   "panel": {
+    "type": "stat",
+    "num": "6",
+    "label": "Größen im typischen Set"
+   }
+  },
+  {
+   "say": "Und sie lassen sich stark dehnen. Dadurch passt ein Deckel auf ganz unterschiedliche Gefäße.",
+   "hl": [
+    "dehnen."
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Zum Beispiel auf Schüsseln.",
+   "hl": [
+    "Schüsseln."
+   ],
+   "tag": "Passt auf",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🥣",
+      "t": "Schüsseln"
+     },
+     {
+      "i": "🥫",
+      "t": "Konservendosen"
+     },
+     {
+      "i": "🫙",
+      "t": "Gläser"
+     },
+     {
+      "i": "🍉",
+      "t": "Halbe Melone"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Auf offene Konservendosen. Auf Gläser.",
+   "hl": [
+    "Konservendosen."
+   ]
+  },
+  {
+   "say": "Und sogar direkt auf eine halbe Melone oder Zwiebel.",
+   "hl": [
+    "halbe Melone"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Der Deckel saugt sich am Rand fest und schließt dadurch ziemlich dicht.",
+   "hl": [
+    "saugt sich"
+   ],
+   "tag": "So funktioniert's",
+   "panel": {
+    "type": "stat",
+    "num": "💨",
+    "label": "Saugt sich am Rand fest",
+    "count": false
+   }
+  },
+  {
+   "say": "Für den Kühlschrank ist das perfekt. Für den Transport im Rucksack würde ich ihn eher nicht nehmen.",
+   "hl": [
+    "Kühlschrank",
+    "eher nicht"
+   ],
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "✕",
+     "label": "Rucksack"
+    },
+    "b": {
+     "num": "✓",
+     "label": "Kühlschrank"
+    }
+   }
+  },
+  {
+   "say": "In die Mikrowelle aber nur, wenn der Hersteller das ausdrücklich erlaubt.",
+   "hl": [
+    "Mikrowelle"
+   ]
+  },
+  {
+   "say": "Wichtig: nicht überdehnen. Sonst können die Deckel reißen.",
+   "hl": [
+    "nicht überdehnen."
+   ],
+   "tag": "Ehrlich",
+   "panel": {
+    "type": "cta",
+    "e": "⚠️",
+    "label": "Nicht überdehnen"
+   },
+   "pause": 0.4
+  },
+  {
+   "say": "Viele Sets sind spülmaschinenfest. Schau vor dem Kauf aber kurz in die Produktbeschreibung.",
+   "hl": [
+    "spülmaschinenfest."
+   ],
+   "tag": "Pflege",
+   "panel": {
+    "type": "cta",
+    "e": "🍽️",
+    "label": "Oft spülmaschinenfest"
+   }
+  },
+  {
+   "say": "Rechne mal kurz: Eine Rolle Folie pro Monat, das sind zwölf Rollen im Jahr.",
+   "hl": [
+    "12 Rollen"
+   ],
+   "show": "Rechne mal kurz: 1 Rolle Folie pro Monat, das sind 12 Rollen im Jahr.",
+   "tag": "Rechnung",
+   "panel": {
+    "type": "stat",
+    "num": "12",
+    "label": "Rollen Folie pro Jahr"
+   }
+  },
+  {
+   "say": "Und dein Plastikmüll wird jede Woche ein bisschen weniger.",
+   "hl": [
+    "Plastikmüll"
+   ]
+  },
+  {
+   "say": "Ein Deckel-Set hält dagegen ziemlich lange.",
+   "hl": [
+    "ziemlich lange."
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Das Set findest du unten im Warenkorb.",
+   "hl": [
+    "Warenkorb."
+   ],
+   "tag": "",
+   "panel": {
+    "type": "cta",
+    "e": "🛒",
+    "label": "Link im Warenkorb"
+   }
+  },
+  {
+   "say": "Und schreib mir: Benutzt du noch Folie, oder bist du schon umgestiegen?",
+   "hl": [
+    "Folie,"
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "💬",
+    "label": "Folie oder Deckel?"
+   }
+  }
+ ],
+ "caption": "Frischhaltefolie ersetzen: Silikon-Stretchdeckel – was können sie wirklich? Folie oder Deckel bei dir?",
+ "hashtags": [
+  "#küchenhacks",
+  "#nachhaltigleben",
+  "#küchengadget",
+  "#tiktokshop",
+  "#haushaltstipps"
+ ]
+}

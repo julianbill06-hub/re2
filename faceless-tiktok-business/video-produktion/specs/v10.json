@@ -1,0 +1,209 @@
+{
+ "id": "v10-spiegel",
+ "speed": 1.08,
+ "hook": "Streifen auf dem Spiegel?<br>Liegt <b>nicht</b> am Mittel.",
+ "scenes": [
+  {
+   "say": "Es gibt einen Grund, warum dein Spiegel immer Streifen hat. Und es ist nicht dein Putzmittel.",
+   "hl": [
+    "nicht dein Putzmittel."
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "🪞",
+    "label": "Streifen? So nicht."
+   }
+  },
+  {
+   "say": "Streifen haben meistens drei Ursachen.",
+   "hl": [
+    "3 Ursachen."
+   ],
+   "show": "Streifen haben meistens 3 Ursachen.",
+   "tag": "Die 3 Ursachen",
+   "panel": {
+    "type": "list",
+    "items": [
+     {
+      "i": "🧴",
+      "t": "Zu viel Putzmittel"
+     },
+     {
+      "i": "🧽",
+      "t": "Falsches Tuch"
+     },
+     {
+      "i": "☀️",
+      "t": "Direkte Sonne"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Zu viel Putzmittel. Das falsche Tuch.",
+   "hl": [
+    "Zu viel",
+    "falsche Tuch."
+   ]
+  },
+  {
+   "say": "Und das wissen die wenigsten: Putzen bei direkter Sonne.",
+   "hl": [
+    "direkter Sonne."
+   ]
+  },
+  {
+   "say": "Dann trocknet das Wasser, bevor du es wegwischen kannst.",
+   "hl": [
+    "trocknet"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Die Mischung: ein halber Liter warmes Wasser und genau ein Tropfen Spülmittel.",
+   "hl": [
+    "1 Tropfen"
+   ],
+   "show": "Die Mischung: ½ Liter warmes Wasser und genau 1 Tropfen Spülmittel.",
+   "tag": "Die Mischung",
+   "panel": {
+    "type": "stat",
+    "num": "1",
+    "label": "Tropfen Spülmittel auf ½ Liter"
+   }
+  },
+  {
+   "say": "Wirklich nur ein Tropfen. Mehr Seife heißt mehr Rückstände. Und mehr Rückstände heißt mehr Streifen.",
+   "hl": [
+    "mehr Streifen."
+   ],
+   "show": "Wirklich nur 1 Tropfen. Mehr Seife heißt mehr Rückstände. Und mehr Rückstände heißt mehr Streifen.",
+   "pause": 0.4
+  },
+  {
+   "say": "Jetzt kommt das Geheimnis: zwei Tücher.",
+   "hl": [
+    "2 Tücher."
+   ],
+   "show": "Jetzt kommt das Geheimnis: 2 Tücher.",
+   "tag": "Das Geheimnis",
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "Tuch 1",
+     "label": "feucht"
+    },
+    "b": {
+     "num": "Tuch 2",
+     "label": "trocken"
+    }
+   }
+  },
+  {
+   "say": "Mit dem ersten, feuchten Tuch in S-Linien von oben nach unten wischen.",
+   "hl": [
+    "S-Linien"
+   ]
+  },
+  {
+   "say": "Nicht im Kreis. Das verteilt den Schmutz nur.",
+   "hl": [
+    "Nicht im Kreis."
+   ],
+   "panel": {
+    "type": "vs",
+    "a": {
+     "num": "✕",
+     "label": "Kreise"
+    },
+    "b": {
+     "num": "✓",
+     "label": "S-Linien"
+    }
+   }
+  },
+  {
+   "say": "Mit dem zweiten, trockenen Mikrofasertuch sofort nachpolieren.",
+   "hl": [
+    "sofort nachpolieren."
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "✨",
+    "label": "Trocken nachpolieren"
+   }
+  },
+  {
+   "say": "Das zweite Tuch ist der eigentliche Trick.",
+   "hl": [
+    "zweite Tuch"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Das klappt übrigens genauso bei Fenstern und Glastüren.",
+   "hl": [
+    "Fenstern"
+   ]
+  },
+  {
+   "say": "Und Achtung beim Waschen: Mikrofaser niemals mit Weichspüler.",
+   "hl": [
+    "niemals mit Weichspüler."
+   ],
+   "tag": "Achtung",
+   "panel": {
+    "type": "cta",
+    "e": "🚫",
+    "label": "Kein Weichspüler"
+   }
+  },
+  {
+   "say": "Der legt sich auf die Fasern. Dann schmieren die Tücher nur noch.",
+   "hl": [
+    "schmieren"
+   ],
+   "pause": 0.4
+  },
+  {
+   "say": "Wasch die Tücher lieber bei vierzig bis sechzig Grad mit normalem Waschmittel.",
+   "hl": [
+    "40–60 °C"
+   ],
+   "show": "Wasch die Tücher lieber bei 40–60 °C mit normalem Waschmittel.",
+   "pause": 0.4
+  },
+  {
+   "say": "Gute Mikrofasertücher findest du unten im Warenkorb.",
+   "hl": [
+    "Warenkorb."
+   ],
+   "tag": "",
+   "panel": {
+    "type": "cta",
+    "e": "🛒",
+    "label": "Mikrofaser-Set im Warenkorb"
+   }
+  },
+  {
+   "say": "Speicher dir das Video, und folg mir für mehr Putztricks, die wirklich funktionieren.",
+   "hl": [
+    "Speicher",
+    "folg mir"
+   ],
+   "panel": {
+    "type": "cta",
+    "e": "👉",
+    "label": "Folgen für mehr Putztricks"
+   }
+  }
+ ],
+ "caption": "Spiegel streifenfrei putzen – der 2-Tücher-Trick. Wusstest du das mit dem Weichspüler?",
+ "hashtags": [
+  "#putztipps",
+  "#cleantok",
+  "#haushaltshacks",
+  "#badputzen",
+  "#spiegelputzen"
+ ]
+}
