@@ -67,6 +67,7 @@ export const GEO = {
   cylLow: new THREE.CylinderGeometry(1, 1, 1, 12),
   box: new THREE.BoxGeometry(1, 1, 1),
   rbox: roundedBox(1, 1, 1, 0.12),
+  tunic: new THREE.CylinderGeometry(0.27, 0.4, 1, 28),
   torus: new THREE.TorusGeometry(1, 0.14, 14, 48),
   cone: new THREE.ConeGeometry(1, 1, 24),
   half: new THREE.SphereGeometry(1, 40, 20, 0, Math.PI * 2, 0, Math.PI / 2),
@@ -288,41 +289,84 @@ export const Laurel: React.FC<{p?: V3}> = ({p = [0, 0, 0]}) => (
   </group>
 );
 
-// Chibi Roman in a toga: big head, small round body, short legs with sandals
+// Stick-figure body with the big cartoon head:
+// long thin legs and arms with knees/elbows, slim tunic torso, sandals.
+const LIMB = '#2b2430';
+type LimbProps = {p: V3; rz: number; rx?: number; bend: number; bendX?: number; l1: number; l2: number; r: number; color: string; end?: React.ReactNode};
+const Limb: React.FC<LimbProps> = ({p, rz, rx = 0, bend, bendX = 0, l1, l2, r, color, end}) => (
+  <group position={p} rotation={[rx, 0, rz]}>
+    <T geo={GEO.cap} color={color} p={[0, -l1 / 2, 0]} s={[r * 2, l1 / 2, r * 2]} o={0.012} />
+    <T geo={GEO.sphere} color={color} p={[0, -l1, 0]} s={r * 1.05} o={0} />
+    <group position={[0, -l1, 0]} rotation={[bendX, 0, bend]}>
+      <T geo={GEO.cap} color={color} p={[0, -l2 / 2, 0]} s={[r * 2, l2 / 2, r * 2]} o={0.012} />
+      <group position={[0, -l2, 0]}>{end}</group>
+    </group>
+  </group>
+);
+
+const Hand: React.FC<{skin: string; side: number}> = ({skin, side}) => (
+  <group>
+    <T geo={GEO.sphere} color={skin} p={[0, -0.06, 0]} s={[0.085, 0.1, 0.075]} o={0.012} />
+    <T geo={GEO.sphere} color={skin} p={[side * 0.07, -0.02, 0.03]} s={[0.035, 0.05, 0.035]} o={0.008} />
+  </group>
+);
+
+const Sandal: React.FC = () => (
+  <group>
+    <T geo={GEO.rbox} color="#6b3f22" p={[0, -0.03, 0.07]} s={[0.15, 0.07, 0.3]} o={0.012} />
+    <T geo={GEO.box} color="#4a2a16" p={[0, 0.06, 0.02]} s={[0.13, 0.025, 0.13]} o={0} />
+  </group>
+);
+
+export const HIP = 1.32, SHOULDER = 1.98, HEAD_Y = 2.7;
+
+export const StickBody: React.FC<{
+  robe: string; trim: string; skin: string; robeMap?: THREE.Texture;
+  armR?: number; armL?: number; elbowR?: number; elbowL?: number; walk?: number; armor?: boolean;
+  handR?: React.ReactNode; handL?: React.ReactNode;
+}> = ({robe, trim, skin, robeMap, armR = 0, armL = 0, elbowR = 0.25, elbowL = 0.25, walk = 0, armor, handR, handL}) => {
+  const sw = Math.sin(walk * Math.PI * 2) * 0.45;
+  return (
+    <group>
+      {/* legs */}
+      <Limb p={[-0.12, HIP, 0]} rz={0.03} rx={sw} bend={0} bendX={-Math.max(0, -sw) * 0.8} l1={0.66} l2={0.64} r={0.05} color={LIMB} end={<Sandal />} />
+      <Limb p={[0.12, HIP, 0]} rz={-0.03} rx={-sw} bend={0} bendX={-Math.max(0, sw) * 0.8} l1={0.66} l2={0.64} r={0.05} color={LIMB} end={<Sandal />} />
+      {/* tunic / toga: slim, flared hem */}
+      <T geo={GEO.tunic} color={robe} map={robeMap} p={[0, (HIP + SHOULDER) / 2 - 0.02, 0]} s={[1, SHOULDER - HIP + 0.22, 0.82]} o={0.022} />
+      <T geo={GEO.torus} color={trim} p={[0, HIP - 0.07, 0]} r={[Math.PI / 2, 0, 0]} s={[0.4, 0.4 * 0.82, 0.5]} o={0.01} />
+      {armor ? (
+        <group>
+          {[0, 1, 2].map((k) => <M key={k} geo={GEO.cyl} color="#b8bec9" p={[0, SHOULDER - 0.12 - k * 0.13, 0]} s={[0.3 + k * 0.025, 0.09, 0.26 + k * 0.02]} o={0.01} />)}
+          {Array.from({length: 7}).map((_, k) => { const a = -1.3 + k * 0.43; return <T key={k} geo={GEO.rbox} color="#7a4a26" p={[Math.sin(a) * 0.36, HIP - 0.08, Math.cos(a) * 0.3]} r={[0, a, 0]} s={[0.08, 0.2, 0.03]} o={0.008} />; })}
+        </group>
+      ) : (
+        <T geo={GEO.torus} color={trim} p={[0, SHOULDER - 0.28, 0]} r={[Math.PI / 2 + 0.2, 0.7, 0]} s={[0.3, 0.27, 1.1]} o={0.012} />
+      )}
+      {/* shoulders (short sleeves) */}
+      <T geo={GEO.sphere} color={robe} map={robeMap} p={[-0.27, SHOULDER - 0.02, 0]} s={[0.11, 0.1, 0.11]} o={0.012} />
+      <T geo={GEO.sphere} color={robe} map={robeMap} p={[0.27, SHOULDER - 0.02, 0]} s={[0.11, 0.1, 0.11]} o={0.012} />
+      {/* arms */}
+      <Limb p={[-0.3, SHOULDER - 0.03, 0]} rz={-0.22 - armL} rx={-0.1} bend={-elbowL} l1={0.5} l2={0.47} r={0.042} color={LIMB} end={<group><Hand skin={skin} side={1} />{handL}</group>} />
+      <Limb p={[0.3, SHOULDER - 0.03, 0]} rz={0.22 + armR} rx={-0.1} bend={elbowR} l1={0.5} l2={0.47} r={0.042} color={LIMB} end={<group><Hand skin={skin} side={-1} />{handR}</group>} />
+      {/* neck */}
+      <T geo={GEO.cyl} color={skin} p={[0, SHOULDER + 0.08, 0]} s={[0.06, 0.16, 0.06]} o={0.01} />
+    </group>
+  );
+};
+
 export const Roman: React.FC<{
   p?: V3; ry?: number; s?: number;
   robe: string; trim: string; skin?: string; hair?: string; hairStyle?: 'caesar' | 'bald' | 'curly' | 'none';
   mood?: Mood; look?: number; laurel?: boolean;
-  armR?: number; armL?: number; bob?: number; robeMap?: THREE.Texture;
-}> = ({p = [0, 0, 0], ry = 0, s = 1, robe, trim, skin = '#f2c4a0', hair = '#3a2416', hairStyle = 'caesar', mood = 'calm', look = 0, laurel, armR = 0, armL = 0, bob = 0, robeMap}) => {
-  const b = Math.sin(bob * Math.PI * 2) * 0.02;
+  armR?: number; armL?: number; bob?: number; robeMap?: THREE.Texture; walk?: number;
+}> = ({p = [0, 0, 0], ry = 0, s = 1, robe, trim, skin = '#f2c4a0', hair = '#3a2416', hairStyle = 'caesar', mood = 'calm', look = 0, laurel, armR = 0, armL = 0, bob = 0, robeMap, walk = 0}) => {
+  const b = Math.sin(bob * Math.PI * 2) * 0.015;
   return (
     <group position={p} rotation={[0, ry, 0]} scale={s}>
-      {/* legs + sandals */}
-      {[-0.2, 0.2].map((x, i) => (
-        <group key={i} position={[x, 0, 0]}>
-          <T geo={GEO.cap} color={skin} p={[0, 0.25, 0]} s={[0.17, 0.22, 0.17]} o={0.02} />
-          <T geo={GEO.rbox} color="#6b3f22" p={[0, 0.05, 0.06]} s={[0.22, 0.1, 0.34]} o={0.02} />
-          <T geo={GEO.box} color="#4a2a16" p={[0, 0.2, 0.02]} s={[0.19, 0.03, 0.19]} o={0} />
-        </group>
-      ))}
-      {/* tunic + draped toga */}
-      <group position={[0, 0.88 + b, 0]}>
-        <T geo={GEO.cap} color={robe} map={robeMap} s={[0.95, 0.62, 0.8]} o={0.03} />
-        <T geo={GEO.cyl} color={trim} p={[0, -0.47, 0]} s={[0.46, 0.08, 0.4]} o={0.015} />
-        {/* diagonal drape */}
-        <T geo={GEO.torus} color={trim} p={[0, 0.08, 0]} r={[Math.PI / 2 + 0.15, 0.62, 0]} s={[0.5, 0.48, 1.3]} o={0.015} />
-        {/* arms */}
-        <group position={[-0.5, 0.2, 0]} rotation={[0, 0, -0.4 - armL]}>
-          <T geo={GEO.cap} color={robe} map={robeMap} p={[0, -0.18, 0]} s={[0.26, 0.28, 0.26]} o={0.02} />
-          <T geo={GEO.sphere} color={skin} p={[0, -0.45, 0]} s={0.13} o={0.02} />
-        </group>
-        <group position={[0.5, 0.2, 0]} rotation={[0, 0, 0.4 + armR]}>
-          <T geo={GEO.cap} color={robe} map={robeMap} p={[0, -0.18, 0]} s={[0.26, 0.28, 0.26]} o={0.02} />
-          <T geo={GEO.sphere} color={skin} p={[0, -0.45, 0]} s={0.13} o={0.02} />
-        </group>
+      <group position={[0, b, 0]}>
+        <StickBody robe={robe} trim={trim} skin={skin} robeMap={robeMap} armR={armR} armL={armL} walk={walk} />
       </group>
-      <group position={[0, 1.95 + b * 1.5, 0]}>
+      <group position={[0, HEAD_Y + b * 1.6, 0]} rotation={[0, 0, Math.sin(bob * Math.PI * 2 + 1) * 0.03]}>
         <Head skin={skin} mood={mood} look={look} hair={hair} hairStyle={hairStyle} />
         {laurel ? <Laurel p={[0, 0.3, 0]} /> : null}
       </group>
@@ -330,31 +374,26 @@ export const Roman: React.FC<{
   );
 };
 
-// Praetorian guard: steel helmet with crest + cheek guards, curved red shield, spear
+// Praetorian guard: stick body with armor, steel helmet with crest, curved red shield, spear
 export const Guard: React.FC<{p: V3; ry?: number; shield: THREE.Texture; mood?: Mood; s?: number}> = ({p, ry = 0, shield, mood = 'stern', s = 1}) => (
   <group position={p} rotation={[0, ry, 0]} scale={s}>
-    <Roman robe="#b2302a" trim="#8a7a6a" mood={mood} hairStyle="none" skin="#eab48e" />
-    {/* segmented armor bands */}
-    {[0, 1, 2].map((k) => (
-      <M key={k} geo={GEO.cyl} color="#b8bec9" p={[0, 1.05 - k * 0.14, 0]} s={[0.47 - k * 0.01, 0.1, 0.4]} o={0.012} />
-    ))}
-    <group position={[0, 1.95, 0]}>
+    <StickBody robe="#b2302a" trim="#7a4a26" skin="#eab48e" armor armR={-0.05} elbowR={1.2} armL={0.15} elbowL={1.0} />
+    <group position={[0, HEAD_Y, 0]}>
+      <Head skin="#eab48e" mood={mood} hairStyle="none" />
       <M geo={GEO.half} color="#c3cad6" p={[0, 0.3, -0.04]} s={[0.84, 0.66, 0.8]} o={0.03} />
       <M geo={GEO.torus} color="#e0b04a" p={[0, 0.32, -0.04]} r={[Math.PI / 2, 0, 0]} s={[0.82, 0.78, 0.6]} o={0.012} />
-      {/* crest: front-to-back brush */}
       <T geo={GEO.rbox} color="#c4232b" p={[0, 1.02, -0.05]} s={[0.14, 0.26, 0.95]} o={0.02} />
       <T geo={GEO.box} color="#d9a83a" p={[0, 0.9, -0.05]} s={[0.1, 0.06, 0.7]} o={0.01} />
-      {/* cheek guards */}
       <M geo={GEO.rbox} color="#c3cad6" p={[-0.72, -0.15, 0.18]} r={[0, 0.5, 0]} s={[0.07, 0.42, 0.3]} o={0.015} />
       <M geo={GEO.rbox} color="#c3cad6" p={[0.72, -0.15, 0.18]} r={[0, -0.5, 0]} s={[0.07, 0.42, 0.3]} o={0.015} />
     </group>
-    {/* spear */}
-    <T geo={GEO.cylLow} color="#7a5232" p={[0.62, 1.6, 0.05]} s={[0.035, 3.2, 0.035]} o={0.012} />
-    <T geo={GEO.cone} color="#d6dae0" p={[0.62, 3.32, 0.05]} s={[0.07, 0.28, 0.07]} o={0.012} />
-    {/* curved shield */}
-    <group position={[-0.45, 0.95, 0.45]} rotation={[0, 0.35, 0]}>
+    {/* spear held upright in the right hand */}
+    <T geo={GEO.cylLow} color="#7a5232" p={[0.55, 1.9, 0.26]} s={[0.03, 3.6, 0.03]} o={0.01} />
+    <T geo={GEO.cone} color="#d6dae0" p={[0.55, 3.82, 0.26]} s={[0.06, 0.26, 0.06]} o={0.01} />
+    {/* curved shield on the left arm */}
+    <group position={[-0.46, 1.42, 0.46]} rotation={[0, 0.35, 0]}>
       <mesh castShadow>
-        <cylinderGeometry args={[0.95, 0.95, 1.25, 24, 1, true, -0.55, 1.1]} />
+        <cylinderGeometry args={[0.8, 0.8, 1.15, 24, 1, true, -0.55, 1.1]} />
         <meshStandardMaterial map={shield} roughness={0.45} metalness={0.1} side={THREE.DoubleSide} />
       </mesh>
     </group>

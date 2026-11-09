@@ -14,15 +14,15 @@ type Shot = {at: number; from: {pos: V3; look: V3}; to: {pos: V3; look: V3}; dur
 
 const SHOTS: Shot[] = [
   // establishing: slow descent over the guards
-  {at: 0, from: {pos: [0.3, 10.5, 14.5], look: [0.5, 1.4, -1.5]}, to: {pos: [0.3, 8.4, 11.8], look: [0.5, 1.1, -0.1]}, dur: 2.4, fov: 47},
+  {at: 0, from: {pos: [0.3, 10.8, 14.5], look: [0.5, 1.7, -1.5]}, to: {pos: [0.3, 8.7, 11.8], look: [0.5, 1.4, -0.1]}, dur: 2.4, fov: 47},
   // Emperor Caligula
-  {at: W('Emperor') - 0.15, from: {pos: [-0.2, 4.4, 8.6], look: [-0.9, 2.3, 3.4]}, to: {pos: [-0.5, 3.5, 7.4], look: [-0.9, 2.5, 3.5]}, dur: 1.6, fov: 42},
+  {at: W('Emperor') - 0.15, from: {pos: [-0.2, 4.7, 8.6], look: [-0.9, 2.6, 3.4]}, to: {pos: [-0.5, 3.8, 7.4], look: [-0.9, 2.8, 3.5]}, dur: 1.6, fov: 42},
   // Not a general.
-  {at: W('Not', 0) - 0.1, from: {pos: [-0.8, 2.7, -0.6], look: [-0.6, 2.3, -4.5]}, to: {pos: [0.9, 2.7, -0.6], look: [1.1, 2.3, -4.5]}, dur: 0.9, fov: 44},
+  {at: W('Not', 0) - 0.1, from: {pos: [-0.8, 3.0, -0.6], look: [-0.6, 2.6, -4.5]}, to: {pos: [0.9, 3.0, -0.6], look: [1.1, 2.6, -4.5]}, dur: 0.9, fov: 44},
   // Not a senator.
-  {at: W('Not', 1) - 0.1, from: {pos: [-2.1, 2.7, 4.0], look: [-2.7, 2.1, 1.0]}, to: {pos: [-2.25, 2.6, 3.5], look: [-2.7, 2.2, 1.0]}, dur: 0.9, fov: 42},
+  {at: W('Not', 1) - 0.1, from: {pos: [-2.1, 3.0, 4.0], look: [-2.7, 2.4, 1.0]}, to: {pos: [-2.25, 2.9, 3.5], look: [-2.7, 2.5, 1.0]}, dur: 0.9, fov: 42},
   // His horse.
-  {at: W('His') - 0.1, from: {pos: [1.3, 3.4, 6.4], look: [1.6, 2.6, 2.4]}, to: {pos: [1.05, 3.1, 5.5], look: [1.6, 2.7, 2.4]}, dur: 1.6, fov: 40},
+  {at: W('His') - 0.1, from: {pos: [1.3, 3.7, 6.4], look: [1.6, 2.9, 2.4]}, to: {pos: [1.05, 3.4, 5.5], look: [1.6, 3.0, 2.4]}, dur: 1.6, fov: 40},
 ];
 
 function camAt(t: number) {
