@@ -6,6 +6,7 @@ import {Caligula} from './Caligula';
 import {HdStill} from './HdStill';
 import {CaligulaEN} from './CaligulaEN';
 import {OceanWar} from './OceanWar';
+import {Ocean60, OCEAN60_DURATION} from './Ocean60';
 import timingOcean from './timing_ocean.json';
 import timingEn from './timing_en.json';
 import timingCal from './timing_caligula.json';
@@ -26,5 +27,6 @@ export const RemotionRoot: React.FC = () => (
   <Composition id="HdStill" component={HdStill} durationInFrames={60} fps={FPS} width={1080} height={1920} />
   <Composition id="CaligulaEN" component={CaligulaEN} durationInFrames={Math.ceil(timingEn.duration * FPS)} fps={FPS} width={1080} height={1920} />
   <Composition id="OceanWar" component={OceanWar} durationInFrames={Math.ceil(timingOcean.duration * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="Ocean60" component={Ocean60} durationInFrames={Math.ceil(OCEAN60_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
   </>
 );

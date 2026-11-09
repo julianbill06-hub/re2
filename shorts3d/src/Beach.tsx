@@ -93,15 +93,84 @@ const Standard: React.FC<{p: V3}> = ({p}) => (
   </group>
 );
 
+
+const HelmetFull: React.FC<{p: V3; r?: number}> = ({p, r = 0}) => (
+  <group position={p} rotation={[0, r, 0]}>
+    <M geo={GEO.half} color="#c3cad6" p={[0, 0.38, 0]} r={[Math.PI, 0, 0]} s={[0.42, 0.38, 0.4]} o={0.015} />
+    <T geo={GEO.rbox} color="#c4232b" p={[0, 0.06, 0.3]} r={[Math.PI / 2, 0, 0]} s={[0.07, 0.14, 0.5]} o={0.01} />
+    {[[-0.12, 0.42, 0.05], [0.1, 0.44, -0.08], [0.0, 0.48, 0.1], [-0.05, 0.5, -0.05], [0.14, 0.4, 0.12]].map((q, i) => <Shell key={i} p={q as V3} r={i * 1.7} s={0.9} color={i % 2 ? '#fbe7c6' : '#f6c6b8'} />)}
+  </group>
+);
+
+const Tower: React.FC<{p: V3; k: number; t: number}> = ({p, k, t}) => {
+  if (k <= 0.001) return null;
+  const f = 0.9 + 0.1 * Math.sin(t * 15);
+  return (
+    <group position={p} scale={[1, k, 1]}>
+      {[0, 1, 2, 3].map((i) => <T key={i} geo={GEO.cyl} color={i % 2 ? '#d8cbb2' : '#cbbda2'} p={[0, 1.2 + i * 2.4, 0]} s={[1.5 - i * 0.18, 2.4, 1.5 - i * 0.18]} o={0.04} />)}
+      {[0, 1, 2, 3].map((i) => <T key={'r' + i} geo={GEO.cyl} color="#b9a98c" p={[0, 2.4 + i * 2.4, 0]} s={[1.6 - i * 0.18, 0.2, 1.6 - i * 0.18]} o={0.02} />)}
+      <T geo={GEO.cyl} color="#8a7a62" p={[0, 9.9, 0]} s={[1.0, 0.3, 1.0]} o={0.02} />
+      <mesh position={[0, 10.6, 0]} scale={[0.6 * f, 1.1 * f, 0.6 * f]}><coneGeometry args={[1, 1, 14]} /><meshBasicMaterial color="#ffa733" /></mesh>
+      <mesh position={[0, 10.45, 0]} scale={[0.35, 0.7 * f, 0.35]}><coneGeometry args={[1, 1, 14]} /><meshBasicMaterial color="#fff1a8" /></mesh>
+    </group>
+  );
+};
+
+const Ship: React.FC<{p: V3; t: number; r?: number}> = ({p, t, r = 0}) => (
+  <group position={[p[0], p[1] + Math.sin(t * 1.6 + p[0]) * 0.08, p[2]]} rotation={[Math.sin(t * 1.3 + p[0]) * 0.03, r, Math.sin(t * 1.1) * 0.04]}>
+    <T geo={GEO.rbox} color="#8a5a32" p={[0, 0.3, 0]} s={[4.2, 0.9, 1.5]} o={0.03} />
+    <T geo={GEO.rbox} color="#6b4626" p={[2.1, 0.75, 0]} r={[0, 0, 0.5]} s={[0.9, 0.4, 0.9]} o={0.02} />
+    <T geo={GEO.cylLow} color="#5a3b22" p={[0, 2.6, 0]} s={[0.08, 4.0, 0.08]} o={0.012} />
+    <T geo={GEO.box} color="#f3ead6" p={[0, 3.0, 0.1]} s={[2.2, 2.0, 0.05]} o={0.015} />
+    <T geo={GEO.box} color="#b8272b" p={[0, 3.0, 0.13]} s={[2.2, 0.35, 0.02]} o={0} />
+    {[-1.4, -0.7, 0, 0.7, 1.4].map((x) => <T key={x} geo={GEO.cylLow} color="#7a5232" p={[x, 0.15, 1.0]} r={[0.9, 0, 0]} s={[0.04, 1.2, 0.04]} o={0.008} />)}
+  </group>
+);
+
+const Coins: React.FC<{since: number}> = ({since}) => {
+  if (since < 0) return null;
+  const out: React.ReactNode[] = [];
+  for (let i = 0; i < 60; i++) {
+    const r1 = Math.sin(i * 12.9898) * 43758.5453, r2 = Math.sin(i * 78.233) * 12345.678, r3 = Math.sin(i * 39.1) * 9876.5;
+    const fx = r1 - Math.floor(r1), fz = r2 - Math.floor(r2), fd = r3 - Math.floor(r3);
+    const tt = since - fd * 1.6;
+    if (tt < 0) continue;
+    const y = Math.max(0.03, 9 - 4.9 * tt * tt);
+    out.push(
+      <group key={i} position={[-9.5 + fx * 15, y, -2.6 + fz * 7.5]} rotation={[tt * 6 + i, tt * 4, 0]}>
+        <M geo={GEO.cyl} color="#f2c230" s={[0.17, 0.035, 0.17]} o={0.008} />
+      </group>,
+    );
+  }
+  return <>{out}</>;
+};
+
+const Britain: React.FC = () => (
+  <group position={[-6, 0, -78]}>
+    {[[-12, 4.5, 9], [-2, 5.5, 11], [9, 4.8, 10], [18, 4, 8]].map(([x, h, w], i) => (
+      <group key={i} position={[x, 0, 0]}>
+        <mesh position={[0, h / 2 - 0.5, 0]} scale={[w, h, 4]}><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="#f2f0ea" roughness={0.9} /></mesh>
+        <mesh position={[0, h - 0.4, 0]} scale={[w * 1.02, 0.6, 4.1]}><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="#7fae5a" roughness={1} /></mesh>
+      </group>
+    ))}
+  </group>
+);
+
 export type BeachProps = {
   t: number;
   guardMood: 'stern' | 'shock' | 'grumpy';
   shells: boolean; // shells in soldiers' hands
   emperor: {mood: any; armR: number; elbowR: number; hold: 'sword' | 'shell'; look: number};
   catapultArm: number;
+  bare?: boolean; // soldiers took their helmets off
+  helmetsWithShells?: boolean;
+  turn?: number; // 0..1 soldiers look at each other
+  tower?: number; // 0..1 tower rises
+  coins?: number; // seconds since coin rain started (<0 = none)
+  horns?: number; // 0..1 trumpets raised (undefined = none)
 };
 
-export const BeachSet: React.FC<BeachProps> = ({t, guardMood, shells, emperor, catapultArm}) => {
+export const BeachSet: React.FC<BeachProps> = ({t, guardMood, shells, emperor, catapultArm, bare = false, helmetsWithShells = false, turn = 0, tower = 0, coins = -1, horns}) => {
   const tx = useTextures();
   const sand = useMemo(sandTexture, []);
   const sea = useMemo(seaMat, []);
@@ -153,12 +222,24 @@ export const BeachSet: React.FC<BeachProps> = ({t, guardMood, shells, emperor, c
           const bob = Math.max(0, Math.sin(t * 2.1 + c * 0.7 + r)) * 0.02;
           return (
             <group key={r + '-' + c}>
-              <Guard p={[x, bob, z]} ry={Math.PI} shield={tx.shield} mood={guardMood === 'shock' && (c + r) % 3 === 0 ? 'grumpy' : guardMood} />
-              {shells ? <Shell p={[x - 0.15, 0.03, z - 0.75]} r={c} s={1.4} /> : null}
+              <Guard p={[x, bob, z]} ry={Math.PI + turn * 0.7 * Math.sin(c * 2.1 + r * 1.3 + 0.6) + turn * 0.12 * Math.sin(t * 3 + c)} shield={tx.shield} bare={bare} mood={guardMood === 'shock' && (c + r) % 3 === 0 ? 'grumpy' : guardMood} />
+              {shells && !helmetsWithShells ? <Shell p={[x - 0.15, 0.03, z - 0.75]} r={c} s={1.4} /> : null}
+              {helmetsWithShells ? <HelmetFull p={[x + 0.1, 0, z - 0.85]} r={c * 0.7} /> : null}
             </group>
           );
         }),
       )}
+      <Britain />
+      <Ship p={[-6, -0.1, -10.5]} t={t} r={0.08} />
+      <Ship p={[3, -0.1, -11.2]} t={t + 1} r={-0.1} />
+      <Tower p={[15.5, 0, -6.5]} k={tower} t={t} />
+      <Coins since={coins} />
+      {horns !== undefined ? (
+        <>
+          <Guard p={[5.4, 0, -2.4]} ry={Math.PI + 0.5} shield={tx.shield} mood="stern" horn={horns} />
+          <Guard p={[11.0, 0, -0.8]} ry={Math.PI - 0.5} shield={tx.shield} mood="stern" horn={horns} />
+        </>
+      ) : null}
       <Standard p={[-10.6, 0, -1.2]} />
       <Standard p={[5.6, 0, -1.2]} />
       <Catapult p={[-13.8, 0, -3.5]} ry={Math.PI / 2} arm={catapultArm} />

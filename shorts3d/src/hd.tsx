@@ -375,17 +375,27 @@ export const Roman: React.FC<{
 };
 
 // Praetorian guard: stick body with armor, steel helmet with crest, curved red shield, spear
-export const Guard: React.FC<{p: V3; ry?: number; shield: THREE.Texture; mood?: Mood; s?: number}> = ({p, ry = 0, shield, mood = 'stern', s = 1}) => (
+export const Guard: React.FC<{p: V3; ry?: number; shield: THREE.Texture; mood?: Mood; s?: number; bare?: boolean; horn?: number}> = ({p, ry = 0, shield, mood = 'stern', s = 1, bare = false, horn}) => (
   <group position={p} rotation={[0, ry, 0]} scale={s}>
     <StickBody robe="#b2302a" trim="#7a4a26" skin="#eab48e" armor armR={-0.05} elbowR={1.2} armL={0.15} elbowL={1.0} />
     <group position={[0, HEAD_Y, 0]}>
-      <Head skin="#eab48e" mood={mood} hairStyle="none" />
-      <M geo={GEO.half} color="#c3cad6" p={[0, 0.3, -0.04]} s={[0.84, 0.66, 0.8]} o={0.03} />
-      <M geo={GEO.torus} color="#e0b04a" p={[0, 0.32, -0.04]} r={[Math.PI / 2, 0, 0]} s={[0.82, 0.78, 0.6]} o={0.012} />
-      <T geo={GEO.rbox} color="#c4232b" p={[0, 1.02, -0.05]} s={[0.14, 0.26, 0.95]} o={0.02} />
-      <T geo={GEO.box} color="#d9a83a" p={[0, 0.9, -0.05]} s={[0.1, 0.06, 0.7]} o={0.01} />
-      <M geo={GEO.rbox} color="#c3cad6" p={[-0.72, -0.15, 0.18]} r={[0, 0.5, 0]} s={[0.07, 0.42, 0.3]} o={0.015} />
-      <M geo={GEO.rbox} color="#c3cad6" p={[0.72, -0.15, 0.18]} r={[0, -0.5, 0]} s={[0.07, 0.42, 0.3]} o={0.015} />
+      <Head skin="#eab48e" mood={mood} hairStyle={bare ? 'caesar' : 'none'} hair="#3a2618" />
+      {bare ? null : (
+        <group>
+          <M geo={GEO.half} color="#c3cad6" p={[0, 0.3, -0.04]} s={[0.84, 0.66, 0.8]} o={0.03} />
+          <M geo={GEO.torus} color="#e0b04a" p={[0, 0.32, -0.04]} r={[Math.PI / 2, 0, 0]} s={[0.82, 0.78, 0.6]} o={0.012} />
+          <T geo={GEO.rbox} color="#c4232b" p={[0, 1.02, -0.05]} s={[0.14, 0.26, 0.95]} o={0.02} />
+          <T geo={GEO.box} color="#d9a83a" p={[0, 0.9, -0.05]} s={[0.1, 0.06, 0.7]} o={0.01} />
+          <M geo={GEO.rbox} color="#c3cad6" p={[-0.72, -0.15, 0.18]} r={[0, 0.5, 0]} s={[0.07, 0.42, 0.3]} o={0.015} />
+          <M geo={GEO.rbox} color="#c3cad6" p={[0.72, -0.15, 0.18]} r={[0, -0.5, 0]} s={[0.07, 0.42, 0.3]} o={0.015} />
+        </group>
+      )}
+      {horn !== undefined ? (
+        <group position={[0.35, -0.35 + horn * 0.2, 0.75]} rotation={[0, 0, 0.3]}>
+          <M geo={GEO.torus} color="#e0b04a" p={[0.55, 0.2, 0]} r={[0, 0, 0]} s={[0.6, 0.6, 0.6]} o={0.012} />
+          <M geo={GEO.cone} color="#e0b04a" p={[1.15, 0.55, 0]} r={[0, 0, -2.3]} s={[0.22, 0.4, 0.22]} o={0.012} />
+        </group>
+      ) : null}
     </group>
     {/* spear held upright in the right hand */}
     <T geo={GEO.cylLow} color="#7a5232" p={[0.55, 1.9, 0.26]} s={[0.03, 3.6, 0.03]} o={0.01} />
