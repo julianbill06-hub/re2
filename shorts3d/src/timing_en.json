@@ -1,117 +1,123 @@
 {
- "duration": 7.226,
+ "duration": 8.64,
  "lines": [
   [
    0.5,
-   2.0117083333333334
+   1.9052708333333332
   ],
   [
-   2.461708333333333,
-   6.176104166666667
+   2.355270833333333,
+   4.226958333333333
+  ],
+  [
+   4.676958333333333,
+   5.359291666666667
+  ],
+  [
+   5.809291666666667,
+   6.627020833333333
+  ],
+  [
+   7.077020833333333,
+   7.590270833333333
   ]
  ],
  "words": [
   {
    "text": "Rome,",
    "start": 0.5,
-   "end": 0.863,
+   "end": 1.102,
    "line": 0
   },
   {
-   "text": "thirty",
-   "start": 0.863,
-   "end": 1.347,
-   "line": 0
-  },
-  {
-   "text": "seven",
-   "start": 1.347,
-   "end": 1.77,
+   "text": "37",
+   "start": 1.102,
+   "end": 1.504,
    "line": 0
   },
   {
    "text": "AD.",
-   "start": 1.77,
-   "end": 2.012,
+   "start": 1.504,
+   "end": 1.905,
    "line": 0
   },
   {
    "text": "Emperor",
-   "start": 2.462,
-   "end": 2.864,
+   "start": 2.355,
+   "end": 2.811,
    "line": 1
   },
   {
    "text": "Caligula",
-   "start": 2.864,
-   "end": 3.312,
+   "start": 2.811,
+   "end": 3.316,
    "line": 1
   },
   {
    "text": "had",
-   "start": 3.312,
-   "end": 3.536,
+   "start": 3.316,
+   "end": 3.569,
    "line": 1
   },
   {
    "text": "a",
-   "start": 3.536,
-   "end": 3.67,
+   "start": 3.569,
+   "end": 3.721,
    "line": 1
   },
   {
    "text": "favorite.",
-   "start": 3.67,
-   "end": 4.118,
+   "start": 3.721,
+   "end": 4.227,
    "line": 1
   },
   {
    "text": "Not",
-   "start": 4.118,
-   "end": 4.341,
-   "line": 1
+   "start": 4.677,
+   "end": 4.878,
+   "line": 2
   },
   {
    "text": "a",
-   "start": 4.341,
-   "end": 4.476,
-   "line": 1
+   "start": 4.878,
+   "end": 4.998,
+   "line": 2
   },
   {
    "text": "general.",
-   "start": 4.476,
-   "end": 4.878,
-   "line": 1
+   "start": 4.998,
+   "end": 5.359,
+   "line": 2
   },
   {
    "text": "Not",
-   "start": 4.878,
-   "end": 5.102,
-   "line": 1
+   "start": 5.809,
+   "end": 6.05,
+   "line": 3
   },
   {
    "text": "a",
-   "start": 5.102,
-   "end": 5.236,
-   "line": 1
+   "start": 6.05,
+   "end": 6.194,
+   "line": 3
   },
   {
    "text": "senator.",
-   "start": 5.236,
-   "end": 5.639,
-   "line": 1
+   "start": 6.194,
+   "end": 6.627,
+   "line": 3
   },
   {
    "text": "His",
-   "start": 5.639,
-   "end": 5.863,
-   "line": 1
+   "start": 7.077,
+   "end": 7.291,
+   "line": 4
   },
   {
    "text": "horse.",
-   "start": 5.863,
-   "end": 6.176,
-   "line": 1
+   "start": 7.291,
+   "end": 7.59,
+   "line": 4
   }
  ]
 }
