@@ -33,10 +33,26 @@ export const T: React.FC<{geo: THREE.BufferGeometry; color?: string; map?: THREE
   return (
     <group position={p} rotation={r} scale={sc}>
       <mesh geometry={geo} castShadow={shadow} receiveShadow>
-        <meshToonMaterial color={color} map={map} gradientMap={toonGrad()} />
+        <meshStandardMaterial color={color} map={map} roughness={0.62} metalness={0} />
       </mesh>
       {o ? (
-        <mesh geometry={hullOf(geo, o)}>
+        <mesh geometry={hullOf(geo, Math.round(o * 0.6 * 1000) / 1000)}>
+          <meshBasicMaterial color={INK} side={THREE.BackSide} />
+        </mesh>
+      ) : null}
+    </group>
+  );
+};
+
+export const M: React.FC<{geo: THREE.BufferGeometry; color: string; p?: V3; r?: V3; s?: V3 | number; o?: number}> = ({geo, color, p, r, s = 1, o = 0.02}) => {
+  const sc: V3 = typeof s === 'number' ? [s, s, s] : s;
+  return (
+    <group position={p} rotation={r} scale={sc}>
+      <mesh geometry={geo} castShadow receiveShadow>
+        <meshStandardMaterial color={color} roughness={0.38} metalness={0.35} />
+      </mesh>
+      {o ? (
+        <mesh geometry={hullOf(geo, Math.round(o * 0.6 * 1000) / 1000)}>
           <meshBasicMaterial color={INK} side={THREE.BackSide} />
         </mesh>
       ) : null}
@@ -128,11 +144,11 @@ export function faceTex(mood: Mood, lookX = 0, blush = true) {
     g.beginPath(); g.moveTo(322, by - tilt); g.quadraticCurveTo(392, by - 26, 452, by + tilt); g.stroke();
     g.beginPath(); g.moveTo(572, by + tilt); g.quadraticCurveTo(632, by - 26, 702, by - tilt); g.stroke();
     // nose hint
-    g.lineWidth = 14; g.strokeStyle = 'rgba(120,60,40,.55)';
+    g.lineWidth = 12; g.strokeStyle = 'rgba(120,60,40,.35)';
     g.beginPath(); g.moveTo(500, 600); g.quadraticCurveTo(522, 622, 500, 640); g.stroke();
     // blush
     if (blush) {
-      g.fillStyle = 'rgba(240,120,110,.28)';
+      g.fillStyle = 'rgba(240,120,110,.16)';
       g.beginPath(); g.ellipse(300, 640, 58, 34, 0, 0, Math.PI * 2); g.fill();
       g.beginPath(); g.ellipse(724, 640, 58, 34, 0, 0, Math.PI * 2); g.fill();
     }
@@ -168,16 +184,16 @@ export function useTextures() {
       for (let y = 0; y < n; y++)
         for (let x = 0; x < n; x++) {
           const k = rand(x * 13 + y * 7);
-          const base = (x + y) % 2 ? [226, 205, 165] : [214, 186, 140];
+          const base = (x + y) % 2 ? [232, 216, 186] : [224, 205, 170];
           g.fillStyle = `rgb(${base[0] + k * 14},${base[1] + k * 12},${base[2] + k * 10})`;
           g.fillRect(x * s, y * s, s, s);
           for (let i = 0; i < 40; i++) { // speckle
-            g.fillStyle = `rgba(120,90,60,${0.05 + rand(i + x * 99 + y * 7) * 0.08})`;
+            g.fillStyle = `rgba(120,90,60,${0.02 + rand(i + x * 99 + y * 7) * 0.03})`;
             g.fillRect(x * s + rand(i * 3 + x) * s, y * s + rand(i * 5 + y) * s, 3, 3);
           }
           g.fillStyle = 'rgba(255,255,255,.12)'; g.fillRect(x * s + 6, y * s + 6, s - 12, 6);
         }
-      g.strokeStyle = '#8f6f4c'; g.lineWidth = 7;
+      g.strokeStyle = 'rgba(140,110,75,.55)'; g.lineWidth = 4;
       for (let i = 0; i <= n; i++) {
         g.beginPath(); g.moveTo(i * s, 0); g.lineTo(i * s, 1024); g.stroke();
         g.beginPath(); g.moveTo(0, i * s); g.lineTo(1024, i * s); g.stroke();
@@ -320,17 +336,17 @@ export const Guard: React.FC<{p: V3; ry?: number; shield: THREE.Texture; mood?: 
     <Roman robe="#b2302a" trim="#8a7a6a" mood={mood} hairStyle="none" skin="#eab48e" />
     {/* segmented armor bands */}
     {[0, 1, 2].map((k) => (
-      <T key={k} geo={GEO.cyl} color="#aeb4bf" p={[0, 1.05 - k * 0.14, 0]} s={[0.47 - k * 0.01, 0.1, 0.4]} o={0.012} />
+      <M key={k} geo={GEO.cyl} color="#b8bec9" p={[0, 1.05 - k * 0.14, 0]} s={[0.47 - k * 0.01, 0.1, 0.4]} o={0.012} />
     ))}
     <group position={[0, 1.95, 0]}>
-      <T geo={GEO.half} color="#b9c3d0" p={[0, 0.3, -0.04]} s={[0.84, 0.66, 0.8]} o={0.03} />
-      <T geo={GEO.torus} color="#d9a83a" p={[0, 0.32, -0.04]} r={[Math.PI / 2, 0, 0]} s={[0.82, 0.78, 0.6]} o={0.012} />
+      <M geo={GEO.half} color="#c3cad6" p={[0, 0.3, -0.04]} s={[0.84, 0.66, 0.8]} o={0.03} />
+      <M geo={GEO.torus} color="#e0b04a" p={[0, 0.32, -0.04]} r={[Math.PI / 2, 0, 0]} s={[0.82, 0.78, 0.6]} o={0.012} />
       {/* crest: front-to-back brush */}
       <T geo={GEO.rbox} color="#c4232b" p={[0, 1.02, -0.05]} s={[0.14, 0.26, 0.95]} o={0.02} />
       <T geo={GEO.box} color="#d9a83a" p={[0, 0.9, -0.05]} s={[0.1, 0.06, 0.7]} o={0.01} />
       {/* cheek guards */}
-      <T geo={GEO.rbox} color="#c9ced6" p={[-0.72, -0.15, 0.18]} r={[0, 0.5, 0]} s={[0.07, 0.42, 0.3]} o={0.015} />
-      <T geo={GEO.rbox} color="#c9ced6" p={[0.72, -0.15, 0.18]} r={[0, -0.5, 0]} s={[0.07, 0.42, 0.3]} o={0.015} />
+      <M geo={GEO.rbox} color="#c3cad6" p={[-0.72, -0.15, 0.18]} r={[0, 0.5, 0]} s={[0.07, 0.42, 0.3]} o={0.015} />
+      <M geo={GEO.rbox} color="#c3cad6" p={[0.72, -0.15, 0.18]} r={[0, -0.5, 0]} s={[0.07, 0.42, 0.3]} o={0.015} />
     </group>
     {/* spear */}
     <T geo={GEO.cylLow} color="#7a5232" p={[0.62, 1.6, 0.05]} s={[0.035, 3.2, 0.035]} o={0.012} />
@@ -339,7 +355,7 @@ export const Guard: React.FC<{p: V3; ry?: number; shield: THREE.Texture; mood?: 
     <group position={[-0.45, 0.95, 0.45]} rotation={[0, 0.35, 0]}>
       <mesh castShadow>
         <cylinderGeometry args={[0.95, 0.95, 1.25, 24, 1, true, -0.55, 1.1]} />
-        <meshToonMaterial map={shield} gradientMap={toonGrad()} side={THREE.DoubleSide} />
+        <meshStandardMaterial map={shield} roughness={0.45} metalness={0.1} side={THREE.DoubleSide} />
       </mesh>
     </group>
   </group>

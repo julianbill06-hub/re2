@@ -1,0 +1,117 @@
+{
+ "duration": 7.226,
+ "lines": [
+  [
+   0.5,
+   2.0117083333333334
+  ],
+  [
+   2.461708333333333,
+   6.176104166666667
+  ]
+ ],
+ "words": [
+  {
+   "text": "Rome,",
+   "start": 0.5,
+   "end": 0.863,
+   "line": 0
+  },
+  {
+   "text": "thirty",
+   "start": 0.863,
+   "end": 1.347,
+   "line": 0
+  },
+  {
+   "text": "seven",
+   "start": 1.347,
+   "end": 1.77,
+   "line": 0
+  },
+  {
+   "text": "AD.",
+   "start": 1.77,
+   "end": 2.012,
+   "line": 0
+  },
+  {
+   "text": "Emperor",
+   "start": 2.462,
+   "end": 2.864,
+   "line": 1
+  },
+  {
+   "text": "Caligula",
+   "start": 2.864,
+   "end": 3.312,
+   "line": 1
+  },
+  {
+   "text": "had",
+   "start": 3.312,
+   "end": 3.536,
+   "line": 1
+  },
+  {
+   "text": "a",
+   "start": 3.536,
+   "end": 3.67,
+   "line": 1
+  },
+  {
+   "text": "favorite.",
+   "start": 3.67,
+   "end": 4.118,
+   "line": 1
+  },
+  {
+   "text": "Not",
+   "start": 4.118,
+   "end": 4.341,
+   "line": 1
+  },
+  {
+   "text": "a",
+   "start": 4.341,
+   "end": 4.476,
+   "line": 1
+  },
+  {
+   "text": "general.",
+   "start": 4.476,
+   "end": 4.878,
+   "line": 1
+  },
+  {
+   "text": "Not",
+   "start": 4.878,
+   "end": 5.102,
+   "line": 1
+  },
+  {
+   "text": "a",
+   "start": 5.102,
+   "end": 5.236,
+   "line": 1
+  },
+  {
+   "text": "senator.",
+   "start": 5.236,
+   "end": 5.639,
+   "line": 1
+  },
+  {
+   "text": "His",
+   "start": 5.639,
+   "end": 5.863,
+   "line": 1
+  },
+  {
+   "text": "horse.",
+   "start": 5.863,
+   "end": 6.176,
+   "line": 1
+  }
+ ]
+}
