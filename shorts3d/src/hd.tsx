@@ -358,13 +358,13 @@ export const Roman: React.FC<{
   p?: V3; ry?: number; s?: number;
   robe: string; trim: string; skin?: string; hair?: string; hairStyle?: 'caesar' | 'bald' | 'curly' | 'none';
   mood?: Mood; look?: number; laurel?: boolean;
-  armR?: number; armL?: number; bob?: number; robeMap?: THREE.Texture; walk?: number;
-}> = ({p = [0, 0, 0], ry = 0, s = 1, robe, trim, skin = '#f2c4a0', hair = '#3a2416', hairStyle = 'caesar', mood = 'calm', look = 0, laurel, armR = 0, armL = 0, bob = 0, robeMap, walk = 0}) => {
+  armR?: number; armL?: number; bob?: number; robeMap?: THREE.Texture; walk?: number; elbowR?: number; handR?: React.ReactNode;
+}> = ({p = [0, 0, 0], ry = 0, s = 1, robe, trim, skin = '#f2c4a0', hair = '#3a2416', hairStyle = 'caesar', mood = 'calm', look = 0, laurel, armR = 0, armL = 0, bob = 0, robeMap, walk = 0, elbowR, handR}) => {
   const b = Math.sin(bob * Math.PI * 2) * 0.015;
   return (
     <group position={p} rotation={[0, ry, 0]} scale={s}>
       <group position={[0, b, 0]}>
-        <StickBody robe={robe} trim={trim} skin={skin} robeMap={robeMap} armR={armR} armL={armL} walk={walk} />
+        <StickBody robe={robe} trim={trim} skin={skin} robeMap={robeMap} armR={armR} armL={armL} walk={walk} elbowR={elbowR} handR={handR} />
       </group>
       <group position={[0, HEAD_Y + b * 1.6, 0]} rotation={[0, 0, Math.sin(bob * Math.PI * 2 + 1) * 0.03]}>
         <Head skin={skin} mood={mood} look={look} hair={hair} hairStyle={hairStyle} />
