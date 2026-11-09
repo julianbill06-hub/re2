@@ -1,0 +1,205 @@
+{
+ "duration": 11.867,
+ "lines": [
+  [
+   0.5,
+   2.3512708333333334
+  ],
+  [
+   2.8012708333333336,
+   6.764479166666667
+  ],
+  [
+   7.214479166666667,
+   10.8173125
+  ]
+ ],
+ "words": [
+  {
+   "text": "Warum",
+   "start": 0.5,
+   "end": 0.77,
+   "line": 0
+  },
+  {
+   "text": "sind",
+   "start": 0.77,
+   "end": 1.001,
+   "line": 0
+  },
+  {
+   "text": "Loopings",
+   "start": 1.001,
+   "end": 1.387,
+   "line": 0
+  },
+  {
+   "text": "eigentlich",
+   "start": 1.387,
+   "end": 1.85,
+   "line": 0
+  },
+  {
+   "text": "nicht",
+   "start": 1.85,
+   "end": 2.12,
+   "line": 0
+  },
+  {
+   "text": "rund?",
+   "start": 2.12,
+   "end": 2.351,
+   "line": 0
+  },
+  {
+   "text": "Bei",
+   "start": 2.801,
+   "end": 3.012,
+   "line": 1
+  },
+  {
+   "text": "einem",
+   "start": 3.012,
+   "end": 3.307,
+   "line": 1
+  },
+  {
+   "text": "perfekten",
+   "start": 3.307,
+   "end": 3.771,
+   "line": 1
+  },
+  {
+   "text": "Kreis",
+   "start": 3.771,
+   "end": 4.066,
+   "line": 1
+  },
+  {
+   "text": "dr\u00fcckt",
+   "start": 4.066,
+   "end": 4.403,
+   "line": 1
+  },
+  {
+   "text": "es",
+   "start": 4.403,
+   "end": 4.572,
+   "line": 1
+  },
+  {
+   "text": "dich",
+   "start": 4.572,
+   "end": 4.825,
+   "line": 1
+  },
+  {
+   "text": "unten",
+   "start": 4.825,
+   "end": 5.12,
+   "line": 1
+  },
+  {
+   "text": "mit",
+   "start": 5.12,
+   "end": 5.331,
+   "line": 1
+  },
+  {
+   "text": "bis",
+   "start": 5.331,
+   "end": 5.542,
+   "line": 1
+  },
+  {
+   "text": "zu",
+   "start": 5.542,
+   "end": 5.71,
+   "line": 1
+  },
+  {
+   "text": "sechs",
+   "start": 5.71,
+   "end": 6.006,
+   "line": 1
+  },
+  {
+   "text": "g",
+   "start": 6.006,
+   "end": 6.132,
+   "line": 1
+  },
+  {
+   "text": "in",
+   "start": 6.132,
+   "end": 6.301,
+   "line": 1
+  },
+  {
+   "text": "den",
+   "start": 6.301,
+   "end": 6.512,
+   "line": 1
+  },
+  {
+   "text": "Sitz.",
+   "start": 6.512,
+   "end": 6.764,
+   "line": 1
+  },
+  {
+   "text": "Deshalb",
+   "start": 7.214,
+   "end": 7.671,
+   "line": 2
+  },
+  {
+   "text": "bauen",
+   "start": 7.671,
+   "end": 8.026,
+   "line": 2
+  },
+  {
+   "text": "Ingenieure",
+   "start": 8.026,
+   "end": 8.635,
+   "line": 2
+  },
+  {
+   "text": "eine",
+   "start": 8.635,
+   "end": 8.94,
+   "line": 2
+  },
+  {
+   "text": "Tropfenform.",
+   "start": 8.94,
+   "end": 9.599,
+   "line": 2
+  },
+  {
+   "text": "Unten",
+   "start": 9.599,
+   "end": 9.955,
+   "line": 2
+  },
+  {
+   "text": "weit,",
+   "start": 9.955,
+   "end": 10.259,
+   "line": 2
+  },
+  {
+   "text": "oben",
+   "start": 10.259,
+   "end": 10.564,
+   "line": 2
+  },
+  {
+   "text": "eng.",
+   "start": 10.564,
+   "end": 10.817,
+   "line": 2
+  }
+ ]
+}
