@@ -12,6 +12,8 @@ const rnd = (i: number) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453;
 
 // ---------------- helpers ----------------
 const UP = new THREE.Vector3(0, 1, 0);
+const LO = new THREE.SphereGeometry(1, 12, 8);
+const CAPLO = new THREE.CapsuleGeometry(0.5, 1, 4, 10);
 /** capsule from a to b (radius r) – for posable, detailed limbs */
 export const Bone: React.FC<{a: V3; b: V3; r: number; color: string; o?: number; glossy?: boolean}> = ({a, b, r, color, o = 0.012, glossy}) => {
   const va = new THREE.Vector3(...a), vb = new THREE.Vector3(...b);
@@ -20,7 +22,7 @@ export const Bone: React.FC<{a: V3; b: V3; r: number; color: string; o?: number;
   const mid = va.add(vb).multiplyScalar(0.5);
   return (
     <group position={mid} quaternion={q}>
-      {glossy ? <M geo={GEO.cap} color={color} s={[r * 2, len / 2, r * 2]} o={o} /> : <T geo={GEO.cap} color={color} s={[r * 2, len / 2, r * 2]} o={o} />}
+      {glossy ? <M geo={r < 0.03 ? CAPLO : GEO.cap} color={color} s={[r * 2, len / 2, r * 2]} o={o} /> : <T geo={r < 0.03 ? CAPLO : GEO.cap} color={color} s={[r * 2, len / 2, r * 2]} o={o} />}
     </group>
   );
 };
@@ -177,7 +179,7 @@ export const TravelerHD: React.FC<{p: V3; ry?: number; mood?: Mood; look?: numbe
       <T geo={GEO.torus} color={C.parka} p={[0, sh + 0.04, -0.09]} r={[Math.PI / 2 + 0.5, 0, 0]} s={[0.17, 0.15, 0.9]} o={0.012} />
       {Array.from({length: 20}).map((_, i) => {
         const a = (i / 20) * Math.PI * 2;
-        return <T key={'f' + i} geo={GEO.sphere} color={i % 2 ? '#b8a888' : '#a39272'} p={[Math.cos(a) * 0.19, sh + 0.06 + Math.sin(a) * 0.06, -0.12 + Math.sin(a) * 0.1]} s={0.045} o={0} />;
+        return <T key={'f' + i} geo={LO} color={i % 2 ? '#b8a888' : '#a39272'} p={[Math.cos(a) * 0.19, sh + 0.06 + Math.sin(a) * 0.06, -0.12 + Math.sin(a) * 0.1]} s={0.045} o={0} />;
       })}
       {scarf ? (
         <>
@@ -200,10 +202,10 @@ export const TravelerHD: React.FC<{p: V3; ry?: number; mood?: Mood; look?: numbe
       <T geo={GEO.cyl} color={C.skin} p={[0, sh + 0.06, 0]} s={[0.055, 0.12, 0.055]} o={0.008} />
       <group position={[0, headY, 0.01]} rotation={[0, headRy, headRoll]} scale={0.31}>
         <Head skin={C.skin} mood={mood} look={look} hairStyle={hairStyle === 'curly' ? 'none' : hairStyle} hair={C.hair[0]} />
-        {hairStyle === 'curly' ? curls.map((c, i) => <T key={i} geo={GEO.sphere} color={C.hair[i % C.hair.length]} p={c.p} s={c.s} o={0.018} />) : null}
+        {hairStyle === 'curly' ? curls.map((c, i) => <T key={i} geo={LO} color={C.hair[i % C.hair.length]} p={c.p} s={c.s} o={0.018} />) : null}
         {hairStyle === 'curly' ? Array.from({length: 7}).map((_, i) => {
           const a = -0.7 + i * 0.23;
-          return <T key={'fr' + i} geo={GEO.sphere} color={C.hair[i % 2]} p={[Math.sin(a) * 0.62, 0.55 - Math.abs(a) * 0.1, Math.cos(a) * 0.52]} s={[0.15, 0.12, 0.13]} o={0.016} />;
+          return <T key={'fr' + i} geo={LO} color={C.hair[i % 2]} p={[Math.sin(a) * 0.62, 0.55 - Math.abs(a) * 0.1, Math.cos(a) * 0.52]} s={[0.15, 0.12, 0.13]} o={0.016} />;
         }) : null}
       </group>
     </>
@@ -273,7 +275,7 @@ export const Conductor: React.FC<{p: V3; ry?: number; glow?: number; point?: num
       {/* lapels */}
       {[-1, 1].map((k) => <T key={'lp' + k} geo={GEO.box} color={C.coatD} p={[k * 0.06, sh - 0.14, 0.15]} r={[0.1, 0, k * 0.35]} s={[0.07, 0.2, 0.012]} o={0.005} />)}
       {/* double row of brass buttons */}
-      {[-1, 1].map((k) => [0, 1, 2, 3].map((j) => <M key={k + '-' + j} geo={GEO.sphere} color={C.gold} p={[k * 0.065, sh - 0.22 - j * 0.11, 0.165 + j * 0.006]} s={0.016} o={0.004} />))}
+      {[-1, 1].map((k) => [0, 1, 2, 3].map((j) => <M key={k + '-' + j} geo={LO} color={C.gold} p={[k * 0.065, sh - 0.22 - j * 0.11, 0.165 + j * 0.006]} s={0.016} o={0.004} />))}
       {/* name plate (blank) + whistle chain */}
       <M geo={GEO.box} color={C.gold} p={[-0.11, sh - 0.12, 0.155]} s={[0.07, 0.018, 0.006]} o={0.003} />
       <Bone a={[0.1, sh - 0.12, 0.16]} b={[0.14, sh - 0.24, 0.165]} r={0.003} color={C.gold} o={0} glossy />
@@ -284,7 +286,7 @@ export const Conductor: React.FC<{p: V3; ry?: number; glow?: number; point?: num
         <group key={'ep' + k}>
           <T geo={GEO.sphere} color={C.coat} p={[k * 0.205, sh - 0.04, 0]} s={[0.1, 0.085, 0.1]} o={0.012} />
           <T geo={GEO.rbox} color={C.coatD} p={[k * 0.17, sh + 0.035, 0]} s={[0.13, 0.022, 0.09]} o={0.006} />
-          {Array.from({length: 6}).map((_, j) => <M key={j} geo={GEO.sphere} color={C.gold} p={[k * 0.235, sh + 0.015, -0.04 + j * 0.016]} s={0.008} o={0} />)}
+          {Array.from({length: 6}).map((_, j) => <M key={j} geo={LO} color={C.gold} p={[k * 0.235, sh + 0.015, -0.04 + j * 0.016]} s={0.008} o={0} />)}
         </group>
       ))}
       {/* arms: coat sleeves, gold cuff stripe, white gloves */}
@@ -448,7 +450,7 @@ export const TrainSet: React.FC<TrainProps> = ({t, flicker = 0, lightsOn = 12, l
       })}
       <M geo={GEO.box} color="#e0b02a" p={[1.35, 0.005, (DOOR[0] + DOOR[1]) / 2]} s={[0.3, 0.012, 1.3]} o={0} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0.9, 0.01, (DOOR[0] + DOOR[1]) / 2 + 0.1]} scale={[1.2, 1.6, 1]}><circleGeometry args={[1, 32]} /><meshBasicMaterial color="#ff9a3c" transparent depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} opacity={0.16 * doorOpen * pl} /></mesh>
-      <spotLight position={[3.4, 2.6, (DOOR[0] + DOOR[1]) / 2]} angle={0.6} penumbra={0.7} intensity={26 * doorOpen * pl} distance={8} color="#ff9a3c" target-position={[0.3, 0, -6.6]} castShadow />
+      <spotLight position={[3.4, 2.6, (DOOR[0] + DOOR[1]) / 2]} angle={0.6} penumbra={0.7} intensity={26 * doorOpen * pl} distance={8} color="#ff9a3c" target-position={[0.3, 0, -6.6]} />
       {/* carriage exterior: roof, stripe, end wall, next carriage */}
       <T geo={GEO.rbox} color="#20262a" p={[0, 2.72, -1]} s={[3.14, 0.5, 14.2]} o={0.01} />
       <M geo={GEO.box} color="#7a1f2a" p={[1.535, 0.93, -1]} s={[0.012, 0.05, 14.1]} o={0} />
@@ -486,7 +488,7 @@ export const TrainSet: React.FC<TrainProps> = ({t, flicker = 0, lightsOn = 12, l
       {/* dust drifting in the light */}
       {dust.map(([a, b, c, d], i) => (
         <mesh key={'d' + i} position={[-1.3 + a * 2.6, 0.3 + ((b * 2.1 + t * 0.08 * (0.4 + d)) % 2.1), 2.2 - c * 9]} scale={0.004 + d * 0.005}>
-          <sphereGeometry args={[1, 6, 4]} /><meshBasicMaterial color="#fff1d0" transparent opacity={0.35} toneMapped={false} />
+          <sphereGeometry args={[1, 4, 3]} /><meshBasicMaterial color="#fff1d0" transparent opacity={0.35} toneMapped={false} />
         </mesh>
       ))}
     </>

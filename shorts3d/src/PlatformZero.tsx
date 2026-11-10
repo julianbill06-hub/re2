@@ -3,7 +3,7 @@ import React, {useMemo} from 'react';
 import * as THREE from 'three';
 import {AbsoluteFill, Audio, Easing, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {ThreeCanvas} from '@remotion/three';
-import {GEO, M, T} from './hd';
+import {GEO, LambertCtx, M, T} from './hd';
 import {Cam, Halo} from './NightGate';
 import {Caption, Chips, Conductor, FilmLook, Pal, TrainProps, TrainSet, TravelerHD, Bone} from './NightTrain';
 import tm from './timing_pz.json';
@@ -335,7 +335,7 @@ export const PlatformZero: React.FC = () => {
     <AbsoluteFill style={{backgroundColor: '#000'}}>
       <AbsoluteFill style={{transform: `scale(${1 + punch})`}}>
         <ThreeCanvas width={width} height={height} shadows dpr={1} gl={{antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: morning ? 1.05 : 1.5}} camera={{fov: 50, near: 0.03, far: 160}}>
-          <World st={st} t={t} />
+          <LambertCtx.Provider value><World st={st} t={t} /></LambertCtx.Provider>
         </ThreeCanvas>
       </AbsoluteFill>
       <FilmLook frame={frame} />

@@ -28,12 +28,15 @@ function hullOf(geo: THREE.BufferGeometry, w: number) {
 }
 
 type V3 = [number, number, number];
+/** set to true (via LambertCtx.Provider) for faster software rendering of big scenes */
+export const LambertCtx = React.createContext(false);
 export const T: React.FC<{geo: THREE.BufferGeometry; color?: string; map?: THREE.Texture; p?: V3; r?: V3; s?: V3 | number; o?: number; shadow?: boolean}> = ({geo, color = '#fff', map, p, r, s = 1, o = 0.03, shadow = true}) => {
+  const lambert = React.useContext(LambertCtx);
   const sc: V3 = typeof s === 'number' ? [s, s, s] : s;
   return (
     <group position={p} rotation={r} scale={sc}>
       <mesh geometry={geo} castShadow={shadow} receiveShadow>
-        <meshStandardMaterial color={color} map={map} roughness={0.62} metalness={0} />
+        {lambert ? <meshLambertMaterial color={color} map={map} /> : <meshStandardMaterial color={color} map={map} roughness={0.62} metalness={0} />}
       </mesh>
       {o ? (
         <mesh geometry={hullOf(geo, Math.round(o * 0.6 * 1000) / 1000)}>
