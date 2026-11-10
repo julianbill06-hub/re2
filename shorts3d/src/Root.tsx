@@ -13,6 +13,7 @@ import {SvTag10, SV10_DURATION} from './SvTag10';
 import {NightGateStill, NightGateScene, GATE_DURATION, NightGateDetail} from './NightGate';
 import {Flight404, F404_DURATION} from './NightStory';
 import {Flight404DE, F404DE_DURATION} from './NightStoryDE';
+import {ProfilePic} from './ProfilePic';
 import timingOcean from './timing_ocean.json';
 import timingEn from './timing_en.json';
 import timingCal from './timing_caligula.json';
@@ -42,5 +43,6 @@ export const RemotionRoot: React.FC = () => (
   <Composition id="NightGateDetail" component={NightGateDetail} durationInFrames={90} fps={FPS} width={1080} height={1920} />
   <Composition id="Flight404" component={Flight404} durationInFrames={Math.ceil(F404_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
   <Composition id="Flight404DE" component={Flight404DE} durationInFrames={Math.ceil(F404DE_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="ProfilePic" component={ProfilePic} durationInFrames={1} fps={FPS} width={1080} height={1080} />
   </>
 );
