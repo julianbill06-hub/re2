@@ -5,6 +5,8 @@ description: "Düsterer, filmischer 3D-Look „Nacht-Gate / Liminal Space“ fü
 
 # 3D-Nacht-Liminal-Stil
 
+Kanal: **Final Call Stories** (TikTok @finalcall.stories). Profilbild: `shorts3d/out/profilbild.png` (der Attendant).
+
 Code-Basis: Projekt `shorts3d/` (Remotion 4.0.542 + @remotion/three + @react-three/fiber 8.18 + three 0.169).
 Wichtigste Dateien: `src/hd.tsx` (Figuren-Bausteine), `src/NightGate.tsx` (Set, Figuren, Detail-Ebene, Beispiel-Kompositionen), `tools/voice.py` (Stimme + Timing).
 
