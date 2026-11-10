@@ -2,7 +2,8 @@
 import React, {useMemo} from 'react';
 import {useThree} from '@react-three/fiber';
 import * as THREE from 'three';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Easing, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import timing from './timing_gate.json';
 import {ThreeCanvas} from '@remotion/three';
 import {GEO, HEAD_Y, M, Roman, T} from './hd';
 
@@ -38,8 +39,8 @@ export const Attendant: React.FC<{p: V3; ry?: number; s?: number; glow?: number}
     <Roman robe="#1b1d24" trim="#7a1f2a" skin="#3a3d45" hairStyle="none" mood="calm" armR={0.15} armL={0.15} />
     {/* smooth faceless head shell over the cartoon head */}
     <T geo={GEO.sphere} color="#4a4e58" p={[0, HEAD_Y, 0]} s={[0.8, 0.74, 0.74]} o={0.02} />
-    <mesh position={[0, HEAD_Y + 0.05, 0.69]} scale={[0.5, 0.05, 0.05]}><boxGeometry args={[1, 1, 1]} /><meshBasicMaterial color={new THREE.Color('#ffb347').multiplyScalar(1 + glow)} toneMapped={false} /></mesh>
-    <pointLight position={[0, HEAD_Y + 0.05, 1.0]} color="#ffb347" intensity={2 * glow} distance={3} />
+    <mesh position={[0, HEAD_Y + 0.05, 0.75]} scale={[0.56, 0.06, 0.06]}><boxGeometry args={[1, 1, 1]} /><meshBasicMaterial color={new THREE.Color('#ffb347').multiplyScalar(1 + glow)} toneMapped={false} /></mesh>
+    <pointLight position={[0, HEAD_Y + 0.05, 1.1]} color="#ffb347" intensity={0.8 * glow} distance={2.2} />
     {/* cap + badge */}
     <T geo={GEO.cyl} color="#14161c" p={[0, HEAD_Y + 0.62, 0]} s={[0.62, 0.22, 0.62]} o={0.015} />
     <T geo={GEO.cyl} color="#14161c" p={[0, HEAD_Y + 0.5, 0.35]} s={[0.5, 0.04, 0.4]} o={0.01} />
@@ -69,7 +70,7 @@ const Cam: React.FC<{pos: V3; look: V3; fov: number}> = ({pos, look, fov}) => {
   return null;
 };
 
-export const GateSet: React.FC<{t: number}> = ({t}) => {
+export const GateSet: React.FC<{t: number; travelerMood?: any; travelerLook?: number; glow?: number; flicker?: number}> = ({t, travelerMood = 'calm', travelerLook = 0.6, glow, flicker = 0}) => {
   const board = useMemo(boardTex, []);
   const floor = useMemo(floorTex, []);
   return (
@@ -82,7 +83,7 @@ export const GateSet: React.FC<{t: number}> = ({t}) => {
       {Array.from({length: 7}).map((_, i) => (
         <group key={i} position={[0, 5.2, 4 - i * 4]}>
           <mesh scale={[0.18, 0.04, 2.4]}><boxGeometry args={[1, 1, 1]} /><meshBasicMaterial color="#dfe8ff" toneMapped={false} /></mesh>
-          <pointLight position={[0, -0.3, 0]} color="#cfdcff" intensity={i % 3 === 1 ? 0.6 : 9} distance={9} decay={1.5} />
+          <pointLight position={[0, -0.3, 0]} color="#cfdcff" intensity={(i % 3 === 1 ? 0.6 : 9) * (i === 5 ? 1 - flicker : 1)} distance={9} decay={1.5} />
         </group>
       ))}
       {/* warm practicals near the gate desk */}
@@ -112,8 +113,8 @@ export const GateSet: React.FC<{t: number}> = ({t}) => {
         <mesh position={[0, 3.6, -0.6]}><planeGeometry args={[2.8, 1.4]} /><meshBasicMaterial map={board} toneMapped={false} /></mesh>
         <mesh position={[0, 4.55, -0.6]}><planeGeometry args={[1.2, 0.35]} /><meshBasicMaterial color="#ffb347" toneMapped={false} /></mesh>
       </group>
-      <Attendant p={[1.5, 0, -5.3]} ry={-0.2} s={0.72} glow={0.7 + 0.3 * Math.sin(t * 2)} />
-      <Traveler p={[-1.28, 0, 0.8]} ry={0.45} mood="calm" look={0.6} sit />
+      <Attendant p={[1.5, 0, -5.3]} ry={-0.2} s={0.72} glow={glow ?? 0.7 + 0.3 * Math.sin(t * 2)} />
+      <Traveler p={[-1.28, 0, 0.8]} ry={0.45} mood={travelerMood} look={travelerLook} sit />
     </>
   );
 };
@@ -138,6 +139,73 @@ export const NightGateStill: React.FC = () => {
         ))}
       </div>
       <div style={{position: 'absolute', top: 1060, left: 0, right: 0, textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 64, color: '#fff', letterSpacing: 1, textShadow: '0 4px 18px rgba(0,0,0,.9)'}}>NO PASSENGERS.</div>
+    </AbsoluteFill>
+  );
+};
+
+// ---------- short animated reference scene ----------
+const cl = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
+const ease = Easing.bezier(0.33, 0, 0.2, 1);
+const GL = (i: number) => timing.lines[i][0];
+export const GATE_DURATION = timing.duration + 1.4;
+type Sh = {at: number; from: V3; to: V3; la: V3; lb: V3; dur: number; fov: number};
+const GSHOTS: Sh[] = [
+  {at: 0, from: [-0.2, 1.7, 4.4], to: [-0.35, 1.6, 3.7], la: [-1.25, 1.0, 0.75], lb: [-1.25, 1.0, 0.75], dur: 3.0, fov: 44},
+  {at: GL(1) - 0.15, from: [-0.2, 2.5, 8.2], to: [-0.2, 2.8, 9.2], la: [0.5, 1.2, -2.6], lb: [0.5, 1.2, -2.6], dur: 2.0, fov: 52},
+  {at: GL(2) - 0.15, from: [0.4, 1.7, 2.0], to: [0.9, 1.6, -0.6], la: [1.5, 1.5, -5.3], lb: [1.5, 1.6, -5.3], dur: 2.4, fov: 44},
+  {at: GL(3) - 0.2, from: [1.1, 1.9, -1.9], to: [1.2, 1.9, -2.5], la: [1.5, 1.85, -5.3], lb: [1.5, 1.85, -5.3], dur: 2.0, fov: 40},
+];
+function gcam(t: number) {
+  let i = 0; for (let k = 0; k < GSHOTS.length; k++) if (t >= GSHOTS[k].at) i = k;
+  const s = GSHOTS[i]; const p = ease(Math.min(1, (t - s.at) / s.dur));
+  const lp = (a: V3, b: V3): V3 => [a[0] + (b[0] - a[0]) * p, a[1] + (b[1] - a[1]) * p, a[2] + (b[2] - a[2]) * p];
+  const pos = lp(s.from, s.to); pos[0] += Math.sin(t * 0.9) * 0.01; pos[1] += Math.sin(t * 1.3 + 1) * 0.008;
+  return {pos, look: lp(s.la, s.lb), fov: s.fov, cutAt: s.at};
+}
+const GateCaption: React.FC<{t: number}> = ({t}) => {
+  const ws = timing.words;
+  let i = ws.findIndex((w) => t >= w.start && t < w.end + 0.1);
+  if (i < 0) { const nx = ws.findIndex((w) => t < w.start); i = nx > 0 ? nx - 1 : nx === 0 ? -1 : ws.length - 1; }
+  if (i < 0) return null;
+  const ln = timing.lines[ws[i].line];
+  if (t > ln[1] + 0.3) return null;
+  const short = (k: number) => ws[k].text.replace(/[^A-Za-z]/g, '').length <= 3;
+  const start = i > 0 && short(i - 1) && ws[i - 1].line === ws[i].line ? i - 1 : i;
+  const chunk = [ws[start], ...(short(start) && start + 1 < ws.length && ws[start + 1].line === ws[start].line && start + 1 !== i + 1 ? [ws[start + 1]] : [])];
+  return <div style={{position: 'absolute', top: 1060, left: 0, right: 0, textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 64, color: '#fff', letterSpacing: 1, textTransform: 'uppercase', textShadow: '0 4px 18px rgba(0,0,0,.9)'}}>{chunk.map((w) => w.text).join(' ')}</div>;
+};
+export const NightGateScene: React.FC = () => {
+  const frame = useCurrentFrame();
+  const {fps, width, height} = useVideoConfig();
+  const t = frame / fps;
+  const cam = gcam(t);
+  const woke = t > 1.1;
+  const look = woke ? Math.sin((t - 1.1) * 1.6) * 0.9 : 0;
+  const glow = interpolate(t, [GL(3) + 0.3, GL(3) + 0.8], [0.6, 1.5], cl);
+  const flicker = t > GL(3) - 0.2 && t < GL(3) + 0.9 ? (Math.sin(t * 47) > 0.2 ? 1 : 0) : 0;
+  const black = interpolate(t, [timing.duration - 0.1, timing.duration + 0.05], [0, 1], cl);
+  const fadeIn = interpolate(t, [0, 0.6], [1, 0], cl);
+  const chipS = spring({frame: frame - Math.round((timing.duration + 0.15) * fps), fps, config: {damping: 14}});
+  return (
+    <AbsoluteFill style={{backgroundColor: '#050608'}}>
+      <ThreeCanvas width={width} height={height} shadows dpr={1.5} gl={{antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.6}} camera={{fov: 40, near: 0.05, far: 120}}>
+        <Cam pos={cam.pos} look={cam.look} fov={cam.fov} />
+        <GateSet t={t} travelerMood={woke ? 'stern' : 'calm'} travelerLook={look} glow={glow} flicker={flicker} />
+      </ThreeCanvas>
+      <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 45%, rgba(0,0,0,.72) 100%)'}} />
+      <AbsoluteFill style={{background: '#000', opacity: Math.max(black, fadeIn)}} />
+      {t > timing.duration + 0.1 ? (
+        <div style={{position: 'absolute', top: 860, left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 22, transform: `scale(${chipS})`}}>
+          {[['#e8343a', 'STAY SEATED'], ['#2fbf71', 'WALK TO THE DESK']].map(([c2, txt]) => (
+            <span key={txt} style={{fontFamily: FONT, fontWeight: 800, fontSize: 40, color: '#14161c', background: '#fff', borderRadius: 999, padding: '12px 28px 12px 18px', display: 'flex', alignItems: 'center', gap: 14}}>
+              <span style={{width: 30, height: 30, borderRadius: 15, background: c2}} />{txt}
+            </span>
+          ))}
+        </div>
+      ) : null}
+      {black < 1 ? <GateCaption t={t} /> : null}
+      <Audio src={staticFile('gate_voice.wav')} />
+      <Audio src={staticFile('gate_music.wav')} />
     </AbsoluteFill>
   );
 };
