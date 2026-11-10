@@ -4,3 +4,4 @@
 - Stil: 3D-Strichmännchen-Cartoon (eigene Figuren aus `shorts3d/src/hd.tsx`), deutsche Stimme (Piper thorsten-high), englische Untertitel.
 - Render: `npx remotion render <Comp> out/<name>.mp4 --browser-executable=<chrome-headless-shell> --gl=swangle --concurrency=2`.
 - Antworten an den Nutzer auf Deutsch.
+- Die Serien „30 Tage Glow-Up“, „30 Tage Maloche“ und „SV Matsch 04“ werden im 3D-Stickman-Cartoon-Stil gebaut: `shorts3d/STIL_3D.md` befolgen (ersetzt den SVG-Bildteil der Serien-Skills).
