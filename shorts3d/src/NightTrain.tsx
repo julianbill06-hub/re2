@@ -84,15 +84,16 @@ const concreteT = () => tex(512, 512, (g) => {
   g.strokeStyle = 'rgba(0,0,0,.35)'; g.lineWidth = 3;
   for (let k = 0; k <= 4; k++) { g.beginPath(); g.moveTo(0, k * 128); g.lineTo(512, k * 128); g.stroke(); }
 }, [3, 12]);
-const ledT = () => tex(1024, 192, (g) => {
+const ledCache = new Map<string, THREE.Texture>();
+const ledT = (main = 'PLATFORM 0', sub = 'LAST STOP · ALL PASSENGERS EXIT') => { const k = main + '|' + sub; const hit = ledCache.get(k); if (hit) return hit; const tx = tex(1024, 192, (g) => {
   g.fillStyle = '#050505'; g.fillRect(0, 0, 1024, 192);
   g.fillStyle = '#ff9a2a'; g.font = '800 104px "IBM Plex Mono", monospace'; g.textBaseline = 'middle';
-  g.fillText('PLATFORM 0', 40, 70);
-  g.font = '700 46px "IBM Plex Mono", monospace'; g.fillStyle = '#ffb347'; g.fillText('LAST STOP · ALL PASSENGERS EXIT', 44, 152);
+  if (main.length <= 2) { g.font = '900 170px "IBM Plex Mono", monospace'; g.textAlign = 'center'; g.fillText(main, 512, 100); g.textAlign = 'left'; } else g.fillText(main, 40, 70);
+  if (sub) { g.font = '700 46px "IBM Plex Mono", monospace'; g.fillStyle = '#ffb347'; g.fillText(sub, 44, 152); }
   g.fillStyle = '#050505';
   for (let x = 0; x < 1024; x += 8) g.fillRect(x, 0, 2, 192);
   for (let y = 0; y < 192; y += 8) g.fillRect(0, y, 1024, 2);
-});
+}); ledCache.set(k, tx); return tx; };
 const signT = () => tex(1024, 512, (g) => {
   g.fillStyle = '#0f2a4a'; g.fillRect(0, 0, 1024, 512);
   g.fillStyle = '#e9eef5'; g.beginPath(); g.arc(256, 256, 170, 0, Math.PI * 2); g.fill();
@@ -117,50 +118,52 @@ const curls = (() => {
   return pts;
 })();
 
-/** Protagonist „Du“ – detailed: curly hair, parka with hood/fur/zipper/pockets, scarf, jeans, sneakers, real hands */
-export const TravelerHD: React.FC<{p: V3; ry?: number; mood?: Mood; look?: number; sit?: boolean; breathe?: number}> = ({p, ry = 0, mood = 'calm', look = 0, sit = true, breathe = 0}) => {
-  const C = {skin: '#f2c4a0', parka: '#1f8a8a', dark: '#14605f', fur: '#d8c8aa', jeans: '#2b3a5c', jeansD: '#1f2a44', shoe: '#8a2b2b', sole: '#f1efe9', scarf: '#d9a33a'};
-  const hipY = sit ? 0.5 : 0.86, sh = hipY + 0.52 + breathe * 0.006, headY = sh + 0.36;
-  const legs = sit
-    ? (s: number) => ({hip: [s * 0.1, hipY, 0] as V3, knee: [s * 0.12, hipY + 0.03, 0.42] as V3, ank: [s * 0.13, 0.11, 0.47] as V3})
-    : (s: number) => ({hip: [s * 0.1, hipY, 0] as V3, knee: [s * 0.1, 0.47, 0.02] as V3, ank: [s * 0.1, 0.11, 0] as V3});
-  const arm = (s: number) => sit
-    ? {sh: [s * 0.215, sh - 0.04, 0] as V3, el: [s * 0.28, hipY + 0.24, 0.1] as V3, wr: [s * 0.19, hipY + 0.1, 0.33] as V3}
-    : {sh: [s * 0.215, sh - 0.04, 0] as V3, el: [s * 0.26, sh - 0.33, -0.02] as V3, wr: [s * 0.25, sh - 0.6, 0.04] as V3};
-  return (
-    <group position={p} rotation={[0, ry, 0]}>
-      {[-1, 1].map((s) => {
-        const L = legs(s);
-        return (
-          <group key={'l' + s}>
-            <Bone a={L.hip} b={L.knee} r={0.07} color={C.jeans} />
-            <T geo={GEO.sphere} color={C.jeans} p={L.knee} s={0.07} o={0} />
-            <Bone a={L.knee} b={L.ank} r={0.06} color={C.jeans} />
-            {/* seam + cuff */}
-            <Bone a={add(L.knee, [s * 0.058, 0, 0])} b={add(L.ank, [s * 0.052, 0.04, 0])} r={0.006} color="#c9a24a" o={0} />
-            <T geo={GEO.cyl} color={C.jeansD} p={add(L.ank, [0, 0.03, 0])} s={[0.066, 0.05, 0.066]} o={0.008} />
-            {/* sneaker */}
-            <group position={add(L.ank, [0, -0.06, 0.06])}>
-              <T geo={GEO.rbox} color={C.sole} p={[0, -0.02, 0.02]} s={[0.12, 0.045, 0.27]} o={0.01} />
-              <T geo={GEO.rbox} color={C.shoe} p={[0, 0.035, 0]} s={[0.11, 0.08, 0.22]} o={0.01} />
-              <T geo={GEO.sphere} color={C.sole} p={[0, 0.0, 0.12]} s={[0.058, 0.04, 0.05]} o={0.008} />
-              {[0, 1, 2].map((k) => <M key={k} geo={GEO.box} color="#f4f1ea" p={[0, 0.078, 0.02 + k * 0.035]} s={[0.07, 0.008, 0.012]} o={0} />)}
-              <M geo={GEO.box} color={C.sole} p={[s * 0.056, 0.03, -0.02]} s={[0.004, 0.03, 0.09]} o={0} />
-            </group>
-          </group>
-        );
-      })}
+export type Pal = {skin: string; parka: string; dark: string; fur: string; jeans: string; jeansD: string; shoe: string; sole: string; scarf: string; hair: string[]};
+export const PAL_HERO: Pal = {skin: '#f2c4a0', parka: '#1f8a8a', dark: '#14605f', fur: '#d8c8aa', jeans: '#2b3a5c', jeansD: '#1f2a44', shoe: '#8a2b2b', sole: '#f1efe9', scarf: '#d9a33a', hair: HAIR};
+
+/** Protagonist „Du“ – detailed: curly hair, parka with hood/fur/zipper/pockets, scarf, jeans, sneakers, real hands.
+ *  walk = gait phase (cycles), run 0..1, headRy/headRoll turn & tilt the head, pocket 0..1 puts the right hand in the pocket. */
+export const TravelerHD: React.FC<{p: V3; ry?: number; mood?: Mood; look?: number; sit?: boolean; breathe?: number; walk?: number; run?: number; headRy?: number; headRoll?: number; pocket?: number; pal?: Partial<Pal>; hairStyle?: 'curly' | 'caesar' | 'bald'; scarf?: boolean; s?: number}> = ({p, ry = 0, mood = 'calm', look = 0, sit = true, breathe = 0, walk = 0, run = 0, headRy = 0, headRoll = 0, pocket = 0, pal = {}, hairStyle = 'curly', scarf = true, s: scale = 1}) => {
+  const C = {...PAL_HERO, ...pal};
+  const moving = !sit && (walk !== 0 || run > 0);
+  const ph = walk * Math.PI * 2, amp = moving ? 0.38 + run * 0.35 : 0;
+  const bob = moving ? Math.abs(Math.sin(ph)) * 0.03 * (1 + run) : 0;
+  const hipY = (sit ? 0.5 : 0.86) + bob, sh = hipY + 0.52 + Math.sin(breathe * Math.PI * 2) * 0.006, headY = sh + 0.36;
+  const lean = run * 0.22;
+  const leg = (s: number) => {
+    if (sit) return {hip: [s * 0.1, hipY, 0] as V3, knee: [s * 0.12, hipY + 0.03, 0.42] as V3, ank: [s * 0.13, 0.11, 0.47] as V3};
+    const sw = Math.sin(ph + (s > 0 ? 0 : Math.PI)) * amp;
+    const back = Math.max(0, -Math.cos(ph + (s > 0 ? 0 : Math.PI))) * (moving ? 0.9 + run * 0.6 : 0);
+    const hip: V3 = [s * 0.1, hipY, 0];
+    const knee: V3 = [s * 0.1, hipY - 0.39 * Math.cos(sw), 0.39 * Math.sin(sw)];
+    const b = sw - back;
+    const ank: V3 = [s * 0.1, Math.max(0.1, knee[1] - 0.38 * Math.cos(b)), knee[2] + 0.38 * Math.sin(b)];
+    return {hip, knee, ank};
+  };
+  const arm = (s: number) => {
+    if (sit) return {sh: [s * 0.215, sh - 0.04, 0] as V3, el: [s * 0.28, hipY + 0.24, 0.1] as V3, wr: [s * 0.19, hipY + 0.1, 0.33] as V3};
+    const c = -Math.sin(ph + (s > 0 ? 0 : Math.PI)) * amp * 0.9;
+    const shp: V3 = [s * 0.215, sh - 0.04, 0];
+    const el: V3 = [s * 0.25, sh - 0.04 - 0.3 * Math.cos(c), 0.3 * Math.sin(c)];
+    const fa = c + 0.25 + run * 1.1;
+    let wr: V3 = [s * 0.24, el[1] - 0.28 * Math.cos(fa), el[2] + 0.28 * Math.sin(fa)];
+    let elb = el;
+    if (s > 0 && pocket > 0) {
+      wr = lerp3(wr, [0.12, hipY + 0.2, 0.17], pocket);
+      elb = lerp3(el, [0.27, hipY + 0.36, 0.0], pocket);
+    }
+    return {sh: shp, el: elb, wr};
+  };
+  const upper = (
+    <>
       {/* hips + parka */}
       <T geo={GEO.rbox} color={C.jeans} p={[0, hipY + 0.02, 0.01]} s={[0.3, 0.14, 0.26]} o={0.01} />
       <T geo={GEO.cyl} color={C.parka} p={[0, hipY + 0.14, 0]} s={[0.215, 0.2, 0.17]} o={0.014} />
       <T geo={GEO.cap} color={C.parka} p={[0, (hipY + sh) / 2 + 0.04, 0]} s={[0.42, 0.25, 0.3]} o={0.016} />
       <T geo={GEO.torus} color={C.dark} p={[0, hipY + 0.05, 0]} r={[Math.PI / 2, 0, 0]} s={[0.215, 0.17, 0.35]} o={0.008} />
-      {/* quilting lines */}
       {[0.2, 0.32, 0.44].map((k) => <T key={k} geo={GEO.torus} color={C.dark} p={[0, hipY + k, 0]} r={[Math.PI / 2, 0, 0]} s={[0.205, 0.15, 0.12]} o={0} />)}
-      {/* zipper + pull */}
       <M geo={GEO.box} color="#1b2020" p={[0, (hipY + sh) / 2 + 0.03, 0.152]} s={[0.014, sh - hipY - 0.02, 0.01]} o={0} />
       <M geo={GEO.box} color="#c9a24a" p={[0.0, sh - 0.12, 0.162]} s={[0.022, 0.04, 0.008]} o={0} />
-      {/* pockets with flaps */}
       {[-1, 1].map((s) => (
         <group key={'p' + s} position={[s * 0.11, hipY + 0.17, 0.14]} rotation={[0.1, s * 0.25, 0]}>
           <T geo={GEO.rbox} color={C.dark} s={[0.12, 0.11, 0.025]} o={0.006} />
@@ -168,20 +171,20 @@ export const TravelerHD: React.FC<{p: V3; ry?: number; mood?: Mood; look?: numbe
           <M geo={GEO.sphere} color="#c9a24a" p={[0, 0.05, 0.026]} s={0.009} o={0} />
         </group>
       ))}
-      {/* small chest patch (own symbol: crescent) */}
       <T geo={GEO.cyl} color="#e9e2cf" p={[-0.1, sh - 0.12, 0.13]} r={[Math.PI / 2 - 0.2, 0, 0]} s={[0.032, 0.01, 0.032]} o={0.005} />
       <T geo={GEO.cyl} color={C.parka} p={[-0.092, sh - 0.115, 0.138]} r={[Math.PI / 2 - 0.2, 0, 0]} s={[0.026, 0.01, 0.026]} o={0} />
-      {/* shoulders, hood with fur trim, scarf */}
       {[-1, 1].map((s) => <T key={'s' + s} geo={GEO.sphere} color={C.parka} p={[s * 0.2, sh - 0.05, 0]} s={[0.1, 0.09, 0.1]} o={0.012} />)}
       <T geo={GEO.torus} color={C.parka} p={[0, sh + 0.04, -0.09]} r={[Math.PI / 2 + 0.5, 0, 0]} s={[0.17, 0.15, 0.9]} o={0.012} />
       {Array.from({length: 20}).map((_, i) => {
         const a = (i / 20) * Math.PI * 2;
         return <T key={'f' + i} geo={GEO.sphere} color={i % 2 ? '#b8a888' : '#a39272'} p={[Math.cos(a) * 0.19, sh + 0.06 + Math.sin(a) * 0.06, -0.12 + Math.sin(a) * 0.1]} s={0.045} o={0} />;
       })}
-      <T geo={GEO.torus} color={C.scarf} p={[0, sh + 0.02, 0]} r={[Math.PI / 2, 0, 0]} s={[0.12, 0.12, 0.7]} o={0.01} />
-      <T geo={GEO.rbox} color={C.scarf} p={[0.06, sh - 0.12, 0.13]} r={[0.15, 0, -0.12]} s={[0.07, 0.2, 0.03]} o={0.008} />
-      {[0, 1, 2].map((k) => <M key={k} geo={GEO.box} color="#b9852a" p={[0.06 + k * 0.016 - 0.016, sh - 0.23, 0.145]} s={[0.006, 0.04, 0.006]} o={0} />)}
-      {/* arms */}
+      {scarf ? (
+        <>
+          <T geo={GEO.torus} color={C.scarf} p={[0, sh + 0.02, 0]} r={[Math.PI / 2, 0, 0]} s={[0.12, 0.12, 0.7]} o={0.01} />
+          <T geo={GEO.rbox} color={C.scarf} p={[0.06, sh - 0.12, 0.13]} r={[0.15, 0, -0.12]} s={[0.07, 0.2, 0.03]} o={0.008} />
+        </>
+      ) : null}
       {[-1, 1].map((s) => {
         const A = arm(s);
         const wd: V3 = [A.wr[0] - A.el[0], A.wr[1] - A.el[1], A.wr[2] - A.el[2]];
@@ -190,22 +193,42 @@ export const TravelerHD: React.FC<{p: V3; ry?: number; mood?: Mood; look?: numbe
             <Bone a={A.sh} b={A.el} r={0.06} color={C.parka} />
             <T geo={GEO.sphere} color={C.parka} p={A.el} s={0.06} o={0} />
             <Bone a={A.el} b={lerp3(A.el, A.wr, 0.92)} r={0.055} color={C.parka} />
-            <T geo={GEO.cyl} color={C.dark} p={lerp3(A.el, A.wr, 0.9)} r={[Math.atan2(wd[2], wd[1]), 0, -Math.atan2(wd[0], wd[1])]} s={[0.05, 0.04, 0.05]} o={0.008} />
-            <Hand at={A.wr} dir={wd} color={C.skin} side={-s} curl={0.6} />
+            {!(s > 0 && pocket > 0.8) ? <Hand at={A.wr} dir={wd} color={C.skin} side={-s} curl={moving ? 0.8 : 0.6} /> : null}
           </group>
         );
       })}
-      {/* neck + head with dense curls */}
       <T geo={GEO.cyl} color={C.skin} p={[0, sh + 0.06, 0]} s={[0.055, 0.12, 0.055]} o={0.008} />
-      <group position={[0, headY, 0.01]} scale={0.31}>
-        <Head skin={C.skin} mood={mood} look={look} hairStyle="none" />
-        {curls.map((c, i) => <T key={i} geo={GEO.sphere} color={c.c} p={c.p} s={c.s} o={0.018} />)}
-        {/* front fringe */}
-        {Array.from({length: 7}).map((_, i) => {
+      <group position={[0, headY, 0.01]} rotation={[0, headRy, headRoll]} scale={0.31}>
+        <Head skin={C.skin} mood={mood} look={look} hairStyle={hairStyle === 'curly' ? 'none' : hairStyle} hair={C.hair[0]} />
+        {hairStyle === 'curly' ? curls.map((c, i) => <T key={i} geo={GEO.sphere} color={C.hair[i % C.hair.length]} p={c.p} s={c.s} o={0.018} />) : null}
+        {hairStyle === 'curly' ? Array.from({length: 7}).map((_, i) => {
           const a = -0.7 + i * 0.23;
-          return <T key={'fr' + i} geo={GEO.sphere} color={HAIR[i % 2]} p={[Math.sin(a) * 0.62, 0.55 - Math.abs(a) * 0.1, Math.cos(a) * 0.52]} s={[0.15, 0.12, 0.13]} o={0.016} />;
-        })}
+          return <T key={'fr' + i} geo={GEO.sphere} color={C.hair[i % 2]} p={[Math.sin(a) * 0.62, 0.55 - Math.abs(a) * 0.1, Math.cos(a) * 0.52]} s={[0.15, 0.12, 0.13]} o={0.016} />;
+        }) : null}
       </group>
+    </>
+  );
+  return (
+    <group position={p} rotation={[0, ry, 0]} scale={scale}>
+      {[-1, 1].map((s) => {
+        const L = leg(s);
+        return (
+          <group key={'l' + s}>
+            <Bone a={L.hip} b={L.knee} r={0.07} color={C.jeans} />
+            <T geo={GEO.sphere} color={C.jeans} p={L.knee} s={0.07} o={0} />
+            <Bone a={L.knee} b={L.ank} r={0.06} color={C.jeans} />
+            <Bone a={add(L.knee, [s * 0.058, 0, 0])} b={add(L.ank, [s * 0.052, 0.04, 0])} r={0.006} color="#c9a24a" o={0} />
+            <T geo={GEO.cyl} color={C.jeansD} p={add(L.ank, [0, 0.03, 0])} s={[0.066, 0.05, 0.066]} o={0.008} />
+            <group position={add(L.ank, [0, -0.06, 0.06])}>
+              <T geo={GEO.rbox} color={C.sole} p={[0, -0.02, 0.02]} s={[0.12, 0.045, 0.27]} o={0.01} />
+              <T geo={GEO.rbox} color={C.shoe} p={[0, 0.035, 0]} s={[0.11, 0.08, 0.22]} o={0.01} />
+              <T geo={GEO.sphere} color={C.sole} p={[0, 0.0, 0.12]} s={[0.058, 0.04, 0.05]} o={0.008} />
+              {[0, 1, 2].map((k) => <M key={k} geo={GEO.box} color="#f4f1ea" p={[0, 0.078, 0.02 + k * 0.035]} s={[0.07, 0.008, 0.012]} o={0} />)}
+            </group>
+          </group>
+        );
+      })}
+      <group position={[0, hipY, 0]} rotation={[lean, 0, 0]}><group position={[0, -hipY, 0]}>{upper}</group></group>
     </group>
   );
 };
@@ -215,7 +238,7 @@ const capGeo = new THREE.CylinderGeometry(0.215, 0.185, 1, 36);
 const headGeo = new THREE.SphereGeometry(1, 48, 36);
 
 /** Gegenspieler Folge 2: der Conductor – faceless, glossy head, ONE red light dot, long coat with brass buttons */
-export const Conductor: React.FC<{p: V3; ry?: number; glow?: number; point?: number; s?: number}> = ({p, ry = 0, glow = 1, point = 1, s = 1}) => {
+export const Conductor: React.FC<{p: V3; ry?: number; glow?: number; point?: number; s?: number; sit?: boolean}> = ({p, ry = 0, glow = 1, point = 1, s = 1, sit = false}) => {
   const C = {coat: '#1a1e29', coatD: '#11141c', red: '#7a1f2a', gold: '#c9a24a', glove: '#e7e3da', head: '#2b2e35', trou: '#151821'};
   const hip = 0.94, sh = 1.5;
   const pointArm = {sh: [0.22, sh - 0.04, 0] as V3, el: lerp3([0.27, sh - 0.32, 0.03], [0.48, sh - 0.06, -0.06], point), wr: lerp3([0.26, sh - 0.6, 0.06], [0.76, sh - 0.04, -0.22], point)};
@@ -223,15 +246,23 @@ export const Conductor: React.FC<{p: V3; ry?: number; glow?: number; point?: num
   const red = new THREE.Color('#ff2a2a').multiplyScalar(1.5 + glow * 2.5);
   return (
     <group position={p} rotation={[0, ry, 0]} scale={s}>
+      {sit ? [-1, 1].map((k) => (
+        <group key={k}>
+          <Bone a={[k * 0.1, 0.5, 0]} b={[k * 0.11, 0.52, 0.45]} r={0.065} color={C.trou} />
+          <Bone a={[k * 0.11, 0.52, 0.45]} b={[k * 0.12, 0.1, 0.5]} r={0.06} color={C.trou} />
+          <Gloss geo={GEO.rbox} color="#0c0d10" p={[k * 0.12, 0.045, 0.56]} s={[0.12, 0.08, 0.28]} o={0.012} rough={0.12} />
+        </group>
+      )) : null}
       {/* legs: trousers with red piping, glossy shoes */}
-      {[-1, 1].map((k) => (
+      {!sit ? [-1, 1].map((k) => (
         <group key={k}>
           <Bone a={[k * 0.1, hip, 0]} b={[k * 0.1, 0.5, 0.02]} r={0.065} color={C.trou} />
           <Bone a={[k * 0.1, 0.5, 0.02]} b={[k * 0.1, 0.11, 0]} r={0.06} color={C.trou} />
           <Bone a={[k * 0.163, 0.86, 0]} b={[k * 0.158, 0.13, 0.01]} r={0.007} color={C.red} o={0} />
           <Gloss geo={GEO.rbox} color="#0c0d10" p={[k * 0.1, 0.045, 0.06]} s={[0.12, 0.08, 0.28]} o={0.012} rough={0.12} />
         </group>
-      ))}
+      )) : null}
+      <group position={[0, sit ? -0.44 : 0, 0]}>
       {/* long coat */}
       <T geo={coatGeo} color={C.coat} p={[0, 1.0, 0]} s={[1, 1.04, 0.8]} o={0.018} />
       <T geo={GEO.torus} color={C.coatD} p={[0, 0.49, 0]} r={[Math.PI / 2, 0, 0]} s={[0.268, 0.215, 0.12]} o={0} />
@@ -290,6 +321,7 @@ export const Conductor: React.FC<{p: V3; ry?: number; glow?: number; point?: num
       <Gloss geo={GEO.cyl} color="#08090b" p={[0, sh + 0.49, 0.14]} r={[0.28, 0, 0]} s={[0.15, 0.012, 0.11]} o={0.006} rough={0.08} />
       <M geo={GEO.cyl} color={C.gold} p={[0, sh + 0.565, 0.205]} r={[Math.PI / 2 - 0.06, 0, 0]} s={[0.032, 0.01, 0.032]} o={0.004} />
       {[-1, 1].map((k) => <M key={'w' + k} geo={GEO.box} color={C.gold} p={[k * 0.05, sh + 0.567, 0.2]} r={[0, k * 0.4, k * 0.2]} s={[0.05, 0.012, 0.004]} o={0} />)}
+      </group>
     </group>
   );
 };
@@ -319,11 +351,14 @@ const DoubleSeat: React.FC<{p: V3; side: number; fab: THREE.Texture}> = ({p, sid
   </group>
 );
 
-export const TrainSet: React.FC<{t: number; flicker?: number}> = ({t, flicker = 0}) => {
+export type TrainProps = {t: number; flicker?: number; lightsOn?: number; led?: string; ledSub?: string; doorOpen?: number; outsideZ?: number; outsideOn?: number; platFlicker?: number; dark?: number};
+export const TrainSet: React.FC<TrainProps> = ({t, flicker = 0, lightsOn = 12, led: ledMain = 'PLATFORM 0', ledSub = 'LAST STOP · ALL PASSENGERS EXIT', doorOpen = 1, outsideZ = 0, outsideOn = 1, platFlicker = 1, dark = 0}) => {
   const fab = useMemo(moquette, []);
   const floor = useMemo(floorT, []);
   const conc = useMemo(concreteT, []);
-  const led = useMemo(ledT, []);
+  const led = ledT(ledMain, ledSub);
+  const pl = outsideOn * platFlicker;
+  const dz = (DOOR[0] + DOOR[1]) / 2;
   const sign = useMemo(signT, []);
   const dust = useMemo(() => Array.from({length: 90}).map((_, i) => [rnd(i), rnd(i + 11), rnd(i + 23), rnd(i + 37)]), []);
   const zs = Array.from({length: 14}).map((_, i) => 6 - i * 1.1);
@@ -332,8 +367,8 @@ export const TrainSet: React.FC<{t: number; flicker?: number}> = ({t, flicker = 
     <>
       <color attach="background" args={['#040507']} />
       <fog attach="fog" args={['#05060a', 7, 24]} />
-      <ambientLight intensity={0.22} />
-      <hemisphereLight args={['#3a4a60', '#120c08', 0.4]} />
+      <ambientLight intensity={0.22 * (1 - dark * 0.85)} />
+      <hemisphereLight args={['#3a4a60', '#120c08', 0.4 * (1 - dark * 0.8)]} />
       {/* floor, aisle, ceiling */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -1]} receiveShadow><planeGeometry args={[3, 15]} /><meshStandardMaterial map={floor} roughness={0.3} metalness={0.25} /></mesh>
       <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, 2.46, -1]}><planeGeometry args={[1.7, 15]} /><meshStandardMaterial color="#3e4541" roughness={0.85} /></mesh>
@@ -341,12 +376,12 @@ export const TrainSet: React.FC<{t: number; flicker?: number}> = ({t, flicker = 
       {/* ceiling light diffusers (one dead, one flickering) */}
       {zs.slice(0, 12).map((z, i) => {
         const dead = i === 7, fl = i === 4 ? 1 - flicker : 1;
-        const on = dead ? 0.04 : fl;
+        const on = i >= lightsOn ? 0 : dead ? 0.04 : fl;
         return (
           <group key={'cl' + i} position={[0, 2.43, z - 0.3]}>
             <mesh scale={[0.32, 0.03, 0.85]}><boxGeometry args={[1, 1, 1]} /><meshBasicMaterial color={new THREE.Color('#e4fff3').multiplyScalar(0.12 + 0.55 * on)} toneMapped={false} /></mesh>
             {on > 0.5 ? <Halo p={[0, -0.05, 0]} s={1.1} color="#d6ffef" o={0.12} /> : null}
-            {i % 2 === 0 ? <pointLight position={[0, -0.25, 0]} color="#d8f2e8" intensity={2.0 * on} distance={3.8} decay={1.5} /> : null}
+            {i % 3 === 0 ? <pointLight position={[0, -0.25, 0]} color="#d8f2e8" intensity={2.6 * on} distance={4.8} decay={1.5} /> : null}
           </group>
         );
       })}
@@ -392,19 +427,39 @@ export const TrainSet: React.FC<{t: number; flicker?: number}> = ({t, flicker = 
       <T geo={GEO.rbox} color="#3a4441" p={[0, 1.0, -7.94]} s={[0.84, 1.96, 0.05]} o={0.01} />
       <mesh position={[0, 1.42, -7.9]}><planeGeometry args={[0.44, 0.6]} /><meshBasicMaterial color="#0a1a14" /></mesh>
       <M geo={GEO.box} color="#c9ced6" p={[0.3, 1.0, -7.88]} s={[0.03, 0.26, 0.03]} o={0} />
-      <mesh position={[0, 2.18, -7.93]}><planeGeometry args={[1.5, 0.28]} /><meshBasicMaterial map={led} toneMapped={false} /></mesh>
-      <Halo p={[0, 2.18, -7.85]} s={1.6} color="#ff9a2a" o={0.25} />
+      <mesh position={[0, 2.24, -7.89]}><planeGeometry args={[1.5, 0.28]} /><meshBasicMaterial map={led} toneMapped={false} /></mesh>
+      <Halo p={[0, 2.24, -7.83]} s={1.6} color="#ff9a2a" o={0.25} />
       <T geo={GEO.cap} color="#b0222a" p={[-1.1, 0.5, -7.85]} s={[0.12, 0.13, 0.12]} o={0.008} />
       {/* left door (closed) */}
       <T geo={GEO.box} color="#3a4441" p={[-1.5, 1.05, (DOOR[0] + DOOR[1]) / 2]} s={[0.06, 2.1, 1.3]} o={0.008} />
       <mesh position={[-1.46, 1.4, (DOOR[0] + DOOR[1]) / 2]} rotation={[0, Math.PI / 2, 0]}><planeGeometry args={[0.9, 0.6]} /><meshStandardMaterial color="#04060a" roughness={0.05} metalness={0.7} /></mesh>
       {/* right door OPEN: frame with yellow edges, slid leaves, warm platform light spilling in */}
       {[DOOR[0], DOOR[1]].map((z) => <T key={'df' + z} geo={GEO.box} color="#e0b02a" p={[1.49, 1.05, z]} s={[0.1, 2.1, 0.05]} o={0.006} />)}
-      <T geo={GEO.box} color="#3a4441" p={[1.56, 1.05, DOOR[1] + 0.35]} s={[0.04, 2.1, 0.6]} o={0.006} />
+      {[0, 1].map((k) => {
+        const zOpen = k ? DOOR[1] + 0.33 : DOOR[0] - 0.33, zShut = k ? DOOR[1] - 0.325 : DOOR[0] + 0.325;
+        const z = zShut + (zOpen - zShut) * doorOpen;
+        return (
+          <group key={'leaf' + k} position={[1.53, 1.05, z]}>
+            <T geo={GEO.box} color="#3a4441" s={[0.04, 2.1, 0.65]} o={0.006} />
+            <mesh position={[-0.025, 0.35, 0]} rotation={[0, -Math.PI / 2, 0]}><planeGeometry args={[0.45, 0.6]} /><meshStandardMaterial color="#0e1726" transparent opacity={0.4} roughness={0.05} metalness={0.7} /></mesh>
+            <M geo={GEO.box} color="#e0b02a" p={[-0.03, 0, k ? -0.31 : 0.31]} s={[0.02, 2.1, 0.03]} o={0} />
+          </group>
+        );
+      })}
       <M geo={GEO.box} color="#e0b02a" p={[1.35, 0.005, (DOOR[0] + DOOR[1]) / 2]} s={[0.3, 0.012, 1.3]} o={0} />
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0.9, 0.01, (DOOR[0] + DOOR[1]) / 2 + 0.1]} scale={[1.2, 1.6, 1]}><circleGeometry args={[1, 32]} /><meshBasicMaterial color="#ff9a3c" transparent opacity={0.16} depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} /></mesh>
-      <spotLight position={[3.4, 2.6, (DOOR[0] + DOOR[1]) / 2]} angle={0.6} penumbra={0.7} intensity={26} distance={8} color="#ff9a3c" target-position={[0.3, 0, -6.6]} castShadow />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0.9, 0.01, (DOOR[0] + DOOR[1]) / 2 + 0.1]} scale={[1.2, 1.6, 1]}><circleGeometry args={[1, 32]} /><meshBasicMaterial color="#ff9a3c" transparent depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} opacity={0.16 * doorOpen * pl} /></mesh>
+      <spotLight position={[3.4, 2.6, (DOOR[0] + DOOR[1]) / 2]} angle={0.6} penumbra={0.7} intensity={26 * doorOpen * pl} distance={8} color="#ff9a3c" target-position={[0.3, 0, -6.6]} castShadow />
+      {/* carriage exterior: roof, stripe, end wall, next carriage */}
+      <T geo={GEO.rbox} color="#20262a" p={[0, 2.72, -1]} s={[3.14, 0.5, 14.2]} o={0.01} />
+      <M geo={GEO.box} color="#7a1f2a" p={[1.535, 0.93, -1]} s={[0.012, 0.05, 14.1]} o={0} />
+      <M geo={GEO.box} color="#c9c2b0" p={[1.535, 2.24, -1]} s={[0.012, 0.03, 14.1]} o={0} />
+      <T geo={GEO.box} color="#2a3230" p={[0, 1.23, 6.08]} s={[3.1, 2.46, 0.08]} o={0} />
+      <group position={[0, 0, -16.6]}>
+        <T geo={GEO.rbox} color="#262d2b" p={[0, 1.45, 0]} s={[3.1, 2.9, 16.6]} o={0.01} />
+        {Array.from({length: 12}).map((_, i) => <mesh key={i} position={[1.56, 1.33, 7 - i * 1.25]} rotation={[0, Math.PI / 2, 0]}><planeGeometry args={[0.85, 0.8]} /><meshBasicMaterial color={i % 4 === 2 ? '#0a0c0c' : '#5d7268'} toneMapped={false} /></mesh>)}
+      </group>
       {/* outside: the platform that is on no map */}
+      <group position={[0, 0, outsideZ]} visible={outsideOn > 0.01}>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[5.2, -0.02, -3]}><planeGeometry args={[7.2, 30]} /><meshStandardMaterial map={conc} roughness={0.7} /></mesh>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[1.98, -0.01, -3]}><planeGeometry args={[0.12, 30]} /><meshStandardMaterial color="#d9b42a" roughness={0.6} /></mesh>
       <T geo={GEO.box} color="#1a1c1f" p={[8.8, 2, -3]} s={[0.2, 4, 30]} o={0} />
@@ -412,10 +467,10 @@ export const TrainSet: React.FC<{t: number; flicker?: number}> = ({t, flicker = 
         <group key={'lp' + i} position={[3.8, 0, z]}>
           <M geo={GEO.cyl} color="#2a2d32" p={[0, 1.6, 0]} s={[0.05, 3.2, 0.05]} o={0.006} />
           <T geo={GEO.rbox} color="#2a2d32" p={[-0.25, 3.2, 0]} s={[0.6, 0.08, 0.16]} o={0.006} />
-          <mesh position={[-0.42, 3.14, 0]} scale={[0.24, 0.03, 0.12]}><boxGeometry args={[1, 1, 1]} /><meshBasicMaterial color={new THREE.Color('#ffb060').multiplyScalar(2)} toneMapped={false} /></mesh>
-          <Halo p={[-0.42, 3.05, 0]} s={2.6} color="#ff9a3c" o={0.4} />
-          <pointLight position={[-0.42, 2.9, 0]} color="#ff9a3c" intensity={7} distance={7} decay={1.5} />
-          <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-0.4, 0.0, 0]} scale={[1.8, 1.8, 1]}><circleGeometry args={[1, 32]} /><meshBasicMaterial color="#ff9a3c" transparent opacity={0.12} depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} /></mesh>
+          <mesh position={[-0.42, 3.14, 0]} scale={[0.24, 0.03, 0.12]}><boxGeometry args={[1, 1, 1]} /><meshBasicMaterial color={new THREE.Color('#ffb060').multiplyScalar(0.15 + 1.85 * pl)} toneMapped={false} /></mesh>
+          <Halo p={[-0.42, 3.05, 0]} s={2.6} color="#ff9a3c" o={0.4 * pl} />
+          {i === 1 || i === 2 ? <pointLight position={[-0.42, 2.9, 0]} color="#ff9a3c" intensity={8.5 * pl} distance={8} decay={1.5} /> : null}
+          <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-0.4, 0.0, 0]} scale={[1.8, 1.8, 1]}><circleGeometry args={[1, 32]} /><meshBasicMaterial color="#ff9a3c" transparent opacity={0.12 * pl} depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} /></mesh>
         </group>
       ))}
       {/* platform sign + bench outside */}
@@ -426,6 +481,7 @@ export const TrainSet: React.FC<{t: number; flicker?: number}> = ({t, flicker = 
       <group position={[5.6, 0, -4.4]} rotation={[0, -Math.PI / 2, 0]}>
         <T geo={GEO.rbox} color="#3a2a20" p={[0, 0.45, 0]} s={[1.6, 0.06, 0.4]} o={0.008} />
         <T geo={GEO.rbox} color="#3a2a20" p={[0, 0.8, -0.18]} s={[1.6, 0.4, 0.05]} o={0.008} />
+      </group>
       </group>
       {/* dust drifting in the light */}
       {dust.map(([a, b, c, d], i) => (
