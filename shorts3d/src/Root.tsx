@@ -10,7 +10,7 @@ import {Ocean60, OCEAN60_DURATION} from './Ocean60';
 import {Flowers, FLOWERS_DURATION} from './Flowers';
 import {Marsh, MARSH_DURATION} from './Marsh';
 import {SvTag10, SV10_DURATION} from './SvTag10';
-import {NightGateStill, NightGateScene, GATE_DURATION} from './NightGate';
+import {NightGateStill, NightGateScene, GATE_DURATION, NightGateDetail} from './NightGate';
 import timingOcean from './timing_ocean.json';
 import timingEn from './timing_en.json';
 import timingCal from './timing_caligula.json';
@@ -37,5 +37,6 @@ export const RemotionRoot: React.FC = () => (
   <Composition id="SvTag10" component={SvTag10} durationInFrames={Math.ceil(SV10_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
   <Composition id="NightGateStill" component={NightGateStill} durationInFrames={60} fps={FPS} width={1080} height={1920} />
   <Composition id="NightGateScene" component={NightGateScene} durationInFrames={Math.ceil(GATE_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="NightGateDetail" component={NightGateDetail} durationInFrames={90} fps={FPS} width={1080} height={1920} />
   </>
 );

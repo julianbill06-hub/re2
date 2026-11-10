@@ -61,6 +61,9 @@ const Seat: React.FC<{p: V3}> = ({p}) => (
     <T geo={GEO.rbox} color="#1c1f26" p={[0, 0.55, 0]} s={[0.62, 0.1, 0.6]} o={0.008} />
     <T geo={GEO.rbox} color="#1c1f26" p={[0, 0.95, -0.27]} r={[-0.15, 0, 0]} s={[0.62, 0.75, 0.08]} o={0.008} />
     <M geo={GEO.box} color="#6b717c" p={[0.33, 0.7, 0]} s={[0.04, 0.32, 0.5]} o={0} />
+    <T geo={GEO.rbox} color="#2a3142" p={[0, 0.62, 0.02]} s={[0.56, 0.06, 0.52]} o={0} />
+    <M geo={GEO.box} color="#aab0ba" p={[0, 0.25, 0]} s={[0.05, 0.5, 0.05]} o={0} />
+    <M geo={GEO.box} color="#aab0ba" p={[0, 0.02, 0]} s={[0.5, 0.04, 0.06]} o={0} />
   </group>
 );
 
@@ -143,6 +146,95 @@ export const NightGateStill: React.FC = () => {
   );
 };
 
+
+// ---------- extra detail layer ----------
+function signTex(txt: string, sub: string, bg: string, fg: string, w = 1024, h = 256) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  const g = c.getContext('2d')!;
+  g.fillStyle = bg; g.fillRect(0, 0, w, h);
+  g.fillStyle = fg; g.font = '800 120px Inter, Arial, sans-serif'; g.textBaseline = 'middle'; g.fillText(txt, 40, h / 2 + 6);
+  if (sub) { g.font = '600 56px Inter, Arial, sans-serif'; g.globalAlpha = 0.8; g.fillText(sub, 40 + g.measureText(txt).width * 2.2 + 60, h / 2 + 4); }
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+function glowTex() {
+  const c = document.createElement('canvas'); c.width = c.height = 128;
+  const g = c.getContext('2d')!; const gr = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.25, 'rgba(255,255,255,.35)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, 128, 128);
+  const t = new THREE.CanvasTexture(c); return t;
+}
+let _glow: THREE.Texture | null = null;
+const Halo: React.FC<{p: V3; s: number; color: string; o?: number}> = ({p, s, color, o = 0.6}) => {
+  if (!_glow) _glow = glowTex();
+  return <sprite position={p} scale={[s, s, 1]}><spriteMaterial map={_glow} color={color} transparent opacity={o} depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} /></sprite>;
+};
+const Stanchion: React.FC<{p: V3}> = ({p}) => (
+  <group position={p}>
+    <M geo={GEO.cyl} color="#b9bec8" p={[0, 0.02, 0]} s={[0.18, 0.04, 0.18]} o={0} />
+    <M geo={GEO.cyl} color="#c9ced6" p={[0, 0.48, 0]} s={[0.03, 0.95, 0.03]} o={0} />
+    <M geo={GEO.sphere} color="#c9ced6" p={[0, 0.97, 0]} s={0.05} o={0} />
+  </group>
+);
+export const GateDetails: React.FC<{t: number}> = ({t}) => {
+  const gate = useMemo(() => signTex('C0', '→ GATE', '#14161c', '#ffb347'), []);
+  const exit = useMemo(() => signTex('EXIT', '', '#1f9d55', '#ffffff', 512, 256), []);
+  const dust = useMemo(() => Array.from({length: 70}).map((_, i) => { const r = (k: number) => { const x = Math.sin((i + k) * 127.1) * 43758.5; return x - Math.floor(x); }; return [r(1), r(2), r(3), r(4)]; }), []);
+  return (
+    <>
+      {/* recessed ceiling coffers */}
+      {Array.from({length: 6}).map((_, i) => Array.from({length: 3}).map((__, k) => (
+        <mesh key={i + '-' + k} position={[-3 + k * 3, 5.3, 6 - i * 4]} rotation={[Math.PI / 2, 0, 0]}><planeGeometry args={[2.6, 3.6]} /><meshStandardMaterial color="#15181e" roughness={0.9} /></mesh>
+      )))}
+      {/* halos around the ceiling strips and warm practicals */}
+      {Array.from({length: 7}).map((_, i) => i % 3 === 1 ? null : <Halo key={i} p={[0, 5.0, 4 - i * 4]} s={2.6} color="#cfdcff" o={0.35} />)}
+      <Halo p={[1.4, 2.4, -3.4]} s={3.2} color="#ff9a3c" o={0.35} />
+      {/* visible light cone from the spot onto the sleeping traveler + dust */}
+      <mesh position={[-1.5, 2.6, 1.0]} rotation={[0.35, 0, 0]}><coneGeometry args={[1.5, 5.2, 32, 1, true]} /><meshBasicMaterial color="#ffe2b0" transparent opacity={0.05} depthWrite={false} side={THREE.DoubleSide} toneMapped={false} /></mesh>
+      {dust.map(([a, b, cc, d], i) => (
+        <mesh key={'d' + i} position={[-2.6 + a * 2.4, 0.6 + ((b * 4 + t * 0.12 * (0.5 + d)) % 4), -0.4 + cc * 2.6]} scale={0.005 + d * 0.006}><sphereGeometry args={[1, 6, 4]} /><meshBasicMaterial color="#fff1d0" transparent opacity={0.35} toneMapped={false} /></mesh>
+      ))}
+      {/* fake floor reflections of ceiling strips and the warm desk light */}
+      {Array.from({length: 7}).map((_, i) => i % 3 === 1 ? null : (
+        <mesh key={'fr' + i} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.012, 4 - i * 4]} scale={[0.5, 3.4, 1]}><planeGeometry args={[1, 1]} /><meshBasicMaterial color="#9fb2e6" transparent opacity={0.12} depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} /></mesh>
+      ))}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[1.4, 0.013, -2.6]} scale={[2.6, 2.0, 1]}><circleGeometry args={[1, 32]} /><meshBasicMaterial color="#ff9a3c" transparent opacity={0.1} depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} /></mesh>
+      {/* carpet strip at the gate + rope barrier */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[1.6, 0.006, -3.0]}><planeGeometry args={[4.2, 3.2]} /><meshStandardMaterial color="#26304a" roughness={1} /></mesh>
+      {[-0.2, 1.1, 2.4, 3.7].map((x) => <Stanchion key={x} p={[x, 0, -2.0]} />)}
+      {[[-0.2, 1.1], [1.1, 2.4], [2.4, 3.7]].map(([a, b], i) => <mesh key={'b' + i} position={[(a + b) / 2, 0.86, -2.0]} scale={[b - a, 0.05, 0.01]}><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="#8a1f2a" /></mesh>)}
+      {/* gate sign + exit sign + clock */}
+      <mesh position={[-0.6, 4.4, -6.3]}><planeGeometry args={[2.6, 0.65]} /><meshBasicMaterial map={gate} toneMapped={false} /></mesh>
+      <Halo p={[-0.6, 4.4, -6.2]} s={2.2} color="#ffb347" o={0.18} />
+      <mesh position={[4.2, 3.6, -2.0]} rotation={[0, -Math.PI / 2, 0]}><planeGeometry args={[0.9, 0.45]} /><meshBasicMaterial map={exit} toneMapped={false} /></mesh>
+      <Halo p={[4.15, 3.6, -2.0]} s={1.4} color="#2fe07a" o={0.3} />
+      <group position={[3.3, 4.5, -5.25]}>
+        <T geo={GEO.cyl} color="#e9ecf2" r={[Math.PI / 2, 0, 0]} s={[0.32, 0.05, 0.32]} o={0.01} />
+        <mesh position={[0.06, 0.08, 0.04]} rotation={[0, 0, -0.7]} scale={[0.02, 0.2, 0.01]}><boxGeometry args={[1, 1, 1]} /><meshBasicMaterial color="#14161c" /></mesh>
+        <mesh position={[-0.05, 0.04, 0.045]} rotation={[0, 0, 1.0]} scale={[0.02, 0.13, 0.01]}><boxGeometry args={[1, 1, 1]} /><meshBasicMaterial color="#14161c" /></mesh>
+      </group>
+      {/* bin + charging pillar */}
+      <group position={[-3.3, 0, -1.5]}>
+        <M geo={GEO.cyl} color="#5f656f" p={[0, 0.45, 0]} s={[0.25, 0.9, 0.25]} o={0.008} />
+        <T geo={GEO.cyl} color="#1c1f26" p={[0, 0.92, 0]} s={[0.26, 0.04, 0.26]} o={0} />
+      </group>
+      <group position={[3.6, 0, 1.4]}>
+        <T geo={GEO.rbox} color="#1c1f26" p={[0, 0.7, 0]} s={[0.35, 1.4, 0.35]} o={0.008} />
+        <mesh position={[0, 1.1, 0.18]}><planeGeometry args={[0.24, 0.14]} /><meshBasicMaterial color="#5ad1ff" toneMapped={false} /></mesh>
+        <Halo p={[0, 1.1, 0.25]} s={0.6} color="#5ad1ff" o={0.4} />
+      </group>
+      {/* backpack on the seat next to the traveler */}
+      <group position={[-0.62, 0.62, 0.8]} rotation={[0, 0.3, 0]}>
+        <T geo={GEO.rbox} color="#7a2f2a" p={[0, 0.22, 0]} s={[0.42, 0.48, 0.26]} o={0.012} />
+        <T geo={GEO.rbox} color="#5c221e" p={[0, 0.12, 0.15]} s={[0.32, 0.22, 0.08]} o={0.008} />
+        <T geo={GEO.torus} color="#2a2a2a" p={[0, 0.5, 0]} r={[0, 0, 0]} s={[0.12, 0.08, 0.5]} o={0} />
+      </group>
+      {/* runway lights + beacon outside */}
+      {Array.from({length: 14}).map((_, i) => <mesh key={'rw' + i} position={[-9, 0.08, 6 - i * 2.2]} scale={0.07}><sphereGeometry args={[1, 6, 4]} /><meshBasicMaterial color={i % 2 ? '#5ad1ff' : '#ffd27a'} toneMapped={false} /></mesh>)}
+      <Halo p={[-12.6, 6.8, 1.4]} s={1.6} color="#ff3b3b" o={Math.sin(t * 4) > 0 ? 0.8 : 0.05} />
+    </>
+  );
+};
+
 // ---------- short animated reference scene ----------
 const cl = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 const ease = Easing.bezier(0.33, 0, 0.2, 1);
@@ -206,6 +298,36 @@ export const NightGateScene: React.FC = () => {
       {black < 1 ? <GateCaption t={t} /> : null}
       <Audio src={staticFile('gate_voice.wav')} />
       <Audio src={staticFile('gate_music.wav')} />
+    </AbsoluteFill>
+  );
+};
+
+// ---------- 3-second detailed clip ----------
+export const NightGateDetail: React.FC = () => {
+  const frame = useCurrentFrame();
+  const {fps, width, height} = useVideoConfig();
+  const t = frame / fps;
+  const p = Easing.bezier(0.33, 0, 0.2, 1)(Math.min(1, t / 3));
+  const pos: V3 = [-1.2 + p * 2.0, 3.3 - p * 0.15, 10.2 - p * 0.9];
+  const look: V3 = [-0.2 + p * 1.0, 1.0, -2.6];
+  const capO = interpolate(t, [0.6, 0.8], [0, 1], cl);
+  return (
+    <AbsoluteFill style={{backgroundColor: '#050608'}}>
+      <ThreeCanvas width={width} height={height} shadows dpr={1.5} gl={{antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.7}} camera={{fov: 40, near: 0.05, far: 120}}>
+        <Cam pos={pos} look={look} fov={50} />
+        <GateSet t={t} travelerMood="calm" travelerLook={0} />
+        <GateDetails t={t} />
+      </ThreeCanvas>
+      <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 48%, rgba(0,0,0,.7) 100%)'}} />
+      <div style={{position: 'absolute', top: 120, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 18}}>
+        {[['#e8343a', 'STAY SEATED'], ['#2fbf71', 'WALK TO THE DESK']].map(([c2, txt]) => (
+          <span key={txt} style={{fontFamily: FONT, fontWeight: 800, fontSize: 26, color: '#14161c', background: '#fff', borderRadius: 999, padding: '8px 18px 8px 12px', display: 'flex', alignItems: 'center', gap: 10}}>
+            <span style={{width: 22, height: 22, borderRadius: 11, background: c2}} />{txt}
+          </span>
+        ))}
+      </div>
+      <div style={{position: 'absolute', top: 1060, left: 0, right: 0, textAlign: 'center', opacity: capO, fontFamily: FONT, fontWeight: 900, fontSize: 64, color: '#fff', letterSpacing: 1, textShadow: '0 4px 18px rgba(0,0,0,.9)'}}>NO PASSENGERS.</div>
+      <Audio src={staticFile('gate_music.wav')} volume={0.8} />
     </AbsoluteFill>
   );
 };
