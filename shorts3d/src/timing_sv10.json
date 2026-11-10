@@ -1,0 +1,1005 @@
+{
+ "duration": 53.463,
+ "lines": [
+  [
+   0.5,
+   3.9960416666666667
+  ],
+  [
+   4.246041666666667,
+   6.776875
+  ],
+  [
+   7.026875,
+   8.243854166666667
+  ],
+  [
+   8.543854166666668,
+   12.752
+  ],
+  [
+   13.052,
+   15.735958333333333
+  ],
+  [
+   15.985958333333333,
+   19.279625
+  ],
+  [
+   19.579625,
+   21.723395833333335
+  ],
+  [
+   22.023395833333332,
+   24.084666666666664
+  ],
+  [
+   24.334666666666664,
+   26.49520833333333
+  ],
+  [
+   26.79520833333333,
+   28.530104166666664
+  ],
+  [
+   28.780104166666664,
+   30.45858333333333
+  ],
+  [
+   30.75858333333333,
+   32.32752083333333
+  ],
+  [
+   32.57752083333333,
+   34.61810416666666
+  ],
+  [
+   34.918104166666666,
+   37.848875
+  ],
+  [
+   38.148875,
+   41.29189583333333
+  ],
+  [
+   41.59189583333333,
+   42.51679166666666
+  ],
+  [
+   42.76679166666666,
+   44.59106249999999
+  ],
+  [
+   44.84106249999999,
+   46.40902083333333
+  ],
+  [
+   46.65902083333333,
+   48.52535416666666
+  ],
+  [
+   48.82535416666666,
+   52.413291666666666
+  ]
+ ],
+ "words": [
+  {
+   "text": "Tag",
+   "start": 0.5,
+   "end": 0.801,
+   "line": 0
+  },
+  {
+   "text": "10.",
+   "start": 0.801,
+   "end": 1.042,
+   "line": 0
+  },
+  {
+   "text": "590",
+   "start": 1.042,
+   "end": 1.344,
+   "line": 0
+  },
+  {
+   "text": "Fans.",
+   "start": 1.344,
+   "end": 1.706,
+   "line": 0
+  },
+  {
+   "text": "Und",
+   "start": 1.706,
+   "end": 2.007,
+   "line": 0
+  },
+  {
+   "text": "das",
+   "start": 2.007,
+   "end": 2.308,
+   "line": 0
+  },
+  {
+   "text": "hier",
+   "start": 2.308,
+   "end": 2.67,
+   "line": 0
+  },
+  {
+   "text": "ist",
+   "start": 2.67,
+   "end": 2.971,
+   "line": 0
+  },
+  {
+   "text": "unsere",
+   "start": 2.971,
+   "end": 3.454,
+   "line": 0
+  },
+  {
+   "text": "Trib\u00fcne.",
+   "start": 3.454,
+   "end": 3.996,
+   "line": 0
+  },
+  {
+   "text": "Gestern",
+   "start": 4.246,
+   "end": 4.586,
+   "line": 1
+  },
+  {
+   "text": "hattet",
+   "start": 4.586,
+   "end": 4.888,
+   "line": 1
+  },
+  {
+   "text": "ihr",
+   "start": 4.888,
+   "end": 5.077,
+   "line": 1
+  },
+  {
+   "text": "die",
+   "start": 5.077,
+   "end": 5.266,
+   "line": 1
+  },
+  {
+   "text": "Wahl:",
+   "start": 5.266,
+   "end": 5.493,
+   "line": 1
+  },
+  {
+   "text": "das",
+   "start": 5.493,
+   "end": 5.681,
+   "line": 1
+  },
+  {
+   "text": "gro\u00dfe",
+   "start": 5.681,
+   "end": 5.946,
+   "line": 1
+  },
+  {
+   "text": "Geld",
+   "start": 5.946,
+   "end": 6.172,
+   "line": 1
+  },
+  {
+   "text": "oder",
+   "start": 6.172,
+   "end": 6.399,
+   "line": 1
+  },
+  {
+   "text": "behalten.",
+   "start": 6.399,
+   "end": 6.777,
+   "line": 1
+  },
+  {
+   "text": "Ihr",
+   "start": 7.027,
+   "end": 7.206,
+   "line": 2
+  },
+  {
+   "text": "habt",
+   "start": 7.206,
+   "end": 7.421,
+   "line": 2
+  },
+  {
+   "text": "entschieden:",
+   "start": 7.421,
+   "end": 7.886,
+   "line": 2
+  },
+  {
+   "text": "BEHALTEN!",
+   "start": 7.886,
+   "end": 8.244,
+   "line": 2
+  },
+  {
+   "text": "Ich",
+   "start": 8.544,
+   "end": 8.739,
+   "line": 3
+  },
+  {
+   "text": "hab",
+   "start": 8.739,
+   "end": 8.933,
+   "line": 3
+  },
+  {
+   "text": "dem",
+   "start": 8.933,
+   "end": 9.128,
+   "line": 3
+  },
+  {
+   "text": "Interessenten",
+   "start": 9.128,
+   "end": 9.713,
+   "line": 3
+  },
+  {
+   "text": "gesagt:",
+   "start": 9.713,
+   "end": 10.024,
+   "line": 3
+  },
+  {
+   "text": "nicht",
+   "start": 10.024,
+   "end": 10.297,
+   "line": 3
+  },
+  {
+   "text": "verk\u00e4uflich.",
+   "start": 10.297,
+   "end": 10.804,
+   "line": 3
+  },
+  {
+   "text": "Beim",
+   "start": 10.804,
+   "end": 11.038,
+   "line": 3
+  },
+  {
+   "text": "Gehen",
+   "start": 11.038,
+   "end": 11.31,
+   "line": 3
+  },
+  {
+   "text": "ist",
+   "start": 11.31,
+   "end": 11.505,
+   "line": 3
+  },
+  {
+   "text": "er",
+   "start": 11.505,
+   "end": 11.661,
+   "line": 3
+  },
+  {
+   "text": "in",
+   "start": 11.661,
+   "end": 11.817,
+   "line": 3
+  },
+  {
+   "text": "eine",
+   "start": 11.817,
+   "end": 12.051,
+   "line": 3
+  },
+  {
+   "text": "Pf\u00fctze",
+   "start": 12.051,
+   "end": 12.362,
+   "line": 3
+  },
+  {
+   "text": "gefallen.",
+   "start": 12.362,
+   "end": 12.752,
+   "line": 3
+  },
+  {
+   "text": "Und",
+   "start": 13.052,
+   "end": 13.272,
+   "line": 4
+  },
+  {
+   "text": "eure",
+   "start": 13.272,
+   "end": 13.536,
+   "line": 4
+  },
+  {
+   "text": "Kommentare?",
+   "start": 13.536,
+   "end": 14.064,
+   "line": 4
+  },
+  {
+   "text": "Die",
+   "start": 14.064,
+   "end": 14.284,
+   "line": 4
+  },
+  {
+   "text": "halbe",
+   "start": 14.284,
+   "end": 14.592,
+   "line": 4
+  },
+  {
+   "text": "Trib\u00fcne",
+   "start": 14.592,
+   "end": 14.988,
+   "line": 4
+  },
+  {
+   "text": "will",
+   "start": 14.988,
+   "end": 15.252,
+   "line": 4
+  },
+  {
+   "text": "mitmachen.",
+   "start": 15.252,
+   "end": 15.736,
+   "line": 4
+  },
+  {
+   "text": "Einer",
+   "start": 15.986,
+   "end": 16.245,
+   "line": 5
+  },
+  {
+   "text": "will",
+   "start": 16.245,
+   "end": 16.467,
+   "line": 5
+  },
+  {
+   "text": "Capo",
+   "start": 16.467,
+   "end": 16.689,
+   "line": 5
+  },
+  {
+   "text": "werden.",
+   "start": 16.689,
+   "end": 16.985,
+   "line": 5
+  },
+  {
+   "text": "Einer",
+   "start": 16.985,
+   "end": 17.244,
+   "line": 5
+  },
+  {
+   "text": "will",
+   "start": 17.244,
+   "end": 17.466,
+   "line": 5
+  },
+  {
+   "text": "an",
+   "start": 17.466,
+   "end": 17.614,
+   "line": 5
+  },
+  {
+   "text": "die",
+   "start": 17.614,
+   "end": 17.799,
+   "line": 5
+  },
+  {
+   "text": "Bierbude.",
+   "start": 17.799,
+   "end": 18.169,
+   "line": 5
+  },
+  {
+   "text": "Einer",
+   "start": 18.169,
+   "end": 18.428,
+   "line": 5
+  },
+  {
+   "text": "will",
+   "start": 18.428,
+   "end": 18.65,
+   "line": 5
+  },
+  {
+   "text": "die",
+   "start": 18.65,
+   "end": 18.836,
+   "line": 5
+  },
+  {
+   "text": "Nummer",
+   "start": 18.836,
+   "end": 19.132,
+   "line": 5
+  },
+  {
+   "text": "10.",
+   "start": 19.132,
+   "end": 19.28,
+   "line": 5
+  },
+  {
+   "text": "Also",
+   "start": 19.58,
+   "end": 19.822,
+   "line": 6
+  },
+  {
+   "text": "gab",
+   "start": 19.822,
+   "end": 20.025,
+   "line": 6
+  },
+  {
+   "text": "es",
+   "start": 20.025,
+   "end": 20.186,
+   "line": 6
+  },
+  {
+   "text": "heute",
+   "start": 20.186,
+   "end": 20.469,
+   "line": 6
+  },
+  {
+   "text": "ein",
+   "start": 20.469,
+   "end": 20.672,
+   "line": 6
+  },
+  {
+   "text": "Probetraining",
+   "start": 20.672,
+   "end": 21.278,
+   "line": 6
+  },
+  {
+   "text": "f\u00fcr",
+   "start": 21.278,
+   "end": 21.481,
+   "line": 6
+  },
+  {
+   "text": "Fans.",
+   "start": 21.481,
+   "end": 21.723,
+   "line": 6
+  },
+  {
+   "text": "Station",
+   "start": 22.023,
+   "end": 22.476,
+   "line": 7
+  },
+  {
+   "text": "1:",
+   "start": 22.476,
+   "end": 22.627,
+   "line": 7
+  },
+  {
+   "text": "Elfmeter",
+   "start": 22.627,
+   "end": 23.129,
+   "line": 7
+  },
+  {
+   "text": "gegen",
+   "start": 23.129,
+   "end": 23.481,
+   "line": 7
+  },
+  {
+   "text": "Opa",
+   "start": 23.481,
+   "end": 23.733,
+   "line": 7
+  },
+  {
+   "text": "Horst.",
+   "start": 23.733,
+   "end": 24.085,
+   "line": 7
+  },
+  {
+   "text": "Opa",
+   "start": 24.335,
+   "end": 24.538,
+   "line": 8
+  },
+  {
+   "text": "Horst",
+   "start": 24.538,
+   "end": 24.824,
+   "line": 8
+  },
+  {
+   "text": "hat",
+   "start": 24.824,
+   "end": 25.028,
+   "line": 8
+  },
+  {
+   "text": "alles",
+   "start": 25.028,
+   "end": 25.313,
+   "line": 8
+  },
+  {
+   "text": "gehalten.",
+   "start": 25.313,
+   "end": 25.721,
+   "line": 8
+  },
+  {
+   "text": "Mit",
+   "start": 25.721,
+   "end": 25.924,
+   "line": 8
+  },
+  {
+   "text": "dem",
+   "start": 25.924,
+   "end": 26.128,
+   "line": 8
+  },
+  {
+   "text": "Gesicht.",
+   "start": 26.128,
+   "end": 26.495,
+   "line": 8
+  },
+  {
+   "text": "Station",
+   "start": 26.795,
+   "end": 27.186,
+   "line": 9
+  },
+  {
+   "text": "2:",
+   "start": 27.186,
+   "end": 27.316,
+   "line": 9
+  },
+  {
+   "text": "Sprint",
+   "start": 27.316,
+   "end": 27.663,
+   "line": 9
+  },
+  {
+   "text": "durch",
+   "start": 27.663,
+   "end": 27.966,
+   "line": 9
+  },
+  {
+   "text": "den",
+   "start": 27.966,
+   "end": 28.183,
+   "line": 9
+  },
+  {
+   "text": "Matsch.",
+   "start": 28.183,
+   "end": 28.53,
+   "line": 9
+  },
+  {
+   "text": "Kevin",
+   "start": 28.78,
+   "end": 29.053,
+   "line": 10
+  },
+  {
+   "text": "hat",
+   "start": 29.053,
+   "end": 29.249,
+   "line": 10
+  },
+  {
+   "text": "dabei",
+   "start": 29.249,
+   "end": 29.522,
+   "line": 10
+  },
+  {
+   "text": "beide",
+   "start": 29.522,
+   "end": 29.795,
+   "line": 10
+  },
+  {
+   "text": "Crocs",
+   "start": 29.795,
+   "end": 30.068,
+   "line": 10
+  },
+  {
+   "text": "verloren.",
+   "start": 30.068,
+   "end": 30.459,
+   "line": 10
+  },
+  {
+   "text": "Station",
+   "start": 30.759,
+   "end": 31.214,
+   "line": 11
+  },
+  {
+   "text": "3:",
+   "start": 31.214,
+   "end": 31.366,
+   "line": 11
+  },
+  {
+   "text": "Bratwurst-Weitwurf.",
+   "start": 31.366,
+   "end": 32.328,
+   "line": 11
+  },
+  {
+   "text": "Manni",
+   "start": 32.578,
+   "end": 32.847,
+   "line": 12
+  },
+  {
+   "text": "hat",
+   "start": 32.847,
+   "end": 33.04,
+   "line": 12
+  },
+  {
+   "text": "die",
+   "start": 33.04,
+   "end": 33.232,
+   "line": 12
+  },
+  {
+   "text": "Bratwurst",
+   "start": 33.232,
+   "end": 33.656,
+   "line": 12
+  },
+  {
+   "text": "gefangen.",
+   "start": 33.656,
+   "end": 34.041,
+   "line": 12
+  },
+  {
+   "text": "Und",
+   "start": 34.041,
+   "end": 34.233,
+   "line": 12
+  },
+  {
+   "text": "gegessen.",
+   "start": 34.233,
+   "end": 34.618,
+   "line": 12
+  },
+  {
+   "text": "Ergebnis:",
+   "start": 34.918,
+   "end": 35.349,
+   "line": 13
+  },
+  {
+   "text": "Alle",
+   "start": 35.349,
+   "end": 35.608,
+   "line": 13
+  },
+  {
+   "text": "bestanden.",
+   "start": 35.608,
+   "end": 36.082,
+   "line": 13
+  },
+  {
+   "text": "Weil",
+   "start": 36.082,
+   "end": 36.34,
+   "line": 13
+  },
+  {
+   "text": "keiner",
+   "start": 36.34,
+   "end": 36.685,
+   "line": 13
+  },
+  {
+   "text": "schlechter",
+   "start": 36.685,
+   "end": 37.202,
+   "line": 13
+  },
+  {
+   "text": "ist",
+   "start": 37.202,
+   "end": 37.418,
+   "line": 13
+  },
+  {
+   "text": "als",
+   "start": 37.418,
+   "end": 37.633,
+   "line": 13
+  },
+  {
+   "text": "wir.",
+   "start": 37.633,
+   "end": 37.849,
+   "line": 13
+  },
+  {
+   "text": "Aber",
+   "start": 38.149,
+   "end": 38.4,
+   "line": 14
+  },
+  {
+   "text": "neue",
+   "start": 38.4,
+   "end": 38.652,
+   "line": 14
+  },
+  {
+   "text": "Spieler",
+   "start": 38.652,
+   "end": 39.029,
+   "line": 14
+  },
+  {
+   "text": "brauchen",
+   "start": 39.029,
+   "end": 39.448,
+   "line": 14
+  },
+  {
+   "text": "Trikots.",
+   "start": 39.448,
+   "end": 39.825,
+   "line": 14
+  },
+  {
+   "text": "Und",
+   "start": 39.825,
+   "end": 40.035,
+   "line": 14
+  },
+  {
+   "text": "die",
+   "start": 40.035,
+   "end": 40.244,
+   "line": 14
+  },
+  {
+   "text": "Vereinskasse",
+   "start": 40.244,
+   "end": 40.831,
+   "line": 14
+  },
+  {
+   "text": "ist",
+   "start": 40.831,
+   "end": 41.04,
+   "line": 14
+  },
+  {
+   "text": "leer.",
+   "start": 41.04,
+   "end": 41.292,
+   "line": 14
+  },
+  {
+   "text": "Also,",
+   "start": 41.592,
+   "end": 41.823,
+   "line": 15
+  },
+  {
+   "text": "ihr",
+   "start": 41.823,
+   "end": 42.016,
+   "line": 15
+  },
+  {
+   "text": "entscheidet.",
+   "start": 42.016,
+   "end": 42.517,
+   "line": 15
+  },
+  {
+   "text": "1:",
+   "start": 42.767,
+   "end": 42.915,
+   "line": 16
+  },
+  {
+   "text": "Trikot-Flohmarkt",
+   "start": 42.915,
+   "end": 43.753,
+   "line": 16
+  },
+  {
+   "text": "im",
+   "start": 43.753,
+   "end": 43.95,
+   "line": 16
+  },
+  {
+   "text": "Vereinsheim.",
+   "start": 43.95,
+   "end": 44.591,
+   "line": 16
+  },
+  {
+   "text": "2:",
+   "start": 44.841,
+   "end": 45.003,
+   "line": 17
+  },
+  {
+   "text": "Manni",
+   "start": 45.003,
+   "end": 45.382,
+   "line": 17
+  },
+  {
+   "text": "grillt",
+   "start": 45.382,
+   "end": 45.814,
+   "line": 17
+  },
+  {
+   "text": "f\u00fcr",
+   "start": 45.814,
+   "end": 46.085,
+   "line": 17
+  },
+  {
+   "text": "Geld.",
+   "start": 46.085,
+   "end": 46.409,
+   "line": 17
+  },
+  {
+   "text": "3:",
+   "start": 46.659,
+   "end": 46.799,
+   "line": 18
+  },
+  {
+   "text": "Wir",
+   "start": 46.799,
+   "end": 47.032,
+   "line": 18
+  },
+  {
+   "text": "verkaufen",
+   "start": 47.032,
+   "end": 47.546,
+   "line": 18
+  },
+  {
+   "text": "Opa",
+   "start": 47.546,
+   "end": 47.779,
+   "line": 18
+  },
+  {
+   "text": "Horsts",
+   "start": 47.779,
+   "end": 48.152,
+   "line": 18
+  },
+  {
+   "text": "Brille.",
+   "start": 48.152,
+   "end": 48.525,
+   "line": 18
+  },
+  {
+   "text": "Der",
+   "start": 48.825,
+   "end": 49.039,
+   "line": 19
+  },
+  {
+   "text": "Top-Kommentar",
+   "start": 49.039,
+   "end": 49.637,
+   "line": 19
+  },
+  {
+   "text": "entscheidet.",
+   "start": 49.637,
+   "end": 50.192,
+   "line": 19
+  },
+  {
+   "text": "Folgt,",
+   "start": 50.192,
+   "end": 50.491,
+   "line": 19
+  },
+  {
+   "text": "dann",
+   "start": 50.491,
+   "end": 50.747,
+   "line": 19
+  },
+  {
+   "text": "steht",
+   "start": 50.747,
+   "end": 51.046,
+   "line": 19
+  },
+  {
+   "text": "ihr",
+   "start": 51.046,
+   "end": 51.26,
+   "line": 19
+  },
+  {
+   "text": "morgen",
+   "start": 51.26,
+   "end": 51.602,
+   "line": 19
+  },
+  {
+   "text": "auf",
+   "start": 51.602,
+   "end": 51.815,
+   "line": 19
+  },
+  {
+   "text": "der",
+   "start": 51.815,
+   "end": 52.029,
+   "line": 19
+  },
+  {
+   "text": "Trib\u00fcne.",
+   "start": 52.029,
+   "end": 52.413,
+   "line": 19
+  }
+ ]
+}

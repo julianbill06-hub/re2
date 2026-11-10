@@ -9,6 +9,7 @@ import {OceanWar} from './OceanWar';
 import {Ocean60, OCEAN60_DURATION} from './Ocean60';
 import {Flowers, FLOWERS_DURATION} from './Flowers';
 import {Marsh, MARSH_DURATION} from './Marsh';
+import {SvTag10, SV10_DURATION} from './SvTag10';
 import timingOcean from './timing_ocean.json';
 import timingEn from './timing_en.json';
 import timingCal from './timing_caligula.json';
@@ -32,5 +33,6 @@ export const RemotionRoot: React.FC = () => (
   <Composition id="Ocean60" component={Ocean60} durationInFrames={Math.ceil(OCEAN60_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
   <Composition id="Flowers" component={Flowers} durationInFrames={Math.ceil(FLOWERS_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
   <Composition id="Marsh" component={Marsh} durationInFrames={Math.ceil(MARSH_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="SvTag10" component={SvTag10} durationInFrames={Math.ceil(SV10_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
   </>
 );
