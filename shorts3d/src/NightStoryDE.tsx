@@ -102,7 +102,7 @@ const Caption: React.FC<{t: number}> = ({t}) => {
   let start = i;
   if (i > 0 && short(i - 1) && ws[i - 1].line === ws[i].line && !(i > 1 && short(i - 2) && ws[i - 2].line === ws[i].line)) start = i - 1;
   const chunk = [ws[start], ...(short(start) && start + 1 < ws.length && ws[start + 1].line === ws[start].line ? [ws[start + 1]] : [])];
-  return <div style={{position: 'absolute', top: 1060, left: 40, right: 40, textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 66, color: '#fff', letterSpacing: 1, textTransform: 'uppercase', textShadow: '0 4px 18px rgba(0,0,0,.9)'}}>{chunk.map((w) => w.text).join(' ')}</div>;
+  return <div style={{position: 'absolute', bottom: 70, left: 40, right: 40, textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 58, color: '#fff', letterSpacing: 1, textTransform: 'uppercase', textShadow: '0 3px 0 rgba(0,0,0,.95), 0 0 14px rgba(0,0,0,.9), 0 0 4px rgba(0,0,0,1)'}}>{chunk.map((w) => w.text).join(' ')}</div>;
 };
 
 const Chips: React.FC<{t: number; frame: number; fps: number}> = ({t, frame, fps}) => {
@@ -135,7 +135,7 @@ export const Flight404DE: React.FC = () => {
   const endBlack = interpolate(t, [L(19) - 0.3, L(19)], [0, 0.55], cl);
   return (
     <AbsoluteFill style={{backgroundColor: '#050608'}}>
-      <ThreeCanvas width={width} height={height} shadows dpr={1.5} gl={{antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: w.morning ? 1.15 : 1.65}} camera={{fov: 44, near: 0.05, far: 140}}>
+      <ThreeCanvas width={width} height={height} shadows dpr={1.25} gl={{antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: w.morning ? 1.15 : 1.65}} camera={{fov: 44, near: 0.05, far: 140}}>
         <Cam pos={cam.pos} look={cam.look} fov={cam.fov} />
         <NightWorld {...w} />
       </ThreeCanvas>
