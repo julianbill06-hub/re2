@@ -48,15 +48,15 @@ export const Attendant: React.FC<{p: V3; ry?: number; s?: number; glow?: number}
   </group>
 );
 
-export const Traveler: React.FC<{p: V3; ry?: number; mood?: any; look?: number; sit?: boolean}> = ({p, ry = 0, mood = 'calm', look = 0, sit}) => (
+export const Traveler: React.FC<{p: V3; ry?: number; mood?: any; look?: number; sit?: boolean; walk?: number; armR?: number; handR?: React.ReactNode}> = ({p, ry = 0, mood = 'calm', look = 0, sit, walk = 0, armR = 0.2, handR}) => (
   <group position={[p[0], p[1] - (sit ? 0.45 : 0), p[2]]} rotation={[0, ry, 0]} scale={0.7}>
-    <Roman robe="#1f8a8a" trim="#156a6a" skin="#f2c4a0" hairStyle="curly" hair="#2e2016" mood={mood} look={look} armR={0.2} armL={0.2} />
+    <Roman robe="#1f8a8a" trim="#156a6a" skin="#f2c4a0" hairStyle="curly" hair="#2e2016" mood={mood} look={look} armR={armR} armL={0.2} walk={walk} handR={handR} />
     {/* parka hood ring */}
     <T geo={GEO.torus} color="#176f6f" p={[0, 2.05, -0.05]} r={[Math.PI / 2, 0, 0]} s={[0.36, 0.34, 1.6]} o={0.012} />
   </group>
 );
 
-const Seat: React.FC<{p: V3}> = ({p}) => (
+export const Seat: React.FC<{p: V3}> = ({p}) => (
   <group position={p}>
     <T geo={GEO.rbox} color="#1c1f26" p={[0, 0.55, 0]} s={[0.62, 0.1, 0.6]} o={0.008} />
     <T geo={GEO.rbox} color="#1c1f26" p={[0, 0.95, -0.27]} r={[-0.15, 0, 0]} s={[0.62, 0.75, 0.08]} o={0.008} />
@@ -67,7 +67,7 @@ const Seat: React.FC<{p: V3}> = ({p}) => (
   </group>
 );
 
-const Cam: React.FC<{pos: V3; look: V3; fov: number}> = ({pos, look, fov}) => {
+export const Cam: React.FC<{pos: V3; look: V3; fov: number}> = ({pos, look, fov}) => {
   const {camera} = useThree();
   camera.position.set(...pos); (camera as THREE.PerspectiveCamera).fov = fov; camera.updateProjectionMatrix(); camera.lookAt(...look);
   return null;
@@ -164,7 +164,7 @@ function glowTex() {
   const t = new THREE.CanvasTexture(c); return t;
 }
 let _glow: THREE.Texture | null = null;
-const Halo: React.FC<{p: V3; s: number; color: string; o?: number}> = ({p, s, color, o = 0.6}) => {
+export const Halo: React.FC<{p: V3; s: number; color: string; o?: number}> = ({p, s, color, o = 0.6}) => {
   if (!_glow) _glow = glowTex();
   return <sprite position={p} scale={[s, s, 1]}><spriteMaterial map={_glow} color={color} transparent opacity={o} depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} /></sprite>;
 };
@@ -176,7 +176,7 @@ const Stanchion: React.FC<{p: V3}> = ({p}) => (
   </group>
 );
 export const GateDetails: React.FC<{t: number}> = ({t}) => {
-  const gate = useMemo(() => signTex('C0', '→ GATE', '#14161c', '#ffb347'), []);
+  const gate = useMemo(() => signTex('B7', '→ GATE', '#14161c', '#ffb347'), []);
   const exit = useMemo(() => signTex('EXIT', '', '#1f9d55', '#ffffff', 512, 256), []);
   const dust = useMemo(() => Array.from({length: 70}).map((_, i) => { const r = (k: number) => { const x = Math.sin((i + k) * 127.1) * 43758.5; return x - Math.floor(x); }; return [r(1), r(2), r(3), r(4)]; }), []);
   return (
