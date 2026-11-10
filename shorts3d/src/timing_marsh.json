@@ -1,0 +1,987 @@
+{
+ "duration": 60.064,
+ "lines": [
+  [
+   0.5,
+   3.3129166666666667
+  ],
+  [
+   3.8129166666666667,
+   5.378
+  ],
+  [
+   5.978,
+   7.546458333333333
+  ],
+  [
+   8.446458333333332,
+   12.296895833333332
+  ],
+  [
+   12.796895833333332,
+   16.023729166666666
+  ],
+  [
+   16.523729166666666,
+   21.425520833333334
+  ],
+  [
+   21.925520833333334,
+   24.0226875
+  ],
+  [
+   24.422687500000002,
+   27.97625
+  ],
+  [
+   28.77625,
+   29.906750000000002
+  ],
+  [
+   30.50675,
+   33.85308333333333
+  ],
+  [
+   34.35308333333333,
+   37.629625
+  ],
+  [
+   38.229625,
+   39.39747916666666
+  ],
+  [
+   39.79747916666666,
+   40.335833333333326
+  ],
+  [
+   40.93583333333333,
+   45.41191666666666
+  ],
+  [
+   45.91191666666666,
+   48.791979166666664
+  ],
+  [
+   49.391979166666665,
+   54.55891666666667
+  ],
+  [
+   55.358916666666666,
+   59.01414583333333
+  ]
+ ],
+ "words": [
+  {
+   "text": "One",
+   "start": 0.5,
+   "end": 0.77,
+   "line": 0
+  },
+  {
+   "text": "kid.",
+   "start": 0.77,
+   "end": 1.041,
+   "line": 0
+  },
+  {
+   "text": "One",
+   "start": 1.041,
+   "end": 1.311,
+   "line": 0
+  },
+  {
+   "text": "marshmallow.",
+   "start": 1.311,
+   "end": 2.015,
+   "line": 0
+  },
+  {
+   "text": "And",
+   "start": 2.015,
+   "end": 2.285,
+   "line": 0
+  },
+  {
+   "text": "one",
+   "start": 2.285,
+   "end": 2.556,
+   "line": 0
+  },
+  {
+   "text": "single",
+   "start": 2.556,
+   "end": 2.988,
+   "line": 0
+  },
+  {
+   "text": "rule.",
+   "start": 2.988,
+   "end": 3.313,
+   "line": 0
+  },
+  {
+   "text": "If",
+   "start": 3.813,
+   "end": 4.022,
+   "line": 1
+  },
+  {
+   "text": "you",
+   "start": 4.022,
+   "end": 4.282,
+   "line": 1
+  },
+  {
+   "text": "wait,",
+   "start": 4.282,
+   "end": 4.595,
+   "line": 1
+  },
+  {
+   "text": "you",
+   "start": 4.595,
+   "end": 4.856,
+   "line": 1
+  },
+  {
+   "text": "get",
+   "start": 4.856,
+   "end": 5.117,
+   "line": 1
+  },
+  {
+   "text": "two.",
+   "start": 5.117,
+   "end": 5.378,
+   "line": 1
+  },
+  {
+   "text": "Then",
+   "start": 5.978,
+   "end": 6.202,
+   "line": 2
+  },
+  {
+   "text": "the",
+   "start": 6.202,
+   "end": 6.389,
+   "line": 2
+  },
+  {
+   "text": "researcher",
+   "start": 6.389,
+   "end": 6.837,
+   "line": 2
+  },
+  {
+   "text": "leaves",
+   "start": 6.837,
+   "end": 7.136,
+   "line": 2
+  },
+  {
+   "text": "the",
+   "start": 7.136,
+   "end": 7.322,
+   "line": 2
+  },
+  {
+   "text": "room.",
+   "start": 7.322,
+   "end": 7.546,
+   "line": 2
+  },
+  {
+   "text": "This",
+   "start": 8.446,
+   "end": 8.802,
+   "line": 3
+  },
+  {
+   "text": "is",
+   "start": 8.802,
+   "end": 9.039,
+   "line": 3
+  },
+  {
+   "text": "the",
+   "start": 9.039,
+   "end": 9.335,
+   "line": 3
+  },
+  {
+   "text": "famous",
+   "start": 9.335,
+   "end": 9.809,
+   "line": 3
+  },
+  {
+   "text": "marshmallow",
+   "start": 9.809,
+   "end": 10.579,
+   "line": 3
+  },
+  {
+   "text": "test.",
+   "start": 10.579,
+   "end": 10.934,
+   "line": 3
+  },
+  {
+   "text": "Stanford,",
+   "start": 10.934,
+   "end": 11.527,
+   "line": 3
+  },
+  {
+   "text": "late",
+   "start": 11.527,
+   "end": 11.882,
+   "line": 3
+  },
+  {
+   "text": "1960s.",
+   "start": 11.882,
+   "end": 12.297,
+   "line": 3
+  },
+  {
+   "text": "Psychologist",
+   "start": 12.797,
+   "end": 13.348,
+   "line": 4
+  },
+  {
+   "text": "Walter",
+   "start": 13.348,
+   "end": 13.663,
+   "line": 4
+  },
+  {
+   "text": "Mischel",
+   "start": 13.663,
+   "end": 14.017,
+   "line": 4
+  },
+  {
+   "text": "wanted",
+   "start": 14.017,
+   "end": 14.332,
+   "line": 4
+  },
+  {
+   "text": "to",
+   "start": 14.332,
+   "end": 14.489,
+   "line": 4
+  },
+  {
+   "text": "know:",
+   "start": 14.489,
+   "end": 14.725,
+   "line": 4
+  },
+  {
+   "text": "how",
+   "start": 14.725,
+   "end": 14.922,
+   "line": 4
+  },
+  {
+   "text": "long",
+   "start": 14.922,
+   "end": 15.158,
+   "line": 4
+  },
+  {
+   "text": "can",
+   "start": 15.158,
+   "end": 15.355,
+   "line": 4
+  },
+  {
+   "text": "kids",
+   "start": 15.355,
+   "end": 15.591,
+   "line": 4
+  },
+  {
+   "text": "hold",
+   "start": 15.591,
+   "end": 15.827,
+   "line": 4
+  },
+  {
+   "text": "out?",
+   "start": 15.827,
+   "end": 16.024,
+   "line": 4
+  },
+  {
+   "text": "The",
+   "start": 16.524,
+   "end": 16.799,
+   "line": 5
+  },
+  {
+   "text": "kids",
+   "start": 16.799,
+   "end": 17.13,
+   "line": 5
+  },
+  {
+   "text": "were",
+   "start": 17.13,
+   "end": 17.46,
+   "line": 5
+  },
+  {
+   "text": "about",
+   "start": 17.46,
+   "end": 17.846,
+   "line": 5
+  },
+  {
+   "text": "four",
+   "start": 17.846,
+   "end": 18.176,
+   "line": 5
+  },
+  {
+   "text": "or",
+   "start": 18.176,
+   "end": 18.396,
+   "line": 5
+  },
+  {
+   "text": "five",
+   "start": 18.396,
+   "end": 18.727,
+   "line": 5
+  },
+  {
+   "text": "years",
+   "start": 18.727,
+   "end": 19.112,
+   "line": 5
+  },
+  {
+   "text": "old.",
+   "start": 19.112,
+   "end": 19.388,
+   "line": 5
+  },
+  {
+   "text": "The",
+   "start": 19.388,
+   "end": 19.663,
+   "line": 5
+  },
+  {
+   "text": "wait:",
+   "start": 19.663,
+   "end": 19.994,
+   "line": 5
+  },
+  {
+   "text": "up",
+   "start": 19.994,
+   "end": 20.214,
+   "line": 5
+  },
+  {
+   "text": "to",
+   "start": 20.214,
+   "end": 20.434,
+   "line": 5
+  },
+  {
+   "text": "fifteen",
+   "start": 20.434,
+   "end": 20.93,
+   "line": 5
+  },
+  {
+   "text": "minutes.",
+   "start": 20.93,
+   "end": 21.426,
+   "line": 5
+  },
+  {
+   "text": "Some",
+   "start": 21.926,
+   "end": 22.225,
+   "line": 6
+  },
+  {
+   "text": "ate",
+   "start": 22.225,
+   "end": 22.475,
+   "line": 6
+  },
+  {
+   "text": "the",
+   "start": 22.475,
+   "end": 22.724,
+   "line": 6
+  },
+  {
+   "text": "marshmallow",
+   "start": 22.724,
+   "end": 23.374,
+   "line": 6
+  },
+  {
+   "text": "right",
+   "start": 23.374,
+   "end": 23.723,
+   "line": 6
+  },
+  {
+   "text": "away.",
+   "start": 23.723,
+   "end": 24.023,
+   "line": 6
+  },
+  {
+   "text": "Others",
+   "start": 24.423,
+   "end": 24.835,
+   "line": 7
+  },
+  {
+   "text": "covered",
+   "start": 24.835,
+   "end": 25.298,
+   "line": 7
+  },
+  {
+   "text": "their",
+   "start": 25.298,
+   "end": 25.659,
+   "line": 7
+  },
+  {
+   "text": "eyes,",
+   "start": 25.659,
+   "end": 25.968,
+   "line": 7
+  },
+  {
+   "text": "sang",
+   "start": 25.968,
+   "end": 26.277,
+   "line": 7
+  },
+  {
+   "text": "songs",
+   "start": 26.277,
+   "end": 26.637,
+   "line": 7
+  },
+  {
+   "text": "or",
+   "start": 26.637,
+   "end": 26.843,
+   "line": 7
+  },
+  {
+   "text": "simply",
+   "start": 26.843,
+   "end": 27.255,
+   "line": 7
+  },
+  {
+   "text": "turned",
+   "start": 27.255,
+   "end": 27.667,
+   "line": 7
+  },
+  {
+   "text": "away.",
+   "start": 27.667,
+   "end": 27.976,
+   "line": 7
+  },
+  {
+   "text": "And",
+   "start": 28.776,
+   "end": 28.953,
+   "line": 8
+  },
+  {
+   "text": "then",
+   "start": 28.953,
+   "end": 29.165,
+   "line": 8
+  },
+  {
+   "text": "came",
+   "start": 29.165,
+   "end": 29.377,
+   "line": 8
+  },
+  {
+   "text": "the",
+   "start": 29.377,
+   "end": 29.553,
+   "line": 8
+  },
+  {
+   "text": "surprise.",
+   "start": 29.553,
+   "end": 29.907,
+   "line": 8
+  },
+  {
+   "text": "Years",
+   "start": 30.507,
+   "end": 30.841,
+   "line": 9
+  },
+  {
+   "text": "later,",
+   "start": 30.841,
+   "end": 31.176,
+   "line": 9
+  },
+  {
+   "text": "the",
+   "start": 31.176,
+   "end": 31.415,
+   "line": 9
+  },
+  {
+   "text": "researchers",
+   "start": 31.415,
+   "end": 32.037,
+   "line": 9
+  },
+  {
+   "text": "checked",
+   "start": 32.037,
+   "end": 32.467,
+   "line": 9
+  },
+  {
+   "text": "how",
+   "start": 32.467,
+   "end": 32.706,
+   "line": 9
+  },
+  {
+   "text": "the",
+   "start": 32.706,
+   "end": 32.945,
+   "line": 9
+  },
+  {
+   "text": "kids",
+   "start": 32.945,
+   "end": 33.232,
+   "line": 9
+  },
+  {
+   "text": "turned",
+   "start": 33.232,
+   "end": 33.614,
+   "line": 9
+  },
+  {
+   "text": "out.",
+   "start": 33.614,
+   "end": 33.853,
+   "line": 9
+  },
+  {
+   "text": "Those",
+   "start": 34.353,
+   "end": 34.667,
+   "line": 10
+  },
+  {
+   "text": "who",
+   "start": 34.667,
+   "end": 34.892,
+   "line": 10
+  },
+  {
+   "text": "waited",
+   "start": 34.892,
+   "end": 35.251,
+   "line": 10
+  },
+  {
+   "text": "longer",
+   "start": 35.251,
+   "end": 35.61,
+   "line": 10
+  },
+  {
+   "text": "did",
+   "start": 35.61,
+   "end": 35.834,
+   "line": 10
+  },
+  {
+   "text": "better",
+   "start": 35.834,
+   "end": 36.193,
+   "line": 10
+  },
+  {
+   "text": "on",
+   "start": 36.193,
+   "end": 36.373,
+   "line": 10
+  },
+  {
+   "text": "school",
+   "start": 36.373,
+   "end": 36.732,
+   "line": 10
+  },
+  {
+   "text": "tests,",
+   "start": 36.732,
+   "end": 37.046,
+   "line": 10
+  },
+  {
+   "text": "on",
+   "start": 37.046,
+   "end": 37.226,
+   "line": 10
+  },
+  {
+   "text": "average.",
+   "start": 37.226,
+   "end": 37.63,
+   "line": 10
+  },
+  {
+   "text": "Patience",
+   "start": 38.23,
+   "end": 38.632,
+   "line": 11
+  },
+  {
+   "text": "as",
+   "start": 38.632,
+   "end": 38.793,
+   "line": 11
+  },
+  {
+   "text": "a",
+   "start": 38.793,
+   "end": 38.914,
+   "line": 11
+  },
+  {
+   "text": "superpower?",
+   "start": 38.914,
+   "end": 39.397,
+   "line": 11
+  },
+  {
+   "text": "Not",
+   "start": 39.797,
+   "end": 39.977,
+   "line": 12
+  },
+  {
+   "text": "so",
+   "start": 39.977,
+   "end": 40.12,
+   "line": 12
+  },
+  {
+   "text": "fast.",
+   "start": 40.12,
+   "end": 40.336,
+   "line": 12
+  },
+  {
+   "text": "A",
+   "start": 40.936,
+   "end": 41.146,
+   "line": 13
+  },
+  {
+   "text": "bigger",
+   "start": 41.146,
+   "end": 41.705,
+   "line": 13
+  },
+  {
+   "text": "study",
+   "start": 41.705,
+   "end": 42.195,
+   "line": 13
+  },
+  {
+   "text": "in",
+   "start": 42.195,
+   "end": 42.474,
+   "line": 13
+  },
+  {
+   "text": "2018",
+   "start": 42.474,
+   "end": 42.894,
+   "line": 13
+  },
+  {
+   "text": "found:",
+   "start": 42.894,
+   "end": 43.384,
+   "line": 13
+  },
+  {
+   "text": "the",
+   "start": 43.384,
+   "end": 43.733,
+   "line": 13
+  },
+  {
+   "text": "link",
+   "start": 43.733,
+   "end": 44.153,
+   "line": 13
+  },
+  {
+   "text": "is",
+   "start": 44.153,
+   "end": 44.433,
+   "line": 13
+  },
+  {
+   "text": "much",
+   "start": 44.433,
+   "end": 44.852,
+   "line": 13
+  },
+  {
+   "text": "weaker.",
+   "start": 44.852,
+   "end": 45.412,
+   "line": 13
+  },
+  {
+   "text": "Things",
+   "start": 45.912,
+   "end": 46.323,
+   "line": 14
+  },
+  {
+   "text": "like",
+   "start": 46.323,
+   "end": 46.632,
+   "line": 14
+  },
+  {
+   "text": "family",
+   "start": 46.632,
+   "end": 47.043,
+   "line": 14
+  },
+  {
+   "text": "background",
+   "start": 47.043,
+   "end": 47.661,
+   "line": 14
+  },
+  {
+   "text": "mattered",
+   "start": 47.661,
+   "end": 48.175,
+   "line": 14
+  },
+  {
+   "text": "much",
+   "start": 48.175,
+   "end": 48.483,
+   "line": 14
+  },
+  {
+   "text": "more.",
+   "start": 48.483,
+   "end": 48.792,
+   "line": 14
+  },
+  {
+   "text": "And",
+   "start": 49.392,
+   "end": 49.664,
+   "line": 15
+  },
+  {
+   "text": "another",
+   "start": 49.664,
+   "end": 50.153,
+   "line": 15
+  },
+  {
+   "text": "experiment",
+   "start": 50.153,
+   "end": 50.806,
+   "line": 15
+  },
+  {
+   "text": "showed:",
+   "start": 50.806,
+   "end": 51.241,
+   "line": 15
+  },
+  {
+   "text": "when",
+   "start": 51.241,
+   "end": 51.568,
+   "line": 15
+  },
+  {
+   "text": "kids",
+   "start": 51.568,
+   "end": 51.894,
+   "line": 15
+  },
+  {
+   "text": "don't",
+   "start": 51.894,
+   "end": 52.22,
+   "line": 15
+  },
+  {
+   "text": "trust",
+   "start": 52.22,
+   "end": 52.601,
+   "line": 15
+  },
+  {
+   "text": "the",
+   "start": 52.601,
+   "end": 52.873,
+   "line": 15
+  },
+  {
+   "text": "adult,",
+   "start": 52.873,
+   "end": 53.254,
+   "line": 15
+  },
+  {
+   "text": "they",
+   "start": 53.254,
+   "end": 53.58,
+   "line": 15
+  },
+  {
+   "text": "eat",
+   "start": 53.58,
+   "end": 53.852,
+   "line": 15
+  },
+  {
+   "text": "right",
+   "start": 53.852,
+   "end": 54.233,
+   "line": 15
+  },
+  {
+   "text": "away.",
+   "start": 54.233,
+   "end": 54.559,
+   "line": 15
+  },
+  {
+   "text": "What",
+   "start": 55.359,
+   "end": 55.623,
+   "line": 16
+  },
+  {
+   "text": "would",
+   "start": 55.623,
+   "end": 55.931,
+   "line": 16
+  },
+  {
+   "text": "you",
+   "start": 55.931,
+   "end": 56.152,
+   "line": 16
+  },
+  {
+   "text": "have",
+   "start": 56.152,
+   "end": 56.416,
+   "line": 16
+  },
+  {
+   "text": "done?",
+   "start": 56.416,
+   "end": 56.68,
+   "line": 16
+  },
+  {
+   "text": "Eat",
+   "start": 56.68,
+   "end": 56.9,
+   "line": 16
+  },
+  {
+   "text": "it",
+   "start": 56.9,
+   "end": 57.076,
+   "line": 16
+  },
+  {
+   "text": "now",
+   "start": 57.076,
+   "end": 57.297,
+   "line": 16
+  },
+  {
+   "text": "or",
+   "start": 57.297,
+   "end": 57.473,
+   "line": 16
+  },
+  {
+   "text": "wait?",
+   "start": 57.473,
+   "end": 57.737,
+   "line": 16
+  },
+  {
+   "text": "Tell",
+   "start": 57.737,
+   "end": 58.001,
+   "line": 16
+  },
+  {
+   "text": "me",
+   "start": 58.001,
+   "end": 58.177,
+   "line": 16
+  },
+  {
+   "text": "in",
+   "start": 58.177,
+   "end": 58.354,
+   "line": 16
+  },
+  {
+   "text": "the",
+   "start": 58.354,
+   "end": 58.574,
+   "line": 16
+  },
+  {
+   "text": "comments.",
+   "start": 58.574,
+   "end": 59.014,
+   "line": 16
+  }
+ ]
+}

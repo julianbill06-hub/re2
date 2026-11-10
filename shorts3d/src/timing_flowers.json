@@ -1,0 +1,975 @@
+{
+ "duration": 56.149,
+ "lines": [
+  [
+   0.5,
+   4.328250000000001
+  ],
+  [
+   4.92825,
+   5.944270833333333
+  ],
+  [
+   6.444270833333333,
+   7.528020833333334
+  ],
+  [
+   8.128020833333334,
+   10.406375
+  ],
+  [
+   11.306375000000001,
+   12.6455625
+  ],
+  [
+   13.445562500000001,
+   17.593354166666668
+  ],
+  [
+   18.093354166666668,
+   20.515
+  ],
+  [
+   21.015,
+   22.424
+  ],
+  [
+   23.024,
+   26.6304375
+  ],
+  [
+   27.2304375,
+   30.995104166666668
+  ],
+  [
+   31.495104166666668,
+   34.11266666666667
+  ],
+  [
+   34.71266666666667,
+   36.6895625
+  ],
+  [
+   37.58956250000001,
+   38.719104166666675
+  ],
+  [
+   39.319104166666676,
+   43.158104166666675
+  ],
+  [
+   43.758104166666676,
+   46.97081250000001
+  ],
+  [
+   47.57081250000001,
+   50.66118750000001
+  ],
+  [
+   51.46118750000001,
+   55.09895833333334
+  ]
+ ],
+ "words": [
+  {
+   "text": "A",
+   "start": 0.5,
+   "end": 0.655,
+   "line": 0
+  },
+  {
+   "text": "feast",
+   "start": 0.655,
+   "end": 1.017,
+   "line": 0
+  },
+  {
+   "text": "at",
+   "start": 1.017,
+   "end": 1.224,
+   "line": 0
+  },
+  {
+   "text": "the",
+   "start": 1.224,
+   "end": 1.483,
+   "line": 0
+  },
+  {
+   "text": "emperor's",
+   "start": 1.483,
+   "end": 2.0,
+   "line": 0
+  },
+  {
+   "text": "palace.",
+   "start": 2.0,
+   "end": 2.414,
+   "line": 0
+  },
+  {
+   "text": "The",
+   "start": 2.414,
+   "end": 2.673,
+   "line": 0
+  },
+  {
+   "text": "guests",
+   "start": 2.673,
+   "end": 3.087,
+   "line": 0
+  },
+  {
+   "text": "laugh,",
+   "start": 3.087,
+   "end": 3.449,
+   "line": 0
+  },
+  {
+   "text": "eat",
+   "start": 3.449,
+   "end": 3.707,
+   "line": 0
+  },
+  {
+   "text": "and",
+   "start": 3.707,
+   "end": 3.966,
+   "line": 0
+  },
+  {
+   "text": "drink.",
+   "start": 3.966,
+   "end": 4.328,
+   "line": 0
+  },
+  {
+   "text": "Then",
+   "start": 4.928,
+   "end": 5.154,
+   "line": 1
+  },
+  {
+   "text": "the",
+   "start": 5.154,
+   "end": 5.342,
+   "line": 1
+  },
+  {
+   "text": "ceiling",
+   "start": 5.342,
+   "end": 5.681,
+   "line": 1
+  },
+  {
+   "text": "opens.",
+   "start": 5.681,
+   "end": 5.944,
+   "line": 1
+  },
+  {
+   "text": "And",
+   "start": 6.444,
+   "end": 6.599,
+   "line": 2
+  },
+  {
+   "text": "it",
+   "start": 6.599,
+   "end": 6.723,
+   "line": 2
+  },
+  {
+   "text": "starts",
+   "start": 6.723,
+   "end": 6.971,
+   "line": 2
+  },
+  {
+   "text": "raining",
+   "start": 6.971,
+   "end": 7.249,
+   "line": 2
+  },
+  {
+   "text": "flowers.",
+   "start": 7.249,
+   "end": 7.528,
+   "line": 2
+  },
+  {
+   "text": "First",
+   "start": 8.128,
+   "end": 8.46,
+   "line": 3
+  },
+  {
+   "text": "a",
+   "start": 8.46,
+   "end": 8.603,
+   "line": 3
+  },
+  {
+   "text": "few.",
+   "start": 8.603,
+   "end": 8.84,
+   "line": 3
+  },
+  {
+   "text": "Then",
+   "start": 8.84,
+   "end": 9.125,
+   "line": 3
+  },
+  {
+   "text": "hundreds.",
+   "start": 9.125,
+   "end": 9.599,
+   "line": 3
+  },
+  {
+   "text": "Then",
+   "start": 9.599,
+   "end": 9.884,
+   "line": 3
+  },
+  {
+   "text": "thousands.",
+   "start": 9.884,
+   "end": 10.406,
+   "line": 3
+  },
+  {
+   "text": "And",
+   "start": 11.306,
+   "end": 11.503,
+   "line": 4
+  },
+  {
+   "text": "the",
+   "start": 11.503,
+   "end": 11.7,
+   "line": 4
+  },
+  {
+   "text": "guests",
+   "start": 11.7,
+   "end": 12.015,
+   "line": 4
+  },
+  {
+   "text": "stop",
+   "start": 12.015,
+   "end": 12.252,
+   "line": 4
+  },
+  {
+   "text": "laughing.",
+   "start": 12.252,
+   "end": 12.646,
+   "line": 4
+  },
+  {
+   "text": "This",
+   "start": 13.446,
+   "end": 13.753,
+   "line": 5
+  },
+  {
+   "text": "is",
+   "start": 13.753,
+   "end": 13.958,
+   "line": 5
+  },
+  {
+   "text": "said",
+   "start": 13.958,
+   "end": 14.265,
+   "line": 5
+  },
+  {
+   "text": "to",
+   "start": 14.265,
+   "end": 14.47,
+   "line": 5
+  },
+  {
+   "text": "have",
+   "start": 14.47,
+   "end": 14.777,
+   "line": 5
+  },
+  {
+   "text": "happened",
+   "start": 14.777,
+   "end": 15.289,
+   "line": 5
+  },
+  {
+   "text": "under",
+   "start": 15.289,
+   "end": 15.647,
+   "line": 5
+  },
+  {
+   "text": "Emperor",
+   "start": 15.647,
+   "end": 16.108,
+   "line": 5
+  },
+  {
+   "text": "Elagabalus,",
+   "start": 16.108,
+   "end": 16.723,
+   "line": 5
+  },
+  {
+   "text": "around",
+   "start": 16.723,
+   "end": 17.132,
+   "line": 5
+  },
+  {
+   "text": "220",
+   "start": 17.132,
+   "end": 17.389,
+   "line": 5
+  },
+  {
+   "text": "AD.",
+   "start": 17.389,
+   "end": 17.593,
+   "line": 5
+  },
+  {
+   "text": "He",
+   "start": 18.093,
+   "end": 18.283,
+   "line": 6
+  },
+  {
+   "text": "became",
+   "start": 18.283,
+   "end": 18.663,
+   "line": 6
+  },
+  {
+   "text": "emperor",
+   "start": 18.663,
+   "end": 19.091,
+   "line": 6
+  },
+  {
+   "text": "of",
+   "start": 19.091,
+   "end": 19.28,
+   "line": 6
+  },
+  {
+   "text": "Rome",
+   "start": 19.28,
+   "end": 19.565,
+   "line": 6
+  },
+  {
+   "text": "at",
+   "start": 19.565,
+   "end": 19.755,
+   "line": 6
+  },
+  {
+   "text": "just",
+   "start": 19.755,
+   "end": 20.04,
+   "line": 6
+  },
+  {
+   "text": "fourteen.",
+   "start": 20.04,
+   "end": 20.515,
+   "line": 6
+  },
+  {
+   "text": "And",
+   "start": 21.015,
+   "end": 21.242,
+   "line": 7
+  },
+  {
+   "text": "he",
+   "start": 21.242,
+   "end": 21.424,
+   "line": 7
+  },
+  {
+   "text": "loved",
+   "start": 21.424,
+   "end": 21.742,
+   "line": 7
+  },
+  {
+   "text": "wild",
+   "start": 21.742,
+   "end": 22.015,
+   "line": 7
+  },
+  {
+   "text": "parties.",
+   "start": 22.015,
+   "end": 22.424,
+   "line": 7
+  },
+  {
+   "text": "He",
+   "start": 23.024,
+   "end": 23.204,
+   "line": 8
+  },
+  {
+   "text": "sat",
+   "start": 23.204,
+   "end": 23.43,
+   "line": 8
+  },
+  {
+   "text": "guests",
+   "start": 23.43,
+   "end": 23.79,
+   "line": 8
+  },
+  {
+   "text": "on",
+   "start": 23.79,
+   "end": 23.971,
+   "line": 8
+  },
+  {
+   "text": "air",
+   "start": 23.971,
+   "end": 24.196,
+   "line": 8
+  },
+  {
+   "text": "cushions",
+   "start": 24.196,
+   "end": 24.647,
+   "line": 8
+  },
+  {
+   "text": "that",
+   "start": 24.647,
+   "end": 24.917,
+   "line": 8
+  },
+  {
+   "text": "suddenly",
+   "start": 24.917,
+   "end": 25.368,
+   "line": 8
+  },
+  {
+   "text": "went",
+   "start": 25.368,
+   "end": 25.639,
+   "line": 8
+  },
+  {
+   "text": "flat",
+   "start": 25.639,
+   "end": 25.909,
+   "line": 8
+  },
+  {
+   "text": "during",
+   "start": 25.909,
+   "end": 26.27,
+   "line": 8
+  },
+  {
+   "text": "dinner.",
+   "start": 26.27,
+   "end": 26.63,
+   "line": 8
+  },
+  {
+   "text": "An",
+   "start": 27.23,
+   "end": 27.406,
+   "line": 9
+  },
+  {
+   "text": "ancient",
+   "start": 27.406,
+   "end": 27.8,
+   "line": 9
+  },
+  {
+   "text": "source",
+   "start": 27.8,
+   "end": 28.15,
+   "line": 9
+  },
+  {
+   "text": "says",
+   "start": 28.15,
+   "end": 28.412,
+   "line": 9
+  },
+  {
+   "text": "his",
+   "start": 28.412,
+   "end": 28.631,
+   "line": 9
+  },
+  {
+   "text": "dining",
+   "start": 28.631,
+   "end": 28.981,
+   "line": 9
+  },
+  {
+   "text": "hall",
+   "start": 28.981,
+   "end": 29.244,
+   "line": 9
+  },
+  {
+   "text": "had",
+   "start": 29.244,
+   "end": 29.463,
+   "line": 9
+  },
+  {
+   "text": "ceilings",
+   "start": 29.463,
+   "end": 29.901,
+   "line": 9
+  },
+  {
+   "text": "that",
+   "start": 29.901,
+   "end": 30.163,
+   "line": 9
+  },
+  {
+   "text": "could",
+   "start": 30.163,
+   "end": 30.47,
+   "line": 9
+  },
+  {
+   "text": "turn",
+   "start": 30.47,
+   "end": 30.732,
+   "line": 9
+  },
+  {
+   "text": "over.",
+   "start": 30.732,
+   "end": 30.995,
+   "line": 9
+  },
+  {
+   "text": "Hidden",
+   "start": 31.495,
+   "end": 31.838,
+   "line": 10
+  },
+  {
+   "text": "inside:",
+   "start": 31.838,
+   "end": 32.182,
+   "line": 10
+  },
+  {
+   "text": "mountains",
+   "start": 32.182,
+   "end": 32.654,
+   "line": 10
+  },
+  {
+   "text": "of",
+   "start": 32.654,
+   "end": 32.825,
+   "line": 10
+  },
+  {
+   "text": "violets",
+   "start": 32.825,
+   "end": 33.212,
+   "line": 10
+  },
+  {
+   "text": "and",
+   "start": 33.212,
+   "end": 33.426,
+   "line": 10
+  },
+  {
+   "text": "other",
+   "start": 33.426,
+   "end": 33.726,
+   "line": 10
+  },
+  {
+   "text": "flowers.",
+   "start": 33.726,
+   "end": 34.113,
+   "line": 10
+  },
+  {
+   "text": "Some",
+   "start": 34.713,
+   "end": 34.91,
+   "line": 11
+  },
+  {
+   "text": "guests",
+   "start": 34.91,
+   "end": 35.174,
+   "line": 11
+  },
+  {
+   "text": "are",
+   "start": 35.174,
+   "end": 35.339,
+   "line": 11
+  },
+  {
+   "text": "said",
+   "start": 35.339,
+   "end": 35.536,
+   "line": 11
+  },
+  {
+   "text": "to",
+   "start": 35.536,
+   "end": 35.668,
+   "line": 11
+  },
+  {
+   "text": "have",
+   "start": 35.668,
+   "end": 35.866,
+   "line": 11
+  },
+  {
+   "text": "suffocated",
+   "start": 35.866,
+   "end": 36.261,
+   "line": 11
+  },
+  {
+   "text": "under",
+   "start": 36.261,
+   "end": 36.492,
+   "line": 11
+  },
+  {
+   "text": "them.",
+   "start": 36.492,
+   "end": 36.69,
+   "line": 11
+  },
+  {
+   "text": "But",
+   "start": 37.59,
+   "end": 37.799,
+   "line": 12
+  },
+  {
+   "text": "is",
+   "start": 37.799,
+   "end": 37.966,
+   "line": 12
+  },
+  {
+   "text": "it",
+   "start": 37.966,
+   "end": 38.133,
+   "line": 12
+  },
+  {
+   "text": "really",
+   "start": 38.133,
+   "end": 38.468,
+   "line": 12
+  },
+  {
+   "text": "true?",
+   "start": 38.468,
+   "end": 38.719,
+   "line": 12
+  },
+  {
+   "text": "The",
+   "start": 39.319,
+   "end": 39.565,
+   "line": 13
+  },
+  {
+   "text": "source",
+   "start": 39.565,
+   "end": 39.959,
+   "line": 13
+  },
+  {
+   "text": "is",
+   "start": 39.959,
+   "end": 40.156,
+   "line": 13
+  },
+  {
+   "text": "the",
+   "start": 40.156,
+   "end": 40.402,
+   "line": 13
+  },
+  {
+   "text": "Historia",
+   "start": 40.402,
+   "end": 40.894,
+   "line": 13
+  },
+  {
+   "text": "Augusta.",
+   "start": 40.894,
+   "end": 41.337,
+   "line": 13
+  },
+  {
+   "text": "And",
+   "start": 41.337,
+   "end": 41.583,
+   "line": 13
+  },
+  {
+   "text": "it's",
+   "start": 41.583,
+   "end": 41.829,
+   "line": 13
+  },
+  {
+   "text": "famous",
+   "start": 41.829,
+   "end": 42.223,
+   "line": 13
+  },
+  {
+   "text": "for",
+   "start": 42.223,
+   "end": 42.469,
+   "line": 13
+  },
+  {
+   "text": "exaggerating.",
+   "start": 42.469,
+   "end": 43.158,
+   "line": 13
+  },
+  {
+   "text": "One",
+   "start": 43.758,
+   "end": 43.994,
+   "line": 14
+  },
+  {
+   "text": "thing",
+   "start": 43.994,
+   "end": 44.325,
+   "line": 14
+  },
+  {
+   "text": "is",
+   "start": 44.325,
+   "end": 44.514,
+   "line": 14
+  },
+  {
+   "text": "certain:",
+   "start": 44.514,
+   "end": 44.939,
+   "line": 14
+  },
+  {
+   "text": "Elagabalus",
+   "start": 44.939,
+   "end": 45.506,
+   "line": 14
+  },
+  {
+   "text": "ruled",
+   "start": 45.506,
+   "end": 45.837,
+   "line": 14
+  },
+  {
+   "text": "for",
+   "start": 45.837,
+   "end": 46.073,
+   "line": 14
+  },
+  {
+   "text": "only",
+   "start": 46.073,
+   "end": 46.357,
+   "line": 14
+  },
+  {
+   "text": "four",
+   "start": 46.357,
+   "end": 46.64,
+   "line": 14
+  },
+  {
+   "text": "years.",
+   "start": 46.64,
+   "end": 46.971,
+   "line": 14
+  },
+  {
+   "text": "He",
+   "start": 47.571,
+   "end": 47.745,
+   "line": 15
+  },
+  {
+   "text": "was",
+   "start": 47.745,
+   "end": 47.963,
+   "line": 15
+  },
+  {
+   "text": "only",
+   "start": 47.963,
+   "end": 48.224,
+   "line": 15
+  },
+  {
+   "text": "eighteen",
+   "start": 48.224,
+   "end": 48.659,
+   "line": 15
+  },
+  {
+   "text": "when",
+   "start": 48.659,
+   "end": 48.92,
+   "line": 15
+  },
+  {
+   "text": "his",
+   "start": 48.92,
+   "end": 49.138,
+   "line": 15
+  },
+  {
+   "text": "own",
+   "start": 49.138,
+   "end": 49.355,
+   "line": 15
+  },
+  {
+   "text": "guards",
+   "start": 49.355,
+   "end": 49.704,
+   "line": 15
+  },
+  {
+   "text": "turned",
+   "start": 49.704,
+   "end": 50.052,
+   "line": 15
+  },
+  {
+   "text": "against",
+   "start": 50.052,
+   "end": 50.444,
+   "line": 15
+  },
+  {
+   "text": "him.",
+   "start": 50.444,
+   "end": 50.661,
+   "line": 15
+  },
+  {
+   "text": "What",
+   "start": 51.461,
+   "end": 51.748,
+   "line": 16
+  },
+  {
+   "text": "do",
+   "start": 51.748,
+   "end": 51.94,
+   "line": 16
+  },
+  {
+   "text": "you",
+   "start": 51.94,
+   "end": 52.179,
+   "line": 16
+  },
+  {
+   "text": "think?",
+   "start": 52.179,
+   "end": 52.514,
+   "line": 16
+  },
+  {
+   "text": "True",
+   "start": 52.514,
+   "end": 52.801,
+   "line": 16
+  },
+  {
+   "text": "story",
+   "start": 52.801,
+   "end": 53.136,
+   "line": 16
+  },
+  {
+   "text": "or",
+   "start": 53.136,
+   "end": 53.328,
+   "line": 16
+  },
+  {
+   "text": "legend?",
+   "start": 53.328,
+   "end": 53.711,
+   "line": 16
+  },
+  {
+   "text": "Tell",
+   "start": 53.711,
+   "end": 53.998,
+   "line": 16
+  },
+  {
+   "text": "me",
+   "start": 53.998,
+   "end": 54.19,
+   "line": 16
+  },
+  {
+   "text": "in",
+   "start": 54.19,
+   "end": 54.381,
+   "line": 16
+  },
+  {
+   "text": "the",
+   "start": 54.381,
+   "end": 54.62,
+   "line": 16
+  },
+  {
+   "text": "comments.",
+   "start": 54.62,
+   "end": 55.099,
+   "line": 16
+  }
+ ]
+}

@@ -1,0 +1,205 @@
+{
+ "duration": 12.862,
+ "lines": [
+  [
+   0.5,
+   3.6042916666666667
+  ],
+  [
+   4.054291666666667,
+   8.858604166666666
+  ],
+  [
+   9.308604166666667,
+   11.812291666666667
+  ]
+ ],
+ "words": [
+  {
+   "text": "Ein",
+   "start": 0.5,
+   "end": 0.702,
+   "line": 0
+  },
+  {
+   "text": "r\u00f6mischer",
+   "start": 0.702,
+   "end": 1.145,
+   "line": 0
+  },
+  {
+   "text": "Kaiser",
+   "start": 1.145,
+   "end": 1.468,
+   "line": 0
+  },
+  {
+   "text": "wollte",
+   "start": 1.468,
+   "end": 1.79,
+   "line": 0
+  },
+  {
+   "text": "angeblich",
+   "start": 1.79,
+   "end": 2.234,
+   "line": 0
+  },
+  {
+   "text": "sein",
+   "start": 2.234,
+   "end": 2.475,
+   "line": 0
+  },
+  {
+   "text": "Pferd",
+   "start": 2.475,
+   "end": 2.758,
+   "line": 0
+  },
+  {
+   "text": "zum",
+   "start": 2.758,
+   "end": 2.959,
+   "line": 0
+  },
+  {
+   "text": "Konsul",
+   "start": 2.959,
+   "end": 3.282,
+   "line": 0
+  },
+  {
+   "text": "machen.",
+   "start": 3.282,
+   "end": 3.604,
+   "line": 0
+  },
+  {
+   "text": "Caligula",
+   "start": 4.054,
+   "end": 4.499,
+   "line": 1
+  },
+  {
+   "text": "schenkte",
+   "start": 4.499,
+   "end": 4.944,
+   "line": 1
+  },
+  {
+   "text": "seinem",
+   "start": 4.944,
+   "end": 5.3,
+   "line": 1
+  },
+  {
+   "text": "Pferd",
+   "start": 5.3,
+   "end": 5.611,
+   "line": 1
+  },
+  {
+   "text": "Incitatus",
+   "start": 5.611,
+   "end": 6.101,
+   "line": 1
+  },
+  {
+   "text": "einen",
+   "start": 6.101,
+   "end": 6.412,
+   "line": 1
+  },
+  {
+   "text": "Stall",
+   "start": 6.412,
+   "end": 6.723,
+   "line": 1
+  },
+  {
+   "text": "aus",
+   "start": 6.723,
+   "end": 6.946,
+   "line": 1
+  },
+  {
+   "text": "Marmor",
+   "start": 6.946,
+   "end": 7.302,
+   "line": 1
+  },
+  {
+   "text": "und",
+   "start": 7.302,
+   "end": 7.524,
+   "line": 1
+  },
+  {
+   "text": "eine",
+   "start": 7.524,
+   "end": 7.791,
+   "line": 1
+  },
+  {
+   "text": "Krippe",
+   "start": 7.791,
+   "end": 8.147,
+   "line": 1
+  },
+  {
+   "text": "aus",
+   "start": 8.147,
+   "end": 8.369,
+   "line": 1
+  },
+  {
+   "text": "Elfenbein.",
+   "start": 8.369,
+   "end": 8.859,
+   "line": 1
+  },
+  {
+   "text": "Und",
+   "start": 9.309,
+   "end": 9.554,
+   "line": 2
+  },
+  {
+   "text": "die",
+   "start": 9.554,
+   "end": 9.8,
+   "line": 2
+  },
+  {
+   "text": "Senatoren?",
+   "start": 9.8,
+   "end": 10.34,
+   "line": 2
+  },
+  {
+   "text": "Die",
+   "start": 10.34,
+   "end": 10.585,
+   "line": 2
+  },
+  {
+   "text": "durften",
+   "start": 10.585,
+   "end": 11.027,
+   "line": 2
+  },
+  {
+   "text": "nur",
+   "start": 11.027,
+   "end": 11.272,
+   "line": 2
+  },
+  {
+   "text": "zuschauen.",
+   "start": 11.272,
+   "end": 11.812,
+   "line": 2
+  }
+ ]
+}

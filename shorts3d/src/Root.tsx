@@ -1,0 +1,51 @@
+import React from 'react';
+import {Composition} from 'remotion';
+import {Looping} from './Looping';
+import timing from './timing.json';
+import {Caligula} from './Caligula';
+import {HdStill} from './HdStill';
+import {CaligulaEN} from './CaligulaEN';
+import {OceanWar} from './OceanWar';
+import {Ocean60, OCEAN60_DURATION} from './Ocean60';
+import {Flowers, FLOWERS_DURATION} from './Flowers';
+import {Marsh, MARSH_DURATION} from './Marsh';
+import {SvTag10, SV10_DURATION} from './SvTag10';
+import {NightGateStill, NightGateScene, GATE_DURATION, NightGateDetail} from './NightGate';
+import {Flight404, F404_DURATION} from './NightStory';
+import {Flight404DE, F404DE_DURATION} from './NightStoryDE';
+import {ProfilePic} from './ProfilePic';
+import {TrainRef, TrainRefClose} from './NightTrain';
+import timingOcean from './timing_ocean.json';
+import timingEn from './timing_en.json';
+import timingCal from './timing_caligula.json';
+
+export const FPS = 30;
+
+export const RemotionRoot: React.FC = () => (
+  <>
+  <Composition
+    id="Looping"
+    component={Looping}
+    durationInFrames={Math.ceil(timing.duration * FPS)}
+    fps={FPS}
+    width={1080}
+    height={1920}
+  />
+  <Composition id="Caligula" component={Caligula} durationInFrames={Math.ceil(timingCal.duration * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="HdStill" component={HdStill} durationInFrames={60} fps={FPS} width={1080} height={1920} />
+  <Composition id="CaligulaEN" component={CaligulaEN} durationInFrames={Math.ceil(timingEn.duration * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="OceanWar" component={OceanWar} durationInFrames={Math.ceil(timingOcean.duration * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="Ocean60" component={Ocean60} durationInFrames={Math.ceil(OCEAN60_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="Flowers" component={Flowers} durationInFrames={Math.ceil(FLOWERS_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="Marsh" component={Marsh} durationInFrames={Math.ceil(MARSH_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="SvTag10" component={SvTag10} durationInFrames={Math.ceil(SV10_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="NightGateStill" component={NightGateStill} durationInFrames={60} fps={FPS} width={1080} height={1920} />
+  <Composition id="NightGateScene" component={NightGateScene} durationInFrames={Math.ceil(GATE_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="NightGateDetail" component={NightGateDetail} durationInFrames={90} fps={FPS} width={1080} height={1920} />
+  <Composition id="Flight404" component={Flight404} durationInFrames={Math.ceil(F404_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="Flight404DE" component={Flight404DE} durationInFrames={Math.ceil(F404DE_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
+  <Composition id="ProfilePic" component={ProfilePic} durationInFrames={1} fps={FPS} width={1080} height={1080} />
+    <Composition id="TrainRef" component={TrainRef} durationInFrames={120} fps={60} width={1080} height={1920} />
+    <Composition id="TrainRefClose" component={TrainRefClose} durationInFrames={120} fps={60} width={1080} height={1920} />
+  </>
+);

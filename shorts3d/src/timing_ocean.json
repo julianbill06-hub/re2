@@ -1,0 +1,289 @@
+{
+ "duration": 17.561,
+ "lines": [
+  [
+   0.5,
+   4.354166666666666
+  ],
+  [
+   4.954166666666667,
+   5.491145833333333
+  ],
+  [
+   6.491145833333333,
+   6.918041666666666
+  ],
+  [
+   7.718041666666666,
+   10.926395833333332
+  ],
+  [
+   11.376395833333333,
+   13.271479166666667
+  ],
+  [
+   13.821479166666666,
+   16.510979166666665
+  ]
+ ],
+ "words": [
+  {
+   "text": "Thousands",
+   "start": 0.5,
+   "end": 1.123,
+   "line": 0
+  },
+  {
+   "text": "of",
+   "start": 1.123,
+   "end": 1.35,
+   "line": 0
+  },
+  {
+   "text": "soldiers.",
+   "start": 1.35,
+   "end": 1.917,
+   "line": 0
+  },
+  {
+   "text": "Catapults.",
+   "start": 1.917,
+   "end": 2.54,
+   "line": 0
+  },
+  {
+   "text": "An",
+   "start": 2.54,
+   "end": 2.767,
+   "line": 0
+  },
+  {
+   "text": "emperor",
+   "start": 2.767,
+   "end": 3.277,
+   "line": 0
+  },
+  {
+   "text": "ready",
+   "start": 3.277,
+   "end": 3.674,
+   "line": 0
+  },
+  {
+   "text": "to",
+   "start": 3.674,
+   "end": 3.901,
+   "line": 0
+  },
+  {
+   "text": "attack.",
+   "start": 3.901,
+   "end": 4.354,
+   "line": 0
+  },
+  {
+   "text": "The",
+   "start": 4.954,
+   "end": 5.178,
+   "line": 1
+  },
+  {
+   "text": "enemy?",
+   "start": 5.178,
+   "end": 5.491,
+   "line": 1
+  },
+  {
+   "text": "The",
+   "start": 6.491,
+   "end": 6.669,
+   "line": 2
+  },
+  {
+   "text": "ocean.",
+   "start": 6.669,
+   "end": 6.918,
+   "line": 2
+  },
+  {
+   "text": "In",
+   "start": 7.718,
+   "end": 7.901,
+   "line": 3
+  },
+  {
+   "text": "40",
+   "start": 7.901,
+   "end": 8.085,
+   "line": 3
+  },
+  {
+   "text": "AD,",
+   "start": 8.085,
+   "end": 8.268,
+   "line": 3
+  },
+  {
+   "text": "Caligula",
+   "start": 8.268,
+   "end": 8.726,
+   "line": 3
+  },
+  {
+   "text": "lined",
+   "start": 8.726,
+   "end": 9.047,
+   "line": 3
+  },
+  {
+   "text": "up",
+   "start": 9.047,
+   "end": 9.231,
+   "line": 3
+  },
+  {
+   "text": "his",
+   "start": 9.231,
+   "end": 9.46,
+   "line": 3
+  },
+  {
+   "text": "army",
+   "start": 9.46,
+   "end": 9.735,
+   "line": 3
+  },
+  {
+   "text": "on",
+   "start": 9.735,
+   "end": 9.918,
+   "line": 3
+  },
+  {
+   "text": "the",
+   "start": 9.918,
+   "end": 10.147,
+   "line": 3
+  },
+  {
+   "text": "coast",
+   "start": 10.147,
+   "end": 10.468,
+   "line": 3
+  },
+  {
+   "text": "of",
+   "start": 10.468,
+   "end": 10.651,
+   "line": 3
+  },
+  {
+   "text": "Gaul.",
+   "start": 10.651,
+   "end": 10.926,
+   "line": 3
+  },
+  {
+   "text": "Then",
+   "start": 11.376,
+   "end": 11.613,
+   "line": 4
+  },
+  {
+   "text": "he",
+   "start": 11.613,
+   "end": 11.771,
+   "line": 4
+  },
+  {
+   "text": "gave",
+   "start": 11.771,
+   "end": 12.008,
+   "line": 4
+  },
+  {
+   "text": "the",
+   "start": 12.008,
+   "end": 12.205,
+   "line": 4
+  },
+  {
+   "text": "order:",
+   "start": 12.205,
+   "end": 12.482,
+   "line": 4
+  },
+  {
+   "text": "collect",
+   "start": 12.482,
+   "end": 12.837,
+   "line": 4
+  },
+  {
+   "text": "seashells!",
+   "start": 12.837,
+   "end": 13.271,
+   "line": 4
+  },
+  {
+   "text": "Ancient",
+   "start": 13.821,
+   "end": 14.194,
+   "line": 5
+  },
+  {
+   "text": "writers",
+   "start": 14.194,
+   "end": 14.566,
+   "line": 5
+  },
+  {
+   "text": "say",
+   "start": 14.566,
+   "end": 14.773,
+   "line": 5
+  },
+  {
+   "text": "he",
+   "start": 14.773,
+   "end": 14.939,
+   "line": 5
+  },
+  {
+   "text": "called",
+   "start": 14.939,
+   "end": 15.27,
+   "line": 5
+  },
+  {
+   "text": "them:",
+   "start": 15.27,
+   "end": 15.518,
+   "line": 5
+  },
+  {
+   "text": "spoils",
+   "start": 15.518,
+   "end": 15.849,
+   "line": 5
+  },
+  {
+   "text": "of",
+   "start": 15.849,
+   "end": 16.014,
+   "line": 5
+  },
+  {
+   "text": "the",
+   "start": 16.014,
+   "end": 16.221,
+   "line": 5
+  },
+  {
+   "text": "ocean.",
+   "start": 16.221,
+   "end": 16.511,
+   "line": 5
+  }
+ ]
+}

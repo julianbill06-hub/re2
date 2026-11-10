@@ -1,0 +1,161 @@
+{
+ "duration": 9.892,
+ "lines": [
+  [
+   0.5,
+   2.356020833333333
+  ],
+  [
+   3.056020833333333,
+   4.344374999999999
+  ],
+  [
+   5.144375,
+   6.642645833333334
+  ],
+  [
+   7.642645833333334,
+   8.8416875
+  ]
+ ],
+ "words": [
+  {
+   "text": "You",
+   "start": 0.5,
+   "end": 0.751,
+   "line": 0
+  },
+  {
+   "text": "wake",
+   "start": 0.751,
+   "end": 1.052,
+   "line": 0
+  },
+  {
+   "text": "up.",
+   "start": 1.052,
+   "end": 1.252,
+   "line": 0
+  },
+  {
+   "text": "The",
+   "start": 1.252,
+   "end": 1.503,
+   "line": 0
+  },
+  {
+   "text": "gate",
+   "start": 1.503,
+   "end": 1.804,
+   "line": 0
+  },
+  {
+   "text": "is",
+   "start": 1.804,
+   "end": 2.005,
+   "line": 0
+  },
+  {
+   "text": "empty.",
+   "start": 2.005,
+   "end": 2.356,
+   "line": 0
+  },
+  {
+   "text": "Not",
+   "start": 3.056,
+   "end": 3.295,
+   "line": 1
+  },
+  {
+   "text": "a",
+   "start": 3.295,
+   "end": 3.438,
+   "line": 1
+  },
+  {
+   "text": "single",
+   "start": 3.438,
+   "end": 3.819,
+   "line": 1
+  },
+  {
+   "text": "passenger.",
+   "start": 3.819,
+   "end": 4.344,
+   "line": 1
+  },
+  {
+   "text": "Only",
+   "start": 5.144,
+   "end": 5.387,
+   "line": 2
+  },
+  {
+   "text": "one",
+   "start": 5.387,
+   "end": 5.59,
+   "line": 2
+  },
+  {
+   "text": "is",
+   "start": 5.59,
+   "end": 5.752,
+   "line": 2
+  },
+  {
+   "text": "still",
+   "start": 5.752,
+   "end": 6.035,
+   "line": 2
+  },
+  {
+   "text": "at",
+   "start": 6.035,
+   "end": 6.197,
+   "line": 2
+  },
+  {
+   "text": "the",
+   "start": 6.197,
+   "end": 6.4,
+   "line": 2
+  },
+  {
+   "text": "desk.",
+   "start": 6.4,
+   "end": 6.643,
+   "line": 2
+  },
+  {
+   "text": "And",
+   "start": 7.643,
+   "end": 7.892,
+   "line": 3
+  },
+  {
+   "text": "he",
+   "start": 7.892,
+   "end": 8.092,
+   "line": 3
+  },
+  {
+   "text": "has",
+   "start": 8.092,
+   "end": 8.342,
+   "line": 3
+  },
+  {
+   "text": "no",
+   "start": 8.342,
+   "end": 8.542,
+   "line": 3
+  },
+  {
+   "text": "face.",
+   "start": 8.542,
+   "end": 8.842,
+   "line": 3
+  }
+ ]
+}

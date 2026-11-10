@@ -1,0 +1,99 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Inter,66,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,1,0,1,0,3,8,40,40,1055,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.69,Cap,,0,0,0,,DU SCHLÄFST
+Dialogue: 0,0:00:00.69,0:00:01.18,Cap,,0,0,0,,AM GATE
+Dialogue: 0,0:00:01.18,0:00:01.72,Cap,,0,0,0,,EIN.
+Dialogue: 0,0:00:01.98,0:00:02.46,Cap,,0,0,0,,ALS DU
+Dialogue: 0,0:00:02.46,0:00:03.05,Cap,,0,0,0,,AUFWACHST,
+Dialogue: 0,0:00:03.05,0:00:03.70,Cap,,0,0,0,,IST ALLES
+Dialogue: 0,0:00:03.70,0:00:04.32,Cap,,0,0,0,,LEER.
+Dialogue: 0,0:00:04.57,0:00:04.94,Cap,,0,0,0,,ALLE
+Dialogue: 0,0:00:04.94,0:00:05.37,Cap,,0,0,0,,FLÜGE
+Dialogue: 0,0:00:05.37,0:00:06.12,Cap,,0,0,0,,GESTRICHEN.
+Dialogue: 0,0:00:06.12,0:00:06.74,Cap,,0,0,0,,BIS AUF
+Dialogue: 0,0:00:06.74,0:00:07.47,Cap,,0,0,0,,EINEN.
+Dialogue: 0,0:00:07.76,0:00:08.37,Cap,,0,0,0,,FLUG
+Dialogue: 0,0:00:08.37,0:00:10.21,Cap,,0,0,0,,404. BOARDING.
+Dialogue: 0,0:00:10.76,0:00:11.11,Cap,,0,0,0,,DANN
+Dialogue: 0,0:00:11.11,0:00:11.46,Cap,,0,0,0,,EINE
+Dialogue: 0,0:00:11.46,0:00:12.10,Cap,,0,0,0,,DURCHSAGE:
+Dialogue: 0,0:00:12.10,0:00:12.62,Cap,,0,0,0,,LETZTER
+Dialogue: 0,0:00:12.62,0:00:13.08,Cap,,0,0,0,,AUFRUF
+Dialogue: 0,0:00:13.08,0:00:13.66,Cap,,0,0,0,,FÜR DEN
+Dialogue: 0,0:00:13.66,0:00:14.19,Cap,,0,0,0,,LETZTEN
+Dialogue: 0,0:00:14.19,0:00:15.12,Cap,,0,0,0,,PASSAGIER.
+Dialogue: 0,0:00:15.44,0:00:16.18,Cap,,0,0,0,,AM SCHALTER
+Dialogue: 0,0:00:16.18,0:00:16.56,Cap,,0,0,0,,STEHT
+Dialogue: 0,0:00:16.56,0:00:16.99,Cap,,0,0,0,,JEMAND.
+Dialogue: 0,0:00:16.99,0:00:17.31,Cap,,0,0,0,,OHNE
+Dialogue: 0,0:00:17.31,0:00:18.09,Cap,,0,0,0,,GESICHT.
+Dialogue: 0,0:00:18.49,0:00:18.96,Cap,,0,0,0,,DU HAST
+Dialogue: 0,0:00:18.96,0:00:19.25,Cap,,0,0,0,,ZWEI
+Dialogue: 0,0:00:19.25,0:00:20.25,Cap,,0,0,0,,MÖGLICHKEITEN.
+Dialogue: 0,0:00:20.55,0:00:20.97,Cap,,0,0,0,,DU GEHST
+Dialogue: 0,0:00:20.97,0:00:21.84,Cap,,0,0,0,,ZUM SCHALTER.
+Dialogue: 0,0:00:22.04,0:00:22.63,Cap,,0,0,0,,ER SCHIEBT
+Dialogue: 0,0:00:22.63,0:00:23.13,Cap,,0,0,0,,DIR EINE
+Dialogue: 0,0:00:23.13,0:00:23.63,Cap,,0,0,0,,BORDKARTE
+Dialogue: 0,0:00:23.63,0:00:24.08,Cap,,0,0,0,,HIN. MIT
+Dialogue: 0,0:00:24.08,0:00:24.45,Cap,,0,0,0,,DEINEM
+Dialogue: 0,0:00:24.45,0:00:25.06,Cap,,0,0,0,,NAMEN.
+Dialogue: 0,0:00:25.44,0:00:25.84,Cap,,0,0,0,,HINTER
+Dialogue: 0,0:00:25.84,0:00:26.46,Cap,,0,0,0,,DIR GEHEN
+Dialogue: 0,0:00:26.46,0:00:27.17,Cap,,0,0,0,,DIE LICHTER
+Dialogue: 0,0:00:27.17,0:00:27.79,Cap,,0,0,0,,AUS. REIHE
+Dialogue: 0,0:00:27.79,0:00:28.70,Cap,,0,0,0,,FÜR REIHE.
+Dialogue: 0,0:00:29.16,0:00:29.83,Cap,,0,0,0,,DIE TÜR
+Dialogue: 0,0:00:29.83,0:00:31.25,Cap,,0,0,0,,ZUR FLUGGASTBRÜCKE
+Dialogue: 0,0:00:31.25,0:00:31.79,Cap,,0,0,0,,ÖFFNET
+Dialogue: 0,0:00:31.79,0:00:32.19,Cap,,0,0,0,,SICH.
+Dialogue: 0,0:00:32.19,0:00:32.86,Cap,,0,0,0,,DAHINTER:
+Dialogue: 0,0:00:32.86,0:00:33.70,Cap,,0,0,0,,NICHTS.
+Dialogue: 0,0:00:34.37,0:00:34.63,Cap,,0,0,0,,LASS
+Dialogue: 0,0:00:34.63,0:00:35.77,Cap,,0,0,0,,UNS ZURÜCKSPULEN.
+Dialogue: 0,0:00:36.09,0:00:36.62,Cap,,0,0,0,,DU BLEIBST
+Dialogue: 0,0:00:36.62,0:00:37.24,Cap,,0,0,0,,SITZEN.
+Dialogue: 0,0:00:37.45,0:00:38.11,Cap,,0,0,0,,DAS LICHT
+Dialogue: 0,0:00:38.11,0:00:38.66,Cap,,0,0,0,,FLACKERT.
+Dialogue: 0,0:00:38.66,0:00:39.15,Cap,,0,0,0,,ALS ES
+Dialogue: 0,0:00:39.15,0:00:39.87,Cap,,0,0,0,,WIEDERKOMMT,
+Dialogue: 0,0:00:39.87,0:00:40.25,Cap,,0,0,0,,STEHT
+Dialogue: 0,0:00:40.25,0:00:40.80,Cap,,0,0,0,,ER EINE
+Dialogue: 0,0:00:40.80,0:00:41.19,Cap,,0,0,0,,REIHE
+Dialogue: 0,0:00:41.19,0:00:41.87,Cap,,0,0,0,,NÄHER.
+Dialogue: 0,0:00:42.16,0:00:42.90,Cap,,0,0,0,,ES FLACKERT
+Dialogue: 0,0:00:42.90,0:00:43.32,Cap,,0,0,0,,WIEDER.
+Dialogue: 0,0:00:43.32,0:00:43.64,Cap,,0,0,0,,NOCH
+Dialogue: 0,0:00:43.64,0:00:43.96,Cap,,0,0,0,,EINE
+Dialogue: 0,0:00:43.96,0:00:44.63,Cap,,0,0,0,,REIHE.
+Dialogue: 0,0:00:45.05,0:00:45.82,Cap,,0,0,0,,DU SCHLIESST
+Dialogue: 0,0:00:45.82,0:00:46.49,Cap,,0,0,0,,DIE AUGEN.
+Dialogue: 0,0:00:46.49,0:00:47.50,Cap,,0,0,0,,UND ZÄHLST.
+Dialogue: 0,0:00:47.91,0:00:48.39,Cap,,0,0,0,,ALS DU
+Dialogue: 0,0:00:48.39,0:00:49.13,Cap,,0,0,0,,SIE ÖFFNEST,
+Dialogue: 0,0:00:49.13,0:00:49.61,Cap,,0,0,0,,IST ES
+Dialogue: 0,0:00:49.61,0:00:50.04,Cap,,0,0,0,,MORGEN.
+Dialogue: 0,0:00:50.04,0:00:50.62,Cap,,0,0,0,,DAS GATE
+Dialogue: 0,0:00:50.62,0:00:51.31,Cap,,0,0,0,,IST VOLLER
+Dialogue: 0,0:00:51.31,0:00:52.15,Cap,,0,0,0,,MENSCHEN.
+Dialogue: 0,0:00:52.42,0:00:52.96,Cap,,0,0,0,,AUF DER
+Dialogue: 0,0:00:52.96,0:00:53.34,Cap,,0,0,0,,TAFEL
+Dialogue: 0,0:00:53.34,0:00:53.66,Cap,,0,0,0,,GIBT
+Dialogue: 0,0:00:53.66,0:00:54.30,Cap,,0,0,0,,ES KEINEN
+Dialogue: 0,0:00:54.30,0:00:54.63,Cap,,0,0,0,,FLUG
+Dialogue: 0,0:00:54.63,0:00:55.19,Cap,,0,0,0,,404.
+Dialogue: 0,0:00:55.49,0:00:55.77,Cap,,0,0,0,,ABER
+Dialogue: 0,0:00:55.77,0:00:56.35,Cap,,0,0,0,,IN DEINER
+Dialogue: 0,0:00:56.35,0:00:56.73,Cap,,0,0,0,,TASCHE
+Dialogue: 0,0:00:56.73,0:00:57.12,Cap,,0,0,0,,STECKT
+Dialogue: 0,0:00:57.12,0:00:57.40,Cap,,0,0,0,,EINE
+Dialogue: 0,0:00:57.40,0:00:58.23,Cap,,0,0,0,,BORDKARTE.
