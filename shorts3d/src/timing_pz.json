@@ -1,0 +1,1449 @@
+{
+"lines": [
+[
+0.0,
+2.109
+],
+[
+2.545,
+6.764
+],
+[
+7.327,
+10.818
+],
+[
+11.182,
+13.564
+],
+[
+14.164,
+18.291
+],
+[
+18.891,
+22.6
+],
+[
+23.218,
+25.782
+],
+[
+26.327,
+32.382
+],
+[
+33.055,
+36.364
+],
+[
+37.055,
+39.836
+],
+[
+40.327,
+43.8
+],
+[
+44.327,
+46.418
+],
+[
+46.418,
+50.745
+],
+[
+51.273,
+52.727
+],
+[
+53.164,
+56.691
+],
+[
+57.182,
+58.818
+]
+],
+"sentences": [
+{
+"line": 0,
+"start": 0.0,
+"end": 2.109,
+"de": "steig niemals an Gleis Null aus."
+},
+{
+"line": 1,
+"start": 2.545,
+"end": 4.364,
+"de": "Du schläfst im letzten Nachzug ein."
+},
+{
+"line": 1,
+"start": 4.836,
+"end": 6.764,
+"de": "Als du aufwachst, ist der Wagen leer."
+},
+{
+"line": 2,
+"start": 7.327,
+"end": 8.055,
+"de": "Der Zug steht."
+},
+{
+"line": 2,
+"start": 8.673,
+"end": 9.582,
+"de": "Draußen ein Schild."
+},
+{
+"line": 2,
+"start": 10.091,
+"end": 10.818,
+"de": "Gleis Null."
+},
+{
+"line": 3,
+"start": 11.182,
+"end": 11.655,
+"de": "Endstation."
+},
+{
+"line": 3,
+"start": 12.255,
+"end": 13.564,
+"de": "Bitte alle aussteigen."
+},
+{
+"line": 4,
+"start": 14.164,
+"end": 15.545,
+"de": "Hinter dir steht der Schaffner."
+},
+{
+"line": 4,
+"start": 16.018,
+"end": 16.545,
+"de": "Kein Gesicht."
+},
+{
+"line": 4,
+"start": 17.109,
+"end": 18.291,
+"de": "Nur ein roter Punkt."
+},
+{
+"line": 5,
+"start": 18.891,
+"end": 19.855,
+"de": "Er zeigt auf die Tür."
+},
+{
+"line": 5,
+"start": 20.455,
+"end": 22.6,
+"de": "Bleibst du sitzen oder steigst du aus?"
+},
+{
+"line": 6,
+"start": 23.218,
+"end": 23.964,
+"de": "Du bleibst sitzen."
+},
+{
+"line": 6,
+"start": 24.655,
+"end": 25.782,
+"de": "Die Türen schließen sich."
+},
+{
+"line": 7,
+"start": 26.327,
+"end": 28.145,
+"de": "Hinter den Fenstern nur schwarz."
+},
+{
+"line": 7,
+"start": 28.673,
+"end": 29.709,
+"de": "Die Durchsage zählt."
+},
+{
+"line": 7,
+"start": 30.291,
+"end": 32.382,
+"de": "Drei, zwei, eins."
+},
+{
+"line": 8,
+"start": 33.055,
+"end": 33.473,
+"de": "Licht aus."
+},
+{
+"line": 8,
+"start": 34.109,
+"end": 36.364,
+"de": "Der rote Punkt sitzt direkt neben dir."
+},
+{
+"line": 9,
+"start": 37.055,
+"end": 37.727,
+"de": "Zurückspulen."
+},
+{
+"line": 9,
+"start": 38.2,
+"end": 39.836,
+"de": "Denn Weg zwei ist schlimmer."
+},
+{
+"line": 10,
+"start": 40.327,
+"end": 41.055,
+"de": "Du steigst aus."
+},
+{
+"line": 10,
+"start": 41.618,
+"end": 42.436,
+"de": "Das Licht flackert."
+},
+{
+"line": 10,
+"start": 42.909,
+"end": 43.8,
+"de": "Er steht hinter dir."
+},
+{
+"line": 11,
+"start": 44.327,
+"end": 45.055,
+"de": "Es flackert wieder."
+},
+{
+"line": 11,
+"start": 45.636,
+"end": 46.418,
+"de": "Er ist näher."
+},
+{
+"line": 12,
+"start": 46.418,
+"end": 47.927,
+"de": "Du rennst die Treppe hoch."
+},
+{
+"line": 12,
+"start": 48.364,
+"end": 49.0,
+"de": "Morgenlicht."
+},
+{
+"line": 12,
+"start": 49.364,
+"end": 49.727,
+"de": "Menschen."
+},
+{
+"line": 12,
+"start": 50.273,
+"end": 50.745,
+"de": "Geschafft."
+},
+{
+"line": 13,
+"start": 51.273,
+"end": 52.727,
+"de": "Dann greifst du in deine Tasche."
+},
+{
+"line": 14,
+"start": 53.164,
+"end": 53.8,
+"de": "Ein Fahrschein."
+},
+{
+"line": 14,
+"start": 54.327,
+"end": 54.945,
+"de": "Gleis Null."
+},
+{
+"line": 14,
+"start": 55.327,
+"end": 56.691,
+"de": "Abfahrt heute Nacht."
+},
+{
+"line": 15,
+"start": 57.182,
+"end": 58.818,
+"de": "Also steigst du ein?"
+}
+],
+"caps": [
+{
+"line": 0,
+"start": 0.0,
+"end": 1.2,
+"text": "NEVER GET OFF"
+},
+{
+"line": 0,
+"start": 1.2,
+"end": 2.109,
+"text": "AT PLATFORM ZERO."
+},
+{
+"line": 1,
+"start": 2.545,
+"end": 3.073,
+"text": "YOU FALL ASLEEP"
+},
+{
+"line": 1,
+"start": 3.073,
+"end": 3.491,
+"text": "ON THE LAST"
+},
+{
+"line": 1,
+"start": 3.491,
+"end": 4.364,
+"text": "NIGHT TRAIN."
+},
+{
+"line": 1,
+"start": 4.836,
+"end": 5.164,
+"text": "YOU WAKE UP."
+},
+{
+"line": 1,
+"start": 5.164,
+"end": 6.091,
+"text": "THE CAR"
+},
+{
+"line": 1,
+"start": 6.091,
+"end": 6.764,
+"text": "IS EMPTY."
+},
+{
+"line": 2,
+"start": 7.327,
+"end": 7.436,
+"text": "THE TRAIN"
+},
+{
+"line": 2,
+"start": 7.436,
+"end": 8.055,
+"text": "HAS STOPPED."
+},
+{
+"line": 2,
+"start": 8.673,
+"end": 9.018,
+"text": "A SIGN"
+},
+{
+"line": 2,
+"start": 9.018,
+"end": 9.582,
+"text": "OUTSIDE."
+},
+{
+"line": 2,
+"start": 10.091,
+"end": 10.455,
+"text": "PLATFORM"
+},
+{
+"line": 2,
+"start": 10.455,
+"end": 10.818,
+"text": "ZERO."
+},
+{
+"line": 3,
+"start": 11.182,
+"end": 11.655,
+"text": "LAST STOP."
+},
+{
+"line": 3,
+"start": 12.255,
+"end": 12.473,
+"text": "ALL PASSENGERS,"
+},
+{
+"line": 3,
+"start": 12.473,
+"end": 13.564,
+"text": "PLEASE EXIT."
+},
+{
+"line": 4,
+"start": 14.164,
+"end": 14.364,
+"text": "BEHIND YOU"
+},
+{
+"line": 4,
+"start": 14.364,
+"end": 14.927,
+"text": "STANDS"
+},
+{
+"line": 4,
+"start": 14.927,
+"end": 15.545,
+"text": "THE CONDUCTOR."
+},
+{
+"line": 4,
+"start": 16.018,
+"end": 16.545,
+"text": "NO FACE."
+},
+{
+"line": 4,
+"start": 17.109,
+"end": 17.636,
+"text": "JUST ONE"
+},
+{
+"line": 4,
+"start": 17.636,
+"end": 18.291,
+"text": "RED LIGHT."
+},
+{
+"line": 5,
+"start": 18.891,
+"end": 19.255,
+"text": "HE POINTS"
+},
+{
+"line": 5,
+"start": 19.255,
+"end": 19.855,
+"text": "AT THE DOOR."
+},
+{
+"line": 5,
+"start": 20.455,
+"end": 21.091,
+"text": "DO YOU STAY"
+},
+{
+"line": 5,
+"start": 21.091,
+"end": 22.6,
+"text": "OR GET OFF?"
+},
+{
+"line": 6,
+"start": 23.218,
+"end": 23.964,
+"text": "YOU STAY."
+},
+{
+"line": 6,
+"start": 24.655,
+"end": 25.145,
+"text": "THE DOORS"
+},
+{
+"line": 6,
+"start": 25.145,
+"end": 25.782,
+"text": "CLOSE."
+},
+{
+"line": 7,
+"start": 26.327,
+"end": 26.673,
+"text": "OUTSIDE:"
+},
+{
+"line": 7,
+"start": 26.673,
+"end": 28.145,
+"text": "ONLY BLACK."
+},
+{
+"line": 7,
+"start": 28.673,
+"end": 28.8,
+"text": "THE SPEAKER"
+},
+{
+"line": 7,
+"start": 28.8,
+"end": 29.709,
+"text": "COUNTS DOWN."
+},
+{
+"line": 7,
+"start": 30.291,
+"end": 30.582,
+"text": "THREE."
+},
+{
+"line": 7,
+"start": 31.091,
+"end": 31.364,
+"text": "TWO."
+},
+{
+"line": 7,
+"start": 32.036,
+"end": 32.382,
+"text": "ONE."
+},
+{
+"line": 8,
+"start": 33.055,
+"end": 33.473,
+"text": "LIGHTS OUT."
+},
+{
+"line": 8,
+"start": 34.109,
+"end": 34.509,
+"text": "THE RED LIGHT"
+},
+{
+"line": 8,
+"start": 34.509,
+"end": 35.255,
+"text": "IS RIGHT"
+},
+{
+"line": 8,
+"start": 35.255,
+"end": 36.364,
+"text": "NEXT TO YOU."
+},
+{
+"line": 9,
+"start": 37.055,
+"end": 37.727,
+"text": "LET'S REWIND."
+},
+{
+"line": 9,
+"start": 38.2,
+"end": 38.491,
+"text": "PATH TWO"
+},
+{
+"line": 9,
+"start": 38.491,
+"end": 39.836,
+"text": "IS WORSE."
+},
+{
+"line": 10,
+"start": 40.327,
+"end": 41.055,
+"text": "YOU GET OFF."
+},
+{
+"line": 10,
+"start": 41.618,
+"end": 41.745,
+"text": "THE LIGHTS"
+},
+{
+"line": 10,
+"start": 41.745,
+"end": 42.436,
+"text": "FLICKER."
+},
+{
+"line": 10,
+"start": 42.909,
+"end": 43.8,
+"text": "HE'S BEHIND YOU."
+},
+{
+"line": 11,
+"start": 44.327,
+"end": 45.055,
+"text": "FLICKER."
+},
+{
+"line": 11,
+"start": 45.636,
+"end": 46.418,
+"text": "HE'S CLOSER."
+},
+{
+"line": 12,
+"start": 46.418,
+"end": 47.273,
+"text": "YOU RUN"
+},
+{
+"line": 12,
+"start": 47.273,
+"end": 47.927,
+"text": "UP THE STAIRS."
+},
+{
+"line": 12,
+"start": 48.364,
+"end": 49.0,
+"text": "MORNING."
+},
+{
+"line": 12,
+"start": 49.364,
+"end": 49.727,
+"text": "PEOPLE."
+},
+{
+"line": 12,
+"start": 50.273,
+"end": 50.745,
+"text": "YOU MADE IT."
+},
+{
+"line": 13,
+"start": 51.273,
+"end": 51.964,
+"text": "THEN"
+},
+{
+"line": 13,
+"start": 51.964,
+"end": 52.127,
+"text": "YOU CHECK"
+},
+{
+"line": 13,
+"start": 52.127,
+"end": 52.727,
+"text": "YOUR POCKET."
+},
+{
+"line": 14,
+"start": 53.164,
+"end": 53.8,
+"text": "A TICKET."
+},
+{
+"line": 14,
+"start": 54.327,
+"end": 54.945,
+"text": "PLATFORM ZERO."
+},
+{
+"line": 14,
+"start": 55.327,
+"end": 55.982,
+"text": "DEPARTS:"
+},
+{
+"line": 14,
+"start": 55.982,
+"end": 56.691,
+"text": "TONIGHT."
+},
+{
+"line": 15,
+"start": 57.182,
+"end": 57.491,
+"text": "SO…"
+},
+{
+"line": 15,
+"start": 57.491,
+"end": 58.509,
+"text": "WILL YOU"
+},
+{
+"line": 15,
+"start": 58.509,
+"end": 58.818,
+"text": "GET ON?"
+}
+],
+"words": [
+{
+"line": 0,
+"start": 0.0,
+"end": 0.364,
+"text": "steig"
+},
+{
+"line": 0,
+"start": 0.364,
+"end": 0.982,
+"text": "niemals"
+},
+{
+"line": 0,
+"start": 0.982,
+"end": 1.2,
+"text": "an"
+},
+{
+"line": 0,
+"start": 1.2,
+"end": 1.473,
+"text": "Gleis"
+},
+{
+"line": 0,
+"start": 1.473,
+"end": 1.745,
+"text": "Null"
+},
+{
+"line": 0,
+"start": 1.745,
+"end": 2.109,
+"text": "aus."
+},
+{
+"line": 1,
+"start": 2.545,
+"end": 2.727,
+"text": "Du"
+},
+{
+"line": 1,
+"start": 2.727,
+"end": 3.073,
+"text": "schläfst"
+},
+{
+"line": 1,
+"start": 3.073,
+"end": 3.2,
+"text": "im"
+},
+{
+"line": 1,
+"start": 3.2,
+"end": 3.491,
+"text": "letzten"
+},
+{
+"line": 1,
+"start": 3.491,
+"end": 4.091,
+"text": "Nachzug"
+},
+{
+"line": 1,
+"start": 4.091,
+"end": 4.364,
+"text": "ein."
+},
+{
+"line": 1,
+"start": 4.836,
+"end": 5.018,
+"text": "Als"
+},
+{
+"line": 1,
+"start": 5.018,
+"end": 5.164,
+"text": "du"
+},
+{
+"line": 1,
+"start": 5.164,
+"end": 5.8,
+"text": "aufwachst,"
+},
+{
+"line": 1,
+"start": 5.982,
+"end": 6.091,
+"text": "ist"
+},
+{
+"line": 1,
+"start": 6.091,
+"end": 6.236,
+"text": "der"
+},
+{
+"line": 1,
+"start": 6.236,
+"end": 6.473,
+"text": "Wagen"
+},
+{
+"line": 1,
+"start": 6.473,
+"end": 6.764,
+"text": "leer."
+},
+{
+"line": 2,
+"start": 7.327,
+"end": 7.436,
+"text": "Der"
+},
+{
+"line": 2,
+"start": 7.436,
+"end": 7.709,
+"text": "Zug"
+},
+{
+"line": 2,
+"start": 7.709,
+"end": 8.055,
+"text": "steht."
+},
+{
+"line": 2,
+"start": 8.673,
+"end": 9.018,
+"text": "Draußen"
+},
+{
+"line": 2,
+"start": 9.018,
+"end": 9.273,
+"text": "ein"
+},
+{
+"line": 2,
+"start": 9.273,
+"end": 9.582,
+"text": "Schild."
+},
+{
+"line": 2,
+"start": 10.091,
+"end": 10.455,
+"text": "Gleis"
+},
+{
+"line": 2,
+"start": 10.455,
+"end": 10.818,
+"text": "Null."
+},
+{
+"line": 3,
+"start": 11.182,
+"end": 11.655,
+"text": "Endstation."
+},
+{
+"line": 3,
+"start": 12.255,
+"end": 12.473,
+"text": "Bitte"
+},
+{
+"line": 3,
+"start": 12.473,
+"end": 12.891,
+"text": "alle"
+},
+{
+"line": 3,
+"start": 12.891,
+"end": 13.564,
+"text": "aussteigen."
+},
+{
+"line": 4,
+"start": 14.164,
+"end": 14.364,
+"text": "Hinter"
+},
+{
+"line": 4,
+"start": 14.364,
+"end": 14.636,
+"text": "dir"
+},
+{
+"line": 4,
+"start": 14.636,
+"end": 14.927,
+"text": "steht"
+},
+{
+"line": 4,
+"start": 14.927,
+"end": 15.109,
+"text": "der"
+},
+{
+"line": 4,
+"start": 15.109,
+"end": 15.545,
+"text": "Schaffner."
+},
+{
+"line": 4,
+"start": 16.018,
+"end": 16.291,
+"text": "Kein"
+},
+{
+"line": 4,
+"start": 16.291,
+"end": 16.545,
+"text": "Gesicht."
+},
+{
+"line": 4,
+"start": 17.109,
+"end": 17.345,
+"text": "Nur"
+},
+{
+"line": 4,
+"start": 17.345,
+"end": 17.636,
+"text": "ein"
+},
+{
+"line": 4,
+"start": 17.636,
+"end": 18.036,
+"text": "roter"
+},
+{
+"line": 4,
+"start": 18.036,
+"end": 18.291,
+"text": "Punkt."
+},
+{
+"line": 5,
+"start": 18.891,
+"end": 19.0,
+"text": "Er"
+},
+{
+"line": 5,
+"start": 19.0,
+"end": 19.255,
+"text": "zeigt"
+},
+{
+"line": 5,
+"start": 19.255,
+"end": 19.473,
+"text": "auf"
+},
+{
+"line": 5,
+"start": 19.473,
+"end": 19.618,
+"text": "die"
+},
+{
+"line": 5,
+"start": 19.618,
+"end": 19.855,
+"text": "Tür."
+},
+{
+"line": 5,
+"start": 20.455,
+"end": 20.727,
+"text": "Bleibst"
+},
+{
+"line": 5,
+"start": 20.727,
+"end": 20.836,
+"text": "du"
+},
+{
+"line": 5,
+"start": 20.836,
+"end": 21.091,
+"text": "sitzen"
+},
+{
+"line": 5,
+"start": 21.091,
+"end": 21.745,
+"text": "oder"
+},
+{
+"line": 5,
+"start": 21.745,
+"end": 22.236,
+"text": "steigst"
+},
+{
+"line": 5,
+"start": 22.236,
+"end": 22.327,
+"text": "du"
+},
+{
+"line": 5,
+"start": 22.327,
+"end": 22.6,
+"text": "aus?"
+},
+{
+"line": 6,
+"start": 23.218,
+"end": 23.364,
+"text": "Du"
+},
+{
+"line": 6,
+"start": 23.364,
+"end": 23.745,
+"text": "bleibst"
+},
+{
+"line": 6,
+"start": 23.745,
+"end": 23.964,
+"text": "sitzen."
+},
+{
+"line": 6,
+"start": 24.655,
+"end": 24.764,
+"text": "Die"
+},
+{
+"line": 6,
+"start": 24.764,
+"end": 25.145,
+"text": "Türen"
+},
+{
+"line": 6,
+"start": 25.145,
+"end": 25.491,
+"text": "schließen"
+},
+{
+"line": 6,
+"start": 25.491,
+"end": 25.782,
+"text": "sich."
+},
+{
+"line": 7,
+"start": 26.327,
+"end": 26.473,
+"text": "Hinter"
+},
+{
+"line": 7,
+"start": 26.473,
+"end": 26.673,
+"text": "den"
+},
+{
+"line": 7,
+"start": 26.673,
+"end": 27.2,
+"text": "Fenstern"
+},
+{
+"line": 7,
+"start": 27.2,
+"end": 27.655,
+"text": "nur"
+},
+{
+"line": 7,
+"start": 27.655,
+"end": 28.145,
+"text": "schwarz."
+},
+{
+"line": 7,
+"start": 28.673,
+"end": 28.8,
+"text": "Die"
+},
+{
+"line": 7,
+"start": 28.8,
+"end": 29.309,
+"text": "Durchsage"
+},
+{
+"line": 7,
+"start": 29.309,
+"end": 29.709,
+"text": "zählt."
+},
+{
+"line": 7,
+"start": 30.291,
+"end": 30.582,
+"text": "Drei,"
+},
+{
+"line": 7,
+"start": 31.091,
+"end": 31.364,
+"text": "zwei,"
+},
+{
+"line": 7,
+"start": 32.036,
+"end": 32.382,
+"text": "eins."
+},
+{
+"line": 8,
+"start": 33.055,
+"end": 33.182,
+"text": "Licht"
+},
+{
+"line": 8,
+"start": 33.182,
+"end": 33.473,
+"text": "aus."
+},
+{
+"line": 8,
+"start": 34.109,
+"end": 34.218,
+"text": "Der"
+},
+{
+"line": 8,
+"start": 34.218,
+"end": 34.509,
+"text": "rote"
+},
+{
+"line": 8,
+"start": 34.509,
+"end": 34.855,
+"text": "Punkt"
+},
+{
+"line": 8,
+"start": 34.855,
+"end": 35.255,
+"text": "sitzt"
+},
+{
+"line": 8,
+"start": 35.255,
+"end": 35.673,
+"text": "direkt"
+},
+{
+"line": 8,
+"start": 35.673,
+"end": 36.127,
+"text": "neben"
+},
+{
+"line": 8,
+"start": 36.127,
+"end": 36.364,
+"text": "dir."
+},
+{
+"line": 9,
+"start": 37.055,
+"end": 37.727,
+"text": "Zurückspulen."
+},
+{
+"line": 9,
+"start": 38.2,
+"end": 38.345,
+"text": "Denn"
+},
+{
+"line": 9,
+"start": 38.345,
+"end": 38.491,
+"text": "Weg"
+},
+{
+"line": 9,
+"start": 38.491,
+"end": 38.855,
+"text": "zwei"
+},
+{
+"line": 9,
+"start": 38.855,
+"end": 39.364,
+"text": "ist"
+},
+{
+"line": 9,
+"start": 39.364,
+"end": 39.836,
+"text": "schlimmer."
+},
+{
+"line": 10,
+"start": 40.327,
+"end": 40.455,
+"text": "Du"
+},
+{
+"line": 10,
+"start": 40.455,
+"end": 40.836,
+"text": "steigst"
+},
+{
+"line": 10,
+"start": 40.836,
+"end": 41.055,
+"text": "aus."
+},
+{
+"line": 10,
+"start": 41.618,
+"end": 41.745,
+"text": "Das"
+},
+{
+"line": 10,
+"start": 41.745,
+"end": 41.964,
+"text": "Licht"
+},
+{
+"line": 10,
+"start": 41.964,
+"end": 42.436,
+"text": "flackert."
+},
+{
+"line": 10,
+"start": 42.909,
+"end": 43.055,
+"text": "Er"
+},
+{
+"line": 10,
+"start": 43.055,
+"end": 43.255,
+"text": "steht"
+},
+{
+"line": 10,
+"start": 43.255,
+"end": 43.636,
+"text": "hinter"
+},
+{
+"line": 10,
+"start": 43.636,
+"end": 43.8,
+"text": "dir."
+},
+{
+"line": 11,
+"start": 44.327,
+"end": 44.455,
+"text": "Es"
+},
+{
+"line": 11,
+"start": 44.455,
+"end": 44.818,
+"text": "flackert"
+},
+{
+"line": 11,
+"start": 44.818,
+"end": 45.055,
+"text": "wieder."
+},
+{
+"line": 11,
+"start": 45.636,
+"end": 45.764,
+"text": "Er"
+},
+{
+"line": 11,
+"start": 45.764,
+"end": 45.964,
+"text": "ist"
+},
+{
+"line": 11,
+"start": 45.964,
+"end": 46.418,
+"text": "näher."
+},
+{
+"line": 12,
+"start": 46.418,
+"end": 46.964,
+"text": "Du"
+},
+{
+"line": 12,
+"start": 46.964,
+"end": 47.273,
+"text": "rennst"
+},
+{
+"line": 12,
+"start": 47.273,
+"end": 47.4,
+"text": "die"
+},
+{
+"line": 12,
+"start": 47.4,
+"end": 47.709,
+"text": "Treppe"
+},
+{
+"line": 12,
+"start": 47.709,
+"end": 47.927,
+"text": "hoch."
+},
+{
+"line": 12,
+"start": 48.364,
+"end": 49.0,
+"text": "Morgenlicht."
+},
+{
+"line": 12,
+"start": 49.364,
+"end": 49.727,
+"text": "Menschen."
+},
+{
+"line": 12,
+"start": 50.273,
+"end": 50.745,
+"text": "Geschafft."
+},
+{
+"line": 13,
+"start": 51.273,
+"end": 51.491,
+"text": "Dann"
+},
+{
+"line": 13,
+"start": 51.491,
+"end": 51.964,
+"text": "greifst"
+},
+{
+"line": 13,
+"start": 51.964,
+"end": 52.036,
+"text": "du"
+},
+{
+"line": 13,
+"start": 52.036,
+"end": 52.127,
+"text": "in"
+},
+{
+"line": 13,
+"start": 52.127,
+"end": 52.291,
+"text": "deine"
+},
+{
+"line": 13,
+"start": 52.291,
+"end": 52.727,
+"text": "Tasche."
+},
+{
+"line": 14,
+"start": 53.164,
+"end": 53.291,
+"text": "Ein"
+},
+{
+"line": 14,
+"start": 53.291,
+"end": 53.8,
+"text": "Fahrschein."
+},
+{
+"line": 14,
+"start": 54.327,
+"end": 54.6,
+"text": "Gleis"
+},
+{
+"line": 14,
+"start": 54.6,
+"end": 54.945,
+"text": "Null."
+},
+{
+"line": 14,
+"start": 55.327,
+"end": 55.982,
+"text": "Abfahrt"
+},
+{
+"line": 14,
+"start": 55.982,
+"end": 56.273,
+"text": "heute"
+},
+{
+"line": 14,
+"start": 56.273,
+"end": 56.691,
+"text": "Nacht."
+},
+{
+"line": 15,
+"start": 57.182,
+"end": 57.491,
+"text": "Also"
+},
+{
+"line": 15,
+"start": 57.491,
+"end": 58.509,
+"text": "steigst"
+},
+{
+"line": 15,
+"start": 58.509,
+"end": 58.618,
+"text": "du"
+},
+{
+"line": 15,
+"start": 58.618,
+"end": 58.818,
+"text": "ein?"
+}
+],
+"duration": 58.918
+}
