@@ -3,3 +3,4 @@ out/*.png
 out/*.jpg
 tools/takes/
 out/*.log
+out/ct_part*.mp4
