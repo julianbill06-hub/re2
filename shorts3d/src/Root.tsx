@@ -11,6 +11,7 @@ import {Flowers, FLOWERS_DURATION} from './Flowers';
 import {Marsh, MARSH_DURATION} from './Marsh';
 import {SvTag10, SV10_DURATION} from './SvTag10';
 import {MallRef, MallRefClose} from './MallRef';
+import {ClosingTime, CT_DURATION} from './ClosingTime';
 import {NightGateStill, NightGateScene, GATE_DURATION, NightGateDetail} from './NightGate';
 import {Flight404, F404_DURATION} from './NightStory';
 import {Flight404DE, F404DE_DURATION} from './NightStoryDE';
@@ -43,6 +44,7 @@ export const RemotionRoot: React.FC = () => (
   <Composition id="SvTag10" component={SvTag10} durationInFrames={Math.ceil(SV10_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
   <Composition id="NightGateStill" component={NightGateStill} durationInFrames={60} fps={FPS} width={1080} height={1920} />
   <Composition id="MallRef" component={MallRef} durationInFrames={60} fps={FPS} width={1080} height={1920} />
+  <Composition id="ClosingTime" component={ClosingTime} durationInFrames={Math.ceil(CT_DURATION * 60)} fps={60} width={1080} height={1920} />
   <Composition id="MallRefClose" component={MallRefClose} durationInFrames={60} fps={FPS} width={1080} height={1920} />
   <Composition id="NightGateScene" component={NightGateScene} durationInFrames={Math.ceil(GATE_DURATION * FPS)} fps={FPS} width={1080} height={1920} />
   <Composition id="NightGateDetail" component={NightGateDetail} durationInFrames={90} fps={FPS} width={1080} height={1920} />

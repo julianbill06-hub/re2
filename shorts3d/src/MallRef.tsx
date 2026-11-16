@@ -32,12 +32,12 @@ const signTex = (txt: string, bg: string, fg: string) => canvasTex(1024, 256, (g
   g.fillStyle = bg; g.fillRect(0, 0, 1024, 256);
   g.fillStyle = fg; g.font = '800 130px Arial, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(txt, 512, 136);
 });
-const boardTex = () => canvasTex(1024, 512, (g) => {
+const boardTex = (mode = 1) => canvasTex(1024, 512, (g) => {
   g.fillStyle = '#05070a'; g.fillRect(0, 0, 1024, 512);
   g.fillStyle = '#ff4b4b'; g.font = '700 70px "Courier New", monospace'; g.textAlign = 'center';
   g.fillText('STORE CLOSED', 512, 150);
   g.fillStyle = '#e8eef5'; g.font = '700 56px "Courier New", monospace';
-  g.fillText('PLEASE STAND STILL', 512, 270);
+  if (mode) g.fillText('PLEASE STAND STILL', 512, 270);
   g.fillStyle = GREEN; g.fillText('00:00', 512, 400);
 });
 
@@ -50,11 +50,11 @@ const Bell: React.FC = () => (
     <M geo={GEO.sphere} color="#b8892a" p={[0, -0.13, 0]} s={0.025} o={0} />
   </group>
 );
-export const Greeter: React.FC<{p: V3; ry?: number; s?: number; glow?: number; tilt?: number}> = ({p, ry = 0, s = 1, glow = 1, tilt = 0}) => {
+export const Greeter: React.FC<{p: V3; ry?: number; s?: number; glow?: number; tilt?: number; ring?: number; armUp?: number}> = ({p, ry = 0, s = 1, glow = 1, tilt = 0, ring = 0, armUp = 0}) => {
   const slit = new THREE.Color(GREEN).multiplyScalar(1.4 + glow);
   return (
     <group position={p} rotation={[0, ry, 0]} scale={s}>
-      <Roman robe="#5a0f18" trim="#ece6da" skin="#f1efe8" hairStyle="none" mood="calm" armR={0.05} armL={0.12} elbowR={0.9} handR={<Bell />} />
+      <Roman robe="#5a0f18" trim="#ece6da" skin="#f1efe8" hairStyle="none" mood="calm" armR={0.05 + armUp} armL={0.12} elbowR={0.9 - armUp * 0.5} handR={<group rotation={[0, 0, Math.sin(ring * Math.PI * 2) * 0.6]}><Bell /></group>} />
       {/* langer Mantel bis übers Knie + Fellsaum */}
       <T geo={GEO.tunic} color="#5a0f18" p={[0, 1.02, 0]} s={[1.18, 0.62, 0.96]} o={0.02} />
       <T geo={GEO.torus} color="#ece6da" p={[0, 0.72, 0]} r={[Math.PI / 2, 0, 0]} s={[0.47, 0.4, 0.9]} o={0.01} />
@@ -78,8 +78,8 @@ export const Greeter: React.FC<{p: V3; ry?: number; s?: number; glow?: number; t
         <mesh scale={[0.89, 0.83, 0.83]}><sphereGeometry args={[1, 32, 24]} /><meshBasicMaterial color="#000" side={THREE.BackSide} /></mesh>
         {/* EIN Licht-Merkmal: schmaler grüner Schlitz + zwei Halos */}
         <mesh position={[0, 0.04, 0.79]} scale={[0.44, 0.032, 0.04]}><boxGeometry args={[1, 1, 1]} /><meshBasicMaterial color={slit} toneMapped={false} /></mesh>
-        <Halo p={[0, 0.04, 0.82]} s={0.9} color={GREEN} o={0.55 * glow} />
-        <Halo p={[0, 0.04, 0.85]} s={1.5} color={GREEN} o={0.2 * glow} />
+        <Halo p={[0, 0.04, 0.82]} s={0.55} color={GREEN} o={Math.min(0.8, 0.5 * glow)} />
+        <Halo p={[0, 0.04, 0.85]} s={1.0} color={GREEN} o={Math.min(0.22, 0.1 * glow)} />
         {/* Zipfelmütze mit Fellrand + Bommel, nach hinten gekippt */}
         <T geo={GEO.torus} color="#ece6da" p={[0, 0.6, -0.04]} r={[Math.PI / 2 + 0.12, 0, 0]} s={[0.7, 0.68, 1.6]} o={0.01} />
         <group position={[0, 0.67, -0.06]} rotation={[-0.55, 0, 0.25]}>
@@ -130,7 +130,7 @@ const ShopFront: React.FC<{p: V3; side: 1 | -1; name: string; color: string; lit
 
 const TREE_LAYERS = 6;
 const treeR = (y: number) => Math.max(0.15, 2.7 * (1 - (y - 0.5) / 7.1));
-const XmasTree: React.FC<{p: V3; t: number}> = ({p, t}) => {
+const XmasTree: React.FC<{p: V3; t: number; light?: number}> = ({p, t, light = 1}) => {
   const lights = useMemo(() => Array.from({length: 190}).map((_, i) => {
     const u = i / 190; const y = 0.75 + u * 6.2; const a = u * 52 + rnd(i) * 0.3; const r = treeR(y) * 0.86;
     return {pos: [Math.sin(a) * r, y, Math.cos(a) * r] as V3, c: ['#ffcf6a', '#ff5a4a', '#ffe9b0', '#7fd6ff'][i % 4], ph: rnd(i + 7) * 6.28};
@@ -156,7 +156,7 @@ const XmasTree: React.FC<{p: V3; t: number}> = ({p, t}) => {
       {baubles.map((b, i) => <M key={'b' + i} geo={GEO.sphere} color={b.c} p={b.pos} s={0.13} o={0.006} />)}
       {lights.map((l, i) => {
         const on = 0.6 + 0.4 * Math.sin(t * 2.2 + l.ph);
-        return <mesh key={'l' + i} position={l.pos} scale={0.055}><sphereGeometry args={[1, 8, 6]} /><meshBasicMaterial color={new THREE.Color(l.c).multiplyScalar(1 + on * 1.4)} toneMapped={false} /></mesh>;
+        return <mesh key={'l' + i} position={l.pos} scale={0.055}><sphereGeometry args={[1, 8, 6]} /><meshBasicMaterial color={new THREE.Color(l.c).multiplyScalar((1 + on * 1.4) * (0.08 + 0.92 * light))} toneMapped={false} /></mesh>;
       })}
       {/* Stern */}
       <group position={[0, 7.75, 0]}>
@@ -164,8 +164,8 @@ const XmasTree: React.FC<{p: V3; t: number}> = ({p, t}) => {
         <Halo p={[0, 0, 0.2]} s={2.8} color="#ffcf6a" o={0.55} />
       </group>
       <Halo p={[0, 3.6, 1.2]} s={9} color="#ff9a3c" o={0.16} />
-      <pointLight position={[0, 3.2, 2.4]} color="#ffab55" intensity={22} distance={12} decay={1.6} castShadow />
-      <pointLight position={[0, 6.5, 1.6]} color="#ffcf8a" intensity={8} distance={8} />
+      <pointLight position={[0, 3.2, 2.4]} color="#ffab55" intensity={22 * light} distance={12} decay={1.6} castShadow />
+      <pointLight position={[0, 6.5, 1.6]} color="#ffcf8a" intensity={8 * light} distance={8} />
       {/* Geschenke */}
       {[[-1.4, 0.9, '#b0142a', '#d9a83a'], [1.3, 1.1, '#1f5fd0', '#ece6da'], [0.2, 1.8, '#1f6f5a', '#e8343a'], [-0.7, 1.9, '#d9a83a', '#5a0f18'], [1.9, -0.3, '#6b2a8a', '#d9a83a']].map(([x, z, c, rb], i) => {
         const sz = 0.38 + rnd(i) * 0.3;
@@ -213,9 +213,11 @@ const HangingStar: React.FC<{p: V3; s: number; t: number; ph: number}> = ({p, s,
   </group>
 );
 
-export const MallSet: React.FC<{t: number; glow?: number; greeter?: {p: V3; ry: number}; traveler?: {p: V3; ry: number; mood: any; look: number}}> = ({t, glow = 1, greeter, traveler}) => {
+export const MallSet: React.FC<{t: number; glow?: number; greeter?: {p: V3; ry: number}; traveler?: {p: V3; ry: number; mood: any; look: number}; light?: number; boardMode?: number; esc?: number; children?: React.ReactNode}> = ({t, glow = 1, greeter, traveler, light = 1, boardMode = 1, esc = 0, children}) => {
   const floor = useMemo(floorTex, []);
-  const board = useMemo(boardTex, []);
+  const board0 = useMemo(() => boardTex(0), []);
+  const board1 = useMemo(() => boardTex(1), []);
+  const board = boardMode ? board1 : board0;
   const exit = useMemo(() => signTex('EXIT', '#1f9d55', '#ffffff'), []);
   const flick = (Math.sin(t * 37) > 0.2 && Math.sin(t * 5.3) > -0.6) ? 1 : 0.15;
   const snow = useMemo(() => Array.from({length: 160}).map((_, i) => [rnd(i) * 14 - 7, rnd(i + 50), rnd(i + 99) * 22 - 16, rnd(i + 200)]), []);
@@ -225,10 +227,10 @@ export const MallSet: React.FC<{t: number; glow?: number; greeter?: {p: V3; ry: 
     <>
       <color attach="background" args={['#04050a']} />
       <fog attach="fog" args={['#06070c', 10, 34]} />
-      <ambientLight intensity={0.22} />
-      <hemisphereLight args={['#33427a', '#1a100a', 0.45]} />
+      <ambientLight intensity={0.22 * (0.3 + 0.7 * light)} />
+      <hemisphereLight args={['#33427a', '#1a100a', 0.45 * (0.3 + 0.7 * light)]} />
       {/* kaltes Notlicht von oben */}
-      <spotLight position={[-0.6, 8.5, 6]} angle={0.42} penumbra={0.85} intensity={45} distance={16} color="#bcd0ff" castShadow target-position={[-0.6, 0, 1.6]} shadow-mapSize={[2048, 2048]} />
+      <spotLight position={[-0.6, 8.5, 6]} angle={0.42} penumbra={0.85} intensity={45 * light} distance={16} color="#bcd0ff" castShadow target-position={[-0.6, 0, 1.6]} shadow-mapSize={[2048, 2048]} />
       {/* Boden */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow position={[0, 0, -6]}><planeGeometry args={[16, 40]} /><meshStandardMaterial map={floor} roughness={0.42} metalness={0.15} /></mesh>
       {/* Decke + Oberlichter mit Nachthimmel */}
@@ -262,7 +264,7 @@ export const MallSet: React.FC<{t: number; glow?: number; greeter?: {p: V3; ry: 
       <group position={[2.6, 0, -9.5]}>
         <group rotation={[0.43, 0, 0]} position={[0, 2.25, 0]}>
           <T geo={GEO.box} color="#20232a" s={[1.3, 0.5, 10]} o={0.008} />
-          {Array.from({length: 26}).map((_, i) => <M key={i} geo={GEO.box} color="#6b717c" p={[0, 0.27, -4.8 + i * 0.37]} s={[1.0, 0.02, 0.2]} o={0} />)}
+          {Array.from({length: 26}).map((_, i) => <M key={i} geo={GEO.box} color="#6b717c" p={[0, 0.27, -4.8 + (((i * 0.37 - esc) % 9.62) + 9.62) % 9.62]} s={[1.0, 0.02, 0.2]} o={0} />)}
           {[-0.62, 0.62].map((x) => (
             <group key={x}>
               <mesh position={[x, 0.65, 0]}><boxGeometry args={[0.04, 0.8, 9.6]} /><meshPhysicalMaterial color="#b5c8e0" transparent opacity={0.18} roughness={0.05} /></mesh>
@@ -272,7 +274,7 @@ export const MallSet: React.FC<{t: number; glow?: number; greeter?: {p: V3; ry: 
         </group>
       </group>
       {/* Weihnachtsbaum im Atrium */}
-      <XmasTree p={[-0.4, 0, -7.5]} t={t} />
+      <XmasTree p={[-0.4, 0, -7.5]} t={t} light={light} />
       {/* Lichterketten + hängende Sterne */}
       {[0, 1, 2, 3].map((i) => <Garland key={'ga' + i} a={[-3.7, 7.6, 3 - i * 5]} b={[3.7, 7.6, 1 - i * 5]} sag={0.9} n={34} t={t} seed={i * 5} />)}
       <HangingStar p={[-2.3, 6.4, -2.5]} s={0.42} t={t} ph={0} />
@@ -284,8 +286,17 @@ export const MallSet: React.FC<{t: number; glow?: number; greeter?: {p: V3; ry: 
         <mesh position={[0, 0, 0.08]}><planeGeometry args={[2.8, 1.4]} /><meshBasicMaterial map={board} toneMapped={false} /></mesh>
       </group>
       {/* EXIT-Schild, weit weg */}
-      <mesh position={[4.2, 3.4, -18.9]}><planeGeometry args={[1.4, 0.35]} /><meshBasicMaterial map={exit} toneMapped={false} /></mesh>
-      <Halo p={[4.2, 3.4, -18.6]} s={2.2} color="#2fdf81" o={0.3} />
+      {/* Podest oben an der Rolltreppe + Glastür mit EXIT */}
+      <T geo={GEO.box} color="#1a1b21" p={[2.6, 4.46, -16.5]} s={[2.4, 0.3, 5]} o={0.006} />
+      <group position={[2.6, 4.61, -18.9]}>
+        <mesh position={[0, 1.2, 0.02]}><planeGeometry args={[1.7, 2.4]} /><meshStandardMaterial color="#2a3d52" emissive="#4a6a8a" emissiveIntensity={0.35} roughness={0.1} metalness={0.4} /></mesh>
+        {[-0.88, 0.88].map((x) => <M key={x} geo={GEO.box} color="#8a8f99" p={[x, 1.2, 0.05]} s={[0.07, 2.45, 0.08]} o={0} />)}
+        <M geo={GEO.box} color="#8a8f99" p={[0, 2.43, 0.05]} s={[1.83, 0.07, 0.08]} o={0} />
+        <M geo={GEO.box} color="#c9ced6" p={[0, 1.15, 0.1]} s={[1.3, 0.05, 0.05]} o={0} />
+        <mesh position={[0, 2.85, 0.05]}><planeGeometry args={[1.2, 0.3]} /><meshBasicMaterial map={exit} toneMapped={false} /></mesh>
+        <Halo p={[0, 2.85, 0.3]} s={2.2} color="#2fdf81" o={0.35} />
+        <pointLight position={[0, 2.6, 0.8]} color="#2fdf81" intensity={3} distance={4} />
+      </group>
       {/* Deko-Schnee + Staub */}
       {snow.map(([x, ph, z, d], i) => (
         <mesh key={'s' + i} position={[x, 8.5 - ((ph * 8.5 + t * (0.25 + d * 0.3)) % 8.5), z]} scale={0.018 + d * 0.022}><sphereGeometry args={[1, 6, 4]} /><meshBasicMaterial color="#e8eeff" transparent opacity={0.55} toneMapped={false} /></mesh>
@@ -295,6 +306,7 @@ export const MallSet: React.FC<{t: number; glow?: number; greeter?: {p: V3; ry: 
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-0.6, 0.012, 1.8]} scale={[1.9, 1.6, 1]}><circleGeometry args={[1, 40]} /><meshBasicMaterial color="#9fb2e6" transparent opacity={0.1} depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} /></mesh>
       {greeter ? <Greeter p={greeter.p} ry={greeter.ry} s={0.74} glow={glow} /> : null}
       {traveler ? <Traveler p={traveler.p} ry={traveler.ry} mood={traveler.mood} look={traveler.look} armR={0.15} /> : null}
+      {children}
     </>
   );
 };

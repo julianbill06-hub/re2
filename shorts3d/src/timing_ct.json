@@ -1,0 +1,1089 @@
+{
+"duration": 44.81,
+"lines": [
+[
+0.08,
+2.34
+],
+[
+2.89,
+4.378
+],
+[
+4.678,
+6.648
+],
+[
+6.948,
+8.48
+],
+[
+9.08,
+10.049
+],
+[
+10.249,
+11.275
+],
+[
+12.225,
+13.653
+],
+[
+14.003,
+14.634
+],
+[
+14.834,
+15.875
+],
+[
+16.475,
+18.697
+],
+[
+19.397,
+20.323
+],
+[
+20.673,
+21.461
+],
+[
+21.711,
+23.171
+],
+[
+24.071,
+26.176
+],
+[
+27.026,
+27.827
+],
+[
+27.977,
+29.387
+],
+[
+29.887,
+31.024
+],
+[
+31.274,
+32.03
+],
+[
+32.23,
+33.272
+],
+[
+33.872,
+34.84
+],
+[
+35.14,
+36.716
+],
+[
+37.316,
+38.98
+],
+[
+39.33,
+41.45
+],
+[
+41.95,
+43.21
+]
+],
+"words": [
+{
+"text": "Bleib",
+"start": 0.08,
+"end": 0.396,
+"line": 0
+},
+{
+"text": "niemals",
+"start": 0.396,
+"end": 0.803,
+"line": 0
+},
+{
+"text": "nach",
+"start": 0.803,
+"end": 1.074,
+"line": 0
+},
+{
+"text": "Ladenschluss",
+"start": 1.074,
+"end": 1.707,
+"line": 0
+},
+{
+"text": "im",
+"start": 1.707,
+"end": 1.888,
+"line": 0
+},
+{
+"text": "Kaufhaus.",
+"start": 1.888,
+"end": 2.34,
+"line": 0
+},
+{
+"text": "Du",
+"start": 2.89,
+"end": 3.046,
+"line": 1
+},
+{
+"text": "schläfst",
+"start": 3.046,
+"end": 3.438,
+"line": 1
+},
+{
+"text": "in",
+"start": 3.438,
+"end": 3.595,
+"line": 1
+},
+{
+"text": "der",
+"start": 3.595,
+"end": 3.791,
+"line": 1
+},
+{
+"text": "Umkleide",
+"start": 3.791,
+"end": 4.182,
+"line": 1
+},
+{
+"text": "ein.",
+"start": 4.182,
+"end": 4.378,
+"line": 1
+},
+{
+"text": "Als",
+"start": 4.678,
+"end": 4.918,
+"line": 2
+},
+{
+"text": "du",
+"start": 4.918,
+"end": 5.111,
+"line": 2
+},
+{
+"text": "rauskommst,",
+"start": 5.111,
+"end": 5.687,
+"line": 2
+},
+{
+"text": "ist",
+"start": 5.687,
+"end": 5.927,
+"line": 2
+},
+{
+"text": "alles",
+"start": 5.927,
+"end": 6.264,
+"line": 2
+},
+{
+"text": "dunkel.",
+"start": 6.264,
+"end": 6.648,
+"line": 2
+},
+{
+"text": "Nur",
+"start": 6.948,
+"end": 7.13,
+"line": 3
+},
+{
+"text": "der",
+"start": 7.13,
+"end": 7.313,
+"line": 3
+},
+{
+"text": "Weihnachtsbaum",
+"start": 7.313,
+"end": 7.896,
+"line": 3
+},
+{
+"text": "leuchtet",
+"start": 7.896,
+"end": 8.261,
+"line": 3
+},
+{
+"text": "noch.",
+"start": 8.261,
+"end": 8.48,
+"line": 3
+},
+{
+"text": "Dann",
+"start": 9.08,
+"end": 9.332,
+"line": 4
+},
+{
+"text": "eine",
+"start": 9.332,
+"end": 9.585,
+"line": 4
+},
+{
+"text": "Durchsage.",
+"start": 9.585,
+"end": 10.049,
+"line": 4
+},
+{
+"text": "Bitte",
+"start": 10.249,
+"end": 10.496,
+"line": 5
+},
+{
+"text": "bleiben",
+"start": 10.496,
+"end": 10.815,
+"line": 5
+},
+{
+"text": "Sie",
+"start": 10.815,
+"end": 10.992,
+"line": 5
+},
+{
+"text": "stehen.",
+"start": 10.992,
+"end": 11.275,
+"line": 5
+},
+{
+"text": "Neben",
+"start": 12.225,
+"end": 12.528,
+"line": 6
+},
+{
+"text": "dem",
+"start": 12.528,
+"end": 12.745,
+"line": 6
+},
+{
+"text": "Baum",
+"start": 12.745,
+"end": 13.004,
+"line": 6
+},
+{
+"text": "steht",
+"start": 13.004,
+"end": 13.307,
+"line": 6
+},
+{
+"text": "jemand.",
+"start": 13.307,
+"end": 13.653,
+"line": 6
+},
+{
+"text": "Kein",
+"start": 14.003,
+"end": 14.255,
+"line": 7
+},
+{
+"text": "Gesicht.",
+"start": 14.255,
+"end": 14.634,
+"line": 7
+},
+{
+"text": "Nur",
+"start": 14.834,
+"end": 15.042,
+"line": 8
+},
+{
+"text": "ein",
+"start": 15.042,
+"end": 15.25,
+"line": 8
+},
+{
+"text": "grünes",
+"start": 15.25,
+"end": 15.583,
+"line": 8
+},
+{
+"text": "Licht.",
+"start": 15.583,
+"end": 15.875,
+"line": 8
+},
+{
+"text": "Bleibst",
+"start": 16.475,
+"end": 16.852,
+"line": 9
+},
+{
+"text": "du",
+"start": 16.852,
+"end": 17.02,
+"line": 9
+},
+{
+"text": "stehen,",
+"start": 17.02,
+"end": 17.355,
+"line": 9
+},
+{
+"text": "oder",
+"start": 17.355,
+"end": 17.607,
+"line": 9
+},
+{
+"text": "rennst",
+"start": 17.607,
+"end": 17.943,
+"line": 9
+},
+{
+"text": "du",
+"start": 17.943,
+"end": 18.11,
+"line": 9
+},
+{
+"text": "zum",
+"start": 18.11,
+"end": 18.32,
+"line": 9
+},
+{
+"text": "Ausgang?",
+"start": 18.32,
+"end": 18.697,
+"line": 9
+},
+{
+"text": "Du",
+"start": 19.397,
+"end": 19.574,
+"line": 10
+},
+{
+"text": "bleibst",
+"start": 19.574,
+"end": 19.97,
+"line": 10
+},
+{
+"text": "stehen.",
+"start": 19.97,
+"end": 20.323,
+"line": 10
+},
+{
+"text": "Die",
+"start": 20.673,
+"end": 20.86,
+"line": 11
+},
+{
+"text": "Glocke",
+"start": 20.86,
+"end": 21.161,
+"line": 11
+},
+{
+"text": "läutet.",
+"start": 21.161,
+"end": 21.461,
+"line": 11
+},
+{
+"text": "Bei",
+"start": 21.711,
+"end": 21.913,
+"line": 12
+},
+{
+"text": "jedem",
+"start": 21.913,
+"end": 22.197,
+"line": 12
+},
+{
+"text": "Schlag",
+"start": 22.197,
+"end": 22.522,
+"line": 12
+},
+{
+"text": "ist",
+"start": 22.522,
+"end": 22.725,
+"line": 12
+},
+{
+"text": "er",
+"start": 22.725,
+"end": 22.887,
+"line": 12
+},
+{
+"text": "näher.",
+"start": 22.887,
+"end": 23.171,
+"line": 12
+},
+{
+"text": "Dann",
+"start": 24.071,
+"end": 24.334,
+"line": 13
+},
+{
+"text": "flüstert",
+"start": 24.334,
+"end": 24.772,
+"line": 13
+},
+{
+"text": "er:",
+"start": 24.772,
+"end": 24.948,
+"line": 13
+},
+{
+"text": "Danke",
+"start": 24.948,
+"end": 25.255,
+"line": 13
+},
+{
+"text": "für",
+"start": 25.255,
+"end": 25.474,
+"line": 13
+},
+{
+"text": "Ihren",
+"start": 25.474,
+"end": 25.781,
+"line": 13
+},
+{
+"text": "Einkauf.",
+"start": 25.781,
+"end": 26.176,
+"line": 13
+},
+{
+"text": "Zurückspulen.",
+"start": 27.026,
+"end": 27.827,
+"line": 14
+},
+{
+"text": "Denn",
+"start": 27.977,
+"end": 28.233,
+"line": 15
+},
+{
+"text": "Weg",
+"start": 28.233,
+"end": 28.447,
+"line": 15
+},
+{
+"text": "zwei",
+"start": 28.447,
+"end": 28.703,
+"line": 15
+},
+{
+"text": "ist",
+"start": 28.703,
+"end": 28.917,
+"line": 15
+},
+{
+"text": "schlimmer.",
+"start": 28.917,
+"end": 29.387,
+"line": 15
+},
+{
+"text": "Du",
+"start": 29.887,
+"end": 30.044,
+"line": 16
+},
+{
+"text": "rennst",
+"start": 30.044,
+"end": 30.357,
+"line": 16
+},
+{
+"text": "zur",
+"start": 30.357,
+"end": 30.554,
+"line": 16
+},
+{
+"text": "Rolltreppe.",
+"start": 30.554,
+"end": 31.024,
+"line": 16
+},
+{
+"text": "Das",
+"start": 31.274,
+"end": 31.446,
+"line": 17
+},
+{
+"text": "Licht",
+"start": 31.446,
+"end": 31.686,
+"line": 17
+},
+{
+"text": "flackert.",
+"start": 31.686,
+"end": 32.03,
+"line": 17
+},
+{
+"text": "Er",
+"start": 32.23,
+"end": 32.379,
+"line": 18
+},
+{
+"text": "ist",
+"start": 32.379,
+"end": 32.565,
+"line": 18
+},
+{
+"text": "jedes",
+"start": 32.565,
+"end": 32.825,
+"line": 18
+},
+{
+"text": "Mal",
+"start": 32.825,
+"end": 33.011,
+"line": 18
+},
+{
+"text": "näher.",
+"start": 33.011,
+"end": 33.272,
+"line": 18
+},
+{
+"text": "Du",
+"start": 33.872,
+"end": 34.01,
+"line": 19
+},
+{
+"text": "drückst",
+"start": 34.01,
+"end": 34.321,
+"line": 19
+},
+{
+"text": "die",
+"start": 34.321,
+"end": 34.494,
+"line": 19
+},
+{
+"text": "Tür",
+"start": 34.494,
+"end": 34.667,
+"line": 19
+},
+{
+"text": "auf.",
+"start": 34.667,
+"end": 34.84,
+"line": 19
+},
+{
+"text": "Morgen.",
+"start": 35.14,
+"end": 35.575,
+"line": 20
+},
+{
+"text": "Menschen.",
+"start": 35.575,
+"end": 36.118,
+"line": 20
+},
+{
+"text": "Geschafft.",
+"start": 36.118,
+"end": 36.716,
+"line": 20
+},
+{
+"text": "Dann",
+"start": 37.316,
+"end": 37.524,
+"line": 21
+},
+{
+"text": "spürst",
+"start": 37.524,
+"end": 37.802,
+"line": 21
+},
+{
+"text": "du",
+"start": 37.802,
+"end": 37.94,
+"line": 21
+},
+{
+"text": "eine",
+"start": 37.94,
+"end": 38.148,
+"line": 21
+},
+{
+"text": "Tüte",
+"start": 38.148,
+"end": 38.356,
+"line": 21
+},
+{
+"text": "in",
+"start": 38.356,
+"end": 38.495,
+"line": 21
+},
+{
+"text": "deiner",
+"start": 38.495,
+"end": 38.772,
+"line": 21
+},
+{
+"text": "Hand.",
+"start": 38.772,
+"end": 38.98,
+"line": 21
+},
+{
+"text": "Auf",
+"start": 39.33,
+"end": 39.519,
+"line": 22
+},
+{
+"text": "dem",
+"start": 39.519,
+"end": 39.709,
+"line": 22
+},
+{
+"text": "Kassenbon",
+"start": 39.709,
+"end": 40.125,
+"line": 22
+},
+{
+"text": "steht:",
+"start": 40.125,
+"end": 40.39,
+"line": 22
+},
+{
+"text": "Komm",
+"start": 40.39,
+"end": 40.617,
+"line": 22
+},
+{
+"text": "heute",
+"start": 40.617,
+"end": 40.882,
+"line": 22
+},
+{
+"text": "Nacht",
+"start": 40.882,
+"end": 41.147,
+"line": 22
+},
+{
+"text": "wieder.",
+"start": 41.147,
+"end": 41.45,
+"line": 22
+},
+{
+"text": "Also,",
+"start": 41.95,
+"end": 42.23,
+"line": 23
+},
+{
+"text": "bleibst",
+"start": 42.23,
+"end": 42.65,
+"line": 23
+},
+{
+"text": "du",
+"start": 42.65,
+"end": 42.837,
+"line": 23
+},
+{
+"text": "stehen?",
+"start": 42.837,
+"end": 43.21,
+"line": 23
+}
+],
+"caps": [
+{
+"line": 0,
+"text": "NEVER STAY",
+"start": 0.08,
+"end": 1.084
+},
+{
+"line": 0,
+"text": "AFTER CLOSING.",
+"start": 1.084,
+"end": 2.34
+},
+{
+"line": 1,
+"text": "YOU FALL ASLEEP",
+"start": 2.89,
+"end": 3.584
+},
+{
+"line": 1,
+"text": "IN A FITTING ROOM.",
+"start": 3.584,
+"end": 4.378
+},
+{
+"line": 2,
+"text": "WHEN YOU COME OUT,",
+"start": 4.678,
+"end": 5.753
+},
+{
+"line": 2,
+"text": "IT'S ALL DARK.",
+"start": 5.753,
+"end": 6.648
+},
+{
+"line": 3,
+"text": "ONLY THE TREE",
+"start": 6.948,
+"end": 7.641
+},
+{
+"line": 3,
+"text": "IS STILL GLOWING.",
+"start": 7.641,
+"end": 8.48
+},
+{
+"line": 4,
+"text": "THEN AN",
+"start": 9.08,
+"end": 9.473
+},
+{
+"line": 4,
+"text": "ANNOUNCEMENT.",
+"start": 9.473,
+"end": 10.049
+},
+{
+"line": 5,
+"text": "PLEASE",
+"start": 10.249,
+"end": 10.659
+},
+{
+"line": 5,
+"text": "STAND STILL.",
+"start": 10.659,
+"end": 11.275
+},
+{
+"line": 6,
+"text": "SOMEONE STANDS",
+"start": 12.225,
+"end": 12.977
+},
+{
+"line": 6,
+"text": "BY THE TREE.",
+"start": 12.977,
+"end": 13.653
+},
+{
+"line": 7,
+"text": "NO FACE.",
+"start": 14.003,
+"end": 14.634
+},
+{
+"line": 8,
+"text": "JUST ONE",
+"start": 14.834,
+"end": 15.289
+},
+{
+"line": 8,
+"text": "GREEN LIGHT.",
+"start": 15.289,
+"end": 15.875
+},
+{
+"line": 9,
+"text": "STAND STILL",
+"start": 16.475,
+"end": 17.262
+},
+{
+"line": 9,
+"text": "OR RUN",
+"start": 17.262,
+"end": 17.818
+},
+{
+"line": 9,
+"text": "FOR THE EXIT?",
+"start": 17.818,
+"end": 18.697
+},
+{
+"line": 10,
+"text": "YOU STAND STILL.",
+"start": 19.397,
+"end": 20.323
+},
+{
+"line": 11,
+"text": "THE BELL RINGS.",
+"start": 20.673,
+"end": 21.461
+},
+{
+"line": 12,
+"text": "EVERY RING,",
+"start": 21.711,
+"end": 22.42
+},
+{
+"line": 12,
+"text": "HE'S CLOSER.",
+"start": 22.42,
+"end": 23.171
+},
+{
+"line": 13,
+"text": "THEN HE WHISPERS:",
+"start": 24.071,
+"end": 24.92
+},
+{
+"line": 13,
+"text": "THANK YOU",
+"start": 24.92,
+"end": 25.474
+},
+{
+"line": 13,
+"text": "FOR SHOPPING.",
+"start": 25.474,
+"end": 26.176
+},
+{
+"line": 14,
+"text": "LET'S REWIND.",
+"start": 27.026,
+"end": 27.827
+},
+{
+"line": 15,
+"text": "PATH TWO",
+"start": 27.977,
+"end": 28.658
+},
+{
+"line": 15,
+"text": "IS WORSE.",
+"start": 28.658,
+"end": 29.387
+},
+{
+"line": 16,
+"text": "YOU RUN",
+"start": 29.887,
+"end": 30.298
+},
+{
+"line": 16,
+"text": "TO THE ESCALATOR.",
+"start": 30.298,
+"end": 31.024
+},
+{
+"line": 17,
+"text": "THE LIGHTS",
+"start": 31.274,
+"end": 31.677
+},
+{
+"line": 17,
+"text": "FLICKER.",
+"start": 31.677,
+"end": 32.03
+},
+{
+"line": 18,
+"text": "HE'S CLOSER",
+"start": 32.23,
+"end": 32.751
+},
+{
+"line": 18,
+"text": "EVERY TIME.",
+"start": 32.751,
+"end": 33.272
+},
+{
+"line": 19,
+"text": "YOU PUSH",
+"start": 33.872,
+"end": 34.27
+},
+{
+"line": 19,
+"text": "THE DOOR OPEN.",
+"start": 34.27,
+"end": 34.84
+},
+{
+"line": 20,
+"text": "MORNING.",
+"start": 35.14,
+"end": 35.63
+},
+{
+"line": 20,
+"text": "PEOPLE.",
+"start": 35.63,
+"end": 36.086
+},
+{
+"line": 20,
+"text": "YOU MADE IT.",
+"start": 36.086,
+"end": 36.716
+},
+{
+"line": 21,
+"text": "THEN YOU FEEL",
+"start": 37.316,
+"end": 37.961
+},
+{
+"line": 21,
+"text": "A BAG",
+"start": 37.961,
+"end": 38.335
+},
+{
+"line": 21,
+"text": "IN YOUR HAND.",
+"start": 38.335,
+"end": 38.98
+},
+{
+"line": 22,
+"text": "THE RECEIPT SAYS:",
+"start": 39.33,
+"end": 40.268
+},
+{
+"line": 22,
+"text": "COME BACK",
+"start": 40.268,
+"end": 40.879
+},
+{
+"line": 22,
+"text": "TONIGHT.",
+"start": 40.879,
+"end": 41.45
+},
+{
+"line": 23,
+"text": "SO…",
+"start": 41.95,
+"end": 42.22
+},
+{
+"line": 23,
+"text": "WOULD YOU",
+"start": 42.22,
+"end": 42.67
+},
+{
+"line": 23,
+"text": "STAND STILL?",
+"start": 42.67,
+"end": 43.21
+}
+]
+}
