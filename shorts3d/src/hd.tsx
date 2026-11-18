@@ -63,7 +63,26 @@ export const M: React.FC<{geo: THREE.BufferGeometry; color: string; p?: V3; r?: 
   );
 };
 
+// smooth tapered horn along a curve (unit size, base at origin, curls out to +x and up)
+function taperTube() {
+  const curve = new THREE.CatmullRomCurve3([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0.35, 0.12, 0.02), new THREE.Vector3(0.62, 0.45, -0.06), new THREE.Vector3(0.7, 0.85, -0.14), new THREE.Vector3(0.6, 1.15, -0.2)]);
+  const TS = 48, RS = 16;
+  const g = new THREE.TubeGeometry(curve, TS, 1, RS, false);
+  const pos = g.attributes.position;
+  const v = new THREE.Vector3();
+  for (let i = 0; i <= TS; i++) {
+    const u = i / TS, c = curve.getPointAt(u), r = 0.17 * (1 - 0.92 * Math.pow(u, 1.15));
+    for (let j = 0; j <= RS; j++) {
+      const k = i * (RS + 1) + j;
+      v.fromBufferAttribute(pos, k).sub(c).multiplyScalar(r).add(c);
+      pos.setXYZ(k, v.x, v.y, v.z);
+    }
+  }
+  g.computeVertexNormals();
+  return g;
+}
 export const GEO = {
+  hornTube: taperTube(),
   sphere: new THREE.SphereGeometry(1, 40, 28),
   cap: new THREE.CapsuleGeometry(0.5, 1, 12, 24),
   cyl: new THREE.CylinderGeometry(1, 1, 1, 28),
@@ -108,8 +127,8 @@ const rand = (i: number) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453
 export type Mood = 'smug' | 'grin' | 'stern' | 'grumpy' | 'shock' | 'calm';
 const faceCache = new Map<string, THREE.Texture>();
 // Hand-drawn style face: thick-outlined eyes, heavy brows, expressive mouth
-export function faceTex(mood: Mood, lookX = 0, blush = true) {
-  const key = mood + lookX + blush;
+export function faceTex(mood: Mood, lookX = 0, blush = true, talk = 0, blink = false) {
+  const key = mood + lookX + blush + '|' + talk + '|' + blink;
   const hit = faceCache.get(key);
   if (hit) return hit;
   const t = canvasTex(1024, 1024, (g) => {
@@ -118,6 +137,11 @@ export function faceTex(mood: Mood, lookX = 0, blush = true) {
       const lid = mood === 'smug' ? 0.42 : mood === 'stern' ? 0.36 : mood === 'grumpy' ? 0.3 : mood === 'calm' ? 1 : 0;
       const ry = mood === 'shock' ? 88 : 74, rx = mood === 'shock' ? 70 : 60;
       const cy = 470;
+      if (blink && mood !== 'calm') { // blink: closed lid line
+        g.strokeStyle = INK; g.lineWidth = 22;
+        g.beginPath(); g.moveTo(cx - rx + 6, cy + 6); g.quadraticCurveTo(cx, cy + 26, cx + rx - 6, cy + 6); g.stroke();
+        return;
+      }
       if (lid >= 1) { // closed, content eyes
         g.strokeStyle = INK; g.lineWidth = 22;
         g.beginPath(); g.arc(cx, cy - 10, 52, 0.15 * Math.PI, 0.85 * Math.PI); g.stroke();
@@ -158,7 +182,15 @@ export function faceTex(mood: Mood, lookX = 0, blush = true) {
     }
     // mouth
     g.strokeStyle = INK; g.lineWidth = 18; g.fillStyle = '#7a2230';
-    if (mood === 'grin' || mood === 'smug') {
+    if (talk > 0 && mood !== 'shock') { // lip-sync: open mouth, 1..3
+      const w = 62 + talk * 10, h = 18 + talk * 20, cy = 728;
+      g.beginPath(); g.ellipse(512, cy, w, h, 0, 0, Math.PI * 2); g.fill();
+      g.save(); g.clip();
+      g.fillStyle = '#fff'; g.fillRect(512 - w, cy - h, w * 2, Math.max(8, h * 0.38));
+      g.fillStyle = '#e0626e'; g.beginPath(); g.ellipse(512, cy + h * 0.8, w * 0.6, h * 0.5, 0, 0, Math.PI * 2); g.fill();
+      g.restore();
+      g.beginPath(); g.ellipse(512, cy, w, h, 0, 0, Math.PI * 2); g.stroke();
+    } else if (mood === 'grin' || mood === 'smug') {
       const w = mood === 'grin' ? 150 : 120, lift = mood === 'smug' ? 26 : 0;
       g.beginPath(); g.moveTo(512 - w, 690 - lift); g.quadraticCurveTo(512, 820, 512 + w, 690 + lift * 0.2);
       g.quadraticCurveTo(512, 735, 512 - w, 690 - lift); g.closePath(); g.fill();
@@ -245,11 +277,11 @@ export function useTextures() {
 }
 
 // ===================== characters =====================
-export const Head: React.FC<{p?: V3; skin: string; mood: Mood; look?: number; hair?: string; hairStyle?: 'caesar' | 'bald' | 'curly' | 'none'; scale?: number}> = ({p = [0, 0, 0], skin, mood, look = 0, hair = '#3a2416', hairStyle = 'caesar', scale = 1}) => (
+export const Head: React.FC<{p?: V3; skin: string; mood: Mood; look?: number; hair?: string; hairStyle?: 'caesar' | 'bald' | 'curly' | 'none'; scale?: number; talk?: number; blink?: boolean}> = ({p = [0, 0, 0], skin, mood, look = 0, hair = '#3a2416', hairStyle = 'caesar', scale = 1, talk = 0, blink = false}) => (
   <group position={p} scale={scale}>
     <T geo={GEO.sphere} color={skin} s={[0.78, 0.72, 0.72]} o={0.03} />
     <mesh geometry={GEO.face} scale={[0.782, 0.722, 0.722]}>
-      <meshBasicMaterial map={faceTex(mood, look)} transparent depthWrite={false} />
+      <meshBasicMaterial map={faceTex(mood, look, true, talk, blink)} transparent depthWrite={false} />
     </mesh>
     {/* ears */}
     <T geo={GEO.sphere} color={skin} p={[-0.77, -0.04, 0]} s={[0.12, 0.17, 0.1]} o={0.025} />

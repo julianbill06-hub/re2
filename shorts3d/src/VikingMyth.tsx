@@ -5,6 +5,23 @@ import {AbsoluteFill, Audio, Easing, interpolate, spring, staticFile, useCurrent
 import {ThreeCanvas} from '@remotion/three';
 import {GEO, HEAD_Y, Head, M, Mood, StickBody, T} from './hd';
 import timing from './timing_viking.json';
+import env from './env_viking.json';
+import {EffectComposer, Bloom, DepthOfField, Vignette, HueSaturation, BrightnessContrast} from '@react-three/postprocessing';
+
+const FX = true; // cinematic post-processing (DOF + bloom + grade)
+// mirrored copy of the smooth horn for the left side (flip x, fix winding)
+const HORN_R = GEO.hornTube;
+const HORN_L = (() => {
+  const g = GEO.hornTube.clone();
+  g.applyMatrix4(new THREE.Matrix4().makeScale(-1, 1, 1));
+  const idx = g.index!;
+  for (let i = 0; i < idx.count; i += 3) { const a = idx.getX(i + 1); idx.setX(i + 1, idx.getX(i + 2)); idx.setX(i + 2, a); }
+  g.computeVertexNormals();
+  return g;
+})();
+// lip-sync level 0..3 for the current time (voice loudness envelope)
+const talkAt = (t: number) => { const v = env.env[Math.floor(t * env.fps)] ?? 0; return v < 0.12 ? 0 : v < 0.3 ? 1 : v < 0.55 ? 2 : 3; };
+const blinkAt = (t: number, seed = 0) => ((t + seed * 1.37) % 3.6) < 0.11;
 
 // ============ Mythos-Check #1: Wikinger mit Hörnerhelmen ============
 const FONT = 'Inter, "Helvetica Neue", Arial, sans-serif';
@@ -81,6 +98,12 @@ function useTex() {
 
 // ---------------- helmets ----------------
 const Horn: React.FC<{side: number; color?: string; len?: number; curl?: number}> = ({side, color = '#f1e6c8', len = 1, curl = 1}) => (
+  <group position={[side * 0.6, 0.18, 0.02]} scale={[1.05 * len * (curl > 1.5 ? 1.15 : 1), 1.05 * len, 1.05 * len]}>
+    <T geo={side > 0 ? HORN_R : HORN_L} color={color} o={0.012} />
+    <T geo={GEO.sphere} color={color} p={[0, 0, 0]} s={0.17} o={0.012} />
+  </group>
+);
+const HornOld: React.FC<{side: number; color?: string; len?: number; curl?: number}> = ({side, color = '#f1e6c8', len = 1, curl = 1}) => (
   <group>
     {Array.from({length: 21}).map((_, i) => {
       const u = i / 20;
@@ -98,6 +121,7 @@ const HornHelmet: React.FC<{off?: number}> = ({off = 0}) => (
     <M geo={GEO.half} color="#a9b0bb" p={[0, 0.22, -0.02]} s={[0.84, 0.72, 0.8]} o={0.03} />
     <M geo={GEO.torus} color="#e0b04a" p={[0, 0.24, -0.02]} r={[Math.PI / 2, 0, 0]} s={[0.82, 0.78, 0.5]} o={0.012} />
     <M geo={GEO.box} color="#e0b04a" p={[0, 0.6, 0.28]} r={[0.5, 0, 0]} s={[0.1, 0.55, 0.06]} o={0.01} />
+    {Array.from({length: 12}).map((_, i) => { const a = (i / 12) * Math.PI * 2; return <M key={'rv' + i} geo={GEO.sphere} color="#f3d36b" p={[Math.sin(a) * 0.84, 0.26, Math.cos(a) * 0.84 - 0.02]} s={0.045} o={0.004} />; })}
     {[-1, 1].map((sd) => (
       <group key={sd} position={[sd * off * 1.6, off * 2.6, off * 0.6]} rotation={[off * 2 * sd, 0, -sd * off * 5]}>
         <Horn side={sd} />
@@ -114,6 +138,7 @@ const RealHelmet: React.FC = () => (
     <M geo={GEO.box} color="#55585f" p={[0, 0.6, -0.02]} r={[0, 0, 0]} s={[0.12, 0.08, 1.58]} o={0.01} />
     <M geo={GEO.box} color="#55585f" p={[0, 0.6, -0.02]} r={[0, 0, 0]} s={[1.66, 0.08, 0.12]} o={0.01} />
     <M geo={GEO.sphere} color="#55585f" p={[0, 0.98, -0.02]} s={0.08} o={0.01} />
+    {Array.from({length: 12}).map((_, i) => { const a = (i / 12) * Math.PI * 2; return <M key={'rv' + i} geo={GEO.sphere} color="#8a8e96" p={[Math.sin(a) * 0.84, 0.24, Math.cos(a) * 0.84 - 0.02]} s={0.045} o={0.004} />; })}
     {/* spectacle guard */}
     {[-1, 1].map((sd) => <M key={sd} geo={GEO.torus} color="#55585f" p={[sd * 0.24, 0.08, 0.66]} r={[0, sd * 0.35, 0]} s={[0.17, 0.15, 0.25]} o={0.008} />)}
     <M geo={GEO.box} color="#55585f" p={[0, -0.02, 0.74]} s={[0.07, 0.34, 0.05]} o={0.008} />
@@ -180,8 +205,8 @@ type Helm = 'horn' | 'real' | 'bronze' | 'wing' | 'none';
 const Viking: React.FC<{
   p?: V3; ry?: number; s?: number; mood?: Mood; look?: number; bob?: number;
   tunic?: string; beard?: string; helm?: Helm; hornOff?: number; armR?: number; armL?: number; elbowR?: number; elbowL?: number;
-  handR?: React.ReactNode; handL?: React.ReactNode; shield?: THREE.Texture; headTilt?: number; cape?: string; walk?: number;
-}> = ({p = [0, 0, 0], ry = 0, s = 1, mood = 'stern', look = 0, bob = 0, tunic = '#4f7a3a', beard = '#d9792b', helm = 'horn', hornOff = 0, armR = 0.1, armL = 0.1, elbowR = 0.3, elbowL = 0.3, handR, handL, shield, headTilt = 0, cape, walk = 0}) => {
+  handR?: React.ReactNode; handL?: React.ReactNode; shield?: THREE.Texture; headTilt?: number; cape?: string; walk?: number; blink?: boolean; talk?: number;
+}> = ({p = [0, 0, 0], ry = 0, s = 1, mood = 'stern', look = 0, bob = 0, tunic = '#4f7a3a', beard = '#d9792b', helm = 'horn', hornOff = 0, armR = 0.1, armL = 0.1, elbowR = 0.3, elbowL = 0.3, handR, handL, shield, headTilt = 0, cape, walk = 0, blink = false, talk = 0}) => {
   const b = Math.sin(bob * Math.PI * 2) * 0.015;
   return (
     <group position={p} rotation={[0, ry, 0]} scale={s}>
@@ -195,7 +220,7 @@ const Viking: React.FC<{
         {shield ? <RoundShield tex={shield} p={[-0.52, 1.35, 0.28]} r={[0, -0.5, 0]} s={0.9} /> : null}
       </group>
       <group position={[0, HEAD_Y + b * 1.6, 0]} rotation={[0, 0, headTilt + Math.sin(bob * Math.PI * 2 + 1) * 0.03]}>
-        <Head skin="#f0bf98" mood={mood} look={look} hair={beard} hairStyle={helm === 'none' ? 'curly' : 'none'} />
+        <Head skin="#f0bf98" mood={mood} look={look} hair={beard} hairStyle={helm === 'none' ? 'curly' : 'none'} blink={blink} talk={talk} />
         {/* beard below the mouth + braids */}
         <T geo={GEO.sphere} color={beard} p={[0, -0.56, 0.36]} s={[0.46, 0.3, 0.3]} o={0.02} />
         {[-1, 1].map((sd) => <T key={sd} geo={GEO.cap} color={beard} p={[sd * 0.18, -0.8, 0.42]} s={[0.1, 0.14, 0.1]} o={0.012} />)}
@@ -238,11 +263,20 @@ const Person: React.FC<{
 };
 
 // ---------------- sets ----------------
+const skyTex = (() => { let c: THREE.Texture | null = null; return () => c ?? (c = cTex(16, 512, (g) => { const gr = g.createLinearGradient(0, 0, 0, 512); gr.addColorStop(0, '#3f8fd8'); gr.addColorStop(0.45, '#8cc8f0'); gr.addColorStop(0.62, '#d8eefa'); gr.addColorStop(1, '#f4f1e4'); g.fillStyle = gr; g.fillRect(0, 0, 16, 512); })); })();
 const Sky: React.FC<{top?: string}> = ({top = '#9fd4f2'}) => (
   <>
     <color attach="background" args={[top]} />
-    <fog attach="fog" args={[top, 30, 110]} />
+    <fog attach="fog" args={['#cfe6f6', 35, 120]} />
+    <mesh scale={150}><sphereGeometry args={[1, 32, 24]} /><meshBasicMaterial map={skyTex()} side={THREE.BackSide} fog={false} /></mesh>
   </>
+);
+const Cloud: React.FC<{p: V3; s: number; t: number}> = ({p, s, t}) => (
+  <group position={[p[0] + t * 0.15, p[1], p[2]]} scale={s}>
+    {[[-1.1, 0, 0, 0.75], [0, 0.35, 0.1, 1], [1.1, 0.05, 0, 0.8], [0.5, -0.25, 0.4, 0.7], [-0.5, -0.25, 0.4, 0.7]].map(([x, y, z, r], k) => (
+      <mesh key={k} position={[x, y, z]} scale={[r, r * 0.8, r * 0.75]}><sphereGeometry args={[1, 20, 14]} /><meshLambertMaterial color="#ffffff" emissive="#dfe8f2" emissiveIntensity={0.55} fog={false} /></mesh>
+    ))}
+  </group>
 );
 const Lights: React.FC<{warm?: boolean; dim?: number}> = ({warm, dim = 1}) => (
   <>
@@ -250,6 +284,7 @@ const Lights: React.FC<{warm?: boolean; dim?: number}> = ({warm, dim = 1}) => (
     <ambientLight intensity={0.2 * dim} />
     <directionalLight position={[8, 14, 10]} intensity={2.6 * dim} color={warm ? '#ffd9a0' : '#fff6e4'} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-14} shadow-camera-right={14} shadow-camera-top={14} shadow-camera-bottom={-14} shadow-bias={-0.0004} shadow-radius={5} />
     <directionalLight position={[-6, 6, 8]} intensity={0.9 * dim} color="#e8f0ff" />
+    <directionalLight position={[-3, 7, -12]} intensity={1.8 * dim} color="#fff0d8" />
   </>
 );
 
@@ -274,18 +309,51 @@ const Longship: React.FC<{p: V3; ry?: number; t: number; tex: ReturnType<typeof 
   </group>
 );
 
+const SEA_W = 220, SEA_D = 80, SEA_X = 110, SEA_Z = 60;
+const Sea: React.FC<{t: number}> = ({t}) => {
+  const geo = useMemo(() => {
+    const g = new THREE.PlaneGeometry(SEA_W, SEA_D, SEA_X, SEA_Z);
+    g.rotateX(-Math.PI / 2);
+    g.setAttribute('color', new THREE.BufferAttribute(new Float32Array(g.attributes.position.count * 3), 3));
+    return g;
+  }, []);
+  const pos = geo.attributes.position as THREE.BufferAttribute, col = geo.attributes.color as THREE.BufferAttribute;
+  const deep = new THREE.Color('#1f5f9a'), mid = new THREE.Color('#2f86c4'), crest = new THREE.Color('#bfe6ff');
+  const c = new THREE.Color();
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i), z = pos.getZ(i);
+    const h = 0.12 * Math.sin(x * 0.35 + t * 1.6) + 0.09 * Math.sin(z * 0.5 - t * 1.2 + x * 0.12) + 0.05 * Math.sin((x + z) * 0.9 + t * 2.3);
+    pos.setY(i, h);
+    const k = Math.max(0, Math.min(1, (h + 0.18) / 0.4));
+    c.copy(deep).lerp(mid, Math.min(1, k * 1.4));
+    if (k > 0.82) c.lerp(crest, (k - 0.82) * 4);
+    col.setXYZ(i, c.r, c.g, c.b);
+  }
+  pos.needsUpdate = true; col.needsUpdate = true;
+  geo.computeVertexNormals();
+  return (
+    <mesh geometry={geo} position={[0, -0.2, -40]} receiveShadow>
+      <meshStandardMaterial vertexColors roughness={0.75} metalness={0} flatShading />
+    </mesh>
+  );
+};
+const Tuft: React.FC<{p: V3; s?: number; t: number}> = ({p, s = 1, t}) => (
+  <group position={p} scale={s}>
+    {[-0.25, -0.1, 0.05, 0.2, 0.3].map((x, k) => (
+      <mesh key={k} position={[x, 0.22, (k % 2) * 0.08]} rotation={[0, 0, -x * 1.4 + Math.sin(t * 2 + p[0] + k) * 0.06]} castShadow>
+        <coneGeometry args={[0.06, 0.5 + (k % 3) * 0.12, 5]} /><meshStandardMaterial color={k % 2 ? '#4f8f36' : '#5fa043'} roughness={1} />
+      </mesh>
+    ))}
+  </group>
+);
 const Fjord: React.FC<{t: number; tex: ReturnType<typeof useTex>; children?: React.ReactNode; shipX: number}> = ({t, tex, children, shipX}) => (
   <>
     <Sky />
     <Lights />
     <mesh position={[-25, 30, -90]}><sphereGeometry args={[5, 24, 16]} /><meshBasicMaterial color="#fff6c8" /></mesh>
-    {[[-22, 15, -70, 6], [10, 18, -75, 8], [32, 13, -70, 5]].map(([x, y, z, s], i) => (
-      <group key={i} position={[x, y, z]}>
-        {[0, 1, 2].map((k) => <mesh key={k} position={[k * s * 0.7 - s * 0.7, k === 1 ? s * 0.35 : 0, 0]} scale={[s * 0.7, s * 0.45, s * 0.4]}><sphereGeometry args={[1, 16, 12]} /><meshBasicMaterial color="#ffffff" /></mesh>)}
-      </group>
-    ))}
+    {[[-24, 24, -70, 4.5], [10, 30, -80, 6], [32, 22, -68, 4], [-8, 36, -95, 6.5]].map(([x, y, z, s], i) => <Cloud key={i} p={[x, y, z]} s={s} t={t} />)}
     {/* sea */}
-    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.2, -40]} receiveShadow><planeGeometry args={[220, 80]} /><meshStandardMaterial color="#2f78b4" roughness={0.35} metalness={0.1} /></mesh>
+    <Sea t={t} />
     {Array.from({length: 30}).map((_, i) => {
       const x = -30 + rnd(i) * 60, z = -4 - rnd(i * 3) * 30, ph = rnd(i * 7) * 6;
       const k = 0.5 + 0.5 * Math.sin(t * 1.6 + ph);
@@ -302,6 +370,8 @@ const Fjord: React.FC<{t: number; tex: ReturnType<typeof useTex>; children?: Rea
     <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 20]} receiveShadow><planeGeometry args={[220, 40]} /><meshStandardMaterial map={tex.grass} roughness={1} /></mesh>
     <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.01, 0.4]}><planeGeometry args={[220, 1.2]} /><meshStandardMaterial color="#b9a888" roughness={1} /></mesh>
     {[[-7, -0.5, 0.9], [8, 0.6, 1.2], [-11, 2, 0.7]].map(([x, z, s], i) => <T key={i} geo={GEO.sphere} color="#8f8a82" p={[x, s * 0.3, z]} s={[s, s * 0.6, s * 0.8]} o={0.03} />)}
+    {Array.from({length: 26}).map((_, i) => <Tuft key={'tf' + i} t={t} p={[-8 + rnd(i * 11) * 16, 0, 1.4 + rnd(i * 13) * 9]} s={0.7 + rnd(i * 17) * 0.6} />)}
+    {Array.from({length: 14}).map((_, i) => <T key={'pb' + i} geo={GEO.sphere} color={i % 2 ? '#a39c90' : '#8f887e'} p={[-9 + rnd(i * 19) * 18, 0.03, 0.2 + rnd(i * 23) * 0.9]} s={[0.12 + rnd(i) * 0.1, 0.06, 0.1]} o={0.008} />)}
     {Array.from({length: 8}).map((_, i) => (
       <group key={i} position={[(i % 2 ? 1 : -1) * (7 + (i >> 1) * 2.6 + rnd(i) * 1.5), 0, 3 + rnd(i * 5) * 5]}>
         <T geo={GEO.cylLow} color="#6b4426" p={[0, 0.6, 0]} s={[0.15, 1.2, 0.15]} o={0.01} />
@@ -329,7 +399,7 @@ const Farm: React.FC<{t: number; tex: ReturnType<typeof useTex>; dig: number; he
       <T geo={GEO.box} color="#f3ead8" p={[-1.2, 1.0, 1.81]} s={[0.9, 2.0, 0.04]} o={0.01} />
     </group>
     {/* the burial mound with an opened front */}
-    <T geo={GEO.half} color="#6a9a4a" p={[0, -0.1, -3]} s={[4.6, 2.2, 3.4]} o={0.04} />
+    <T geo={GEO.half} color="#6a9a4a" p={[0, -0.1, -3]} s={[4.6, 2.2, 3.4]} o={0} />
     <mesh position={[0, 0.02, 0.38]} rotation={[-Math.PI / 2, 0, 0]} scale={[1.6 * Math.min(1, dig + 0.3), 1, 1]}>
       <circleGeometry args={[1, 32]} /><meshStandardMaterial color="#5a3d26" roughness={1} />
     </mesh>
@@ -592,7 +662,7 @@ export const VikingMyth: React.FC = () => {
           <Fjord t={t} tex={tex} shipX={shipX}>
             {t < L(4) || t >= L(5) - 0.15 ? (
               <>
-                <Viking p={HERO} ry={turn * -1.1} mood={bonk ? 'grin' : heroMood} bob={t * 0.8} hornOff={hornOff} armR={heroArm} elbowR={0.2} handR={<Axe />} shield={tex.sh1} cape="#7a2a2a" />
+                <Viking p={HERO} blink={blinkAt(t)} ry={turn * -1.1} mood={bonk ? 'grin' : heroMood} bob={t * 0.8} hornOff={hornOff} armR={heroArm} elbowR={0.2} handR={<Axe />} shield={tex.sh1} cape="#7a2a2a" />
                 {t >= L(5) - 0.15 && t < L(6) ? (
                   <Viking p={[-1.75, 0, 2.2]} ry={0.5} helm="real" tunic="#5a6fa0" beard="#4a2e1a" mood={bonk ? 'shock' : 'grumpy'} bob={t * 0.8 + 0.3} headTilt={bonk ? 0.25 : 0} shield={tex.sh2} handR={<Axe />} />
                 ) : null}
@@ -653,6 +723,15 @@ export const VikingMyth: React.FC = () => {
           </Stage>
         ) : null}
         {set === 'museum' ? <Museum t={t} tex={tex} /> : null}
+        {FX ? (
+          <EffectComposer multisampling={4}>
+            <DepthOfField target={cam.look} focalLength={0.045} bokehScale={3.2} />
+            <Bloom intensity={0.35} luminanceThreshold={0.92} luminanceSmoothing={0.2} mipmapBlur />
+            <HueSaturation saturation={0.12} />
+            <BrightnessContrast contrast={0.06} />
+            <Vignette offset={0.32} darkness={0.42} />
+          </EffectComposer>
+        ) : null}
       </ThreeCanvas>
 
       <AbsoluteFill style={{background: '#000', opacity: darken}} />
