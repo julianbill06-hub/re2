@@ -1,0 +1,1055 @@
+{
+ "duration": 61.8,
+ "lines": [
+  [
+   0.5,
+   2.8520833333333333
+  ],
+  [
+   3.2020833333333334,
+   3.693395833333333
+  ],
+  [
+   3.9433958333333337,
+   5.2087916666666665
+  ],
+  [
+   5.7087916666666665,
+   10.713916666666666
+  ],
+  [
+   11.163916666666665,
+   13.845020833333333
+  ],
+  [
+   14.245020833333331,
+   16.658583333333333
+  ],
+  [
+   17.20858333333333,
+   21.78720833333333
+  ],
+  [
+   22.237208333333328,
+   25.642249999999994
+  ],
+  [
+   26.042249999999996,
+   26.746999999999996
+  ],
+  [
+   27.346999999999994,
+   28.604708333333328
+  ],
+  [
+   28.95470833333333,
+   31.950749999999996
+  ],
+  [
+   32.400749999999995,
+   36.00031249999999
+  ],
+  [
+   36.4003125,
+   40.5195625
+  ],
+  [
+   40.969562499999995,
+   44.47410416666666
+  ],
+  [
+   45.02410416666666,
+   47.20320833333333
+  ],
+  [
+   47.503208333333326,
+   50.92779166666666
+  ],
+  [
+   51.37779166666666,
+   54.11024999999999
+  ],
+  [
+   54.61024999999999,
+   59.24168749999999
+  ],
+  [
+   59.541687499999995,
+   60.70016666666666
+  ]
+ ],
+ "words": [
+  {
+   "text": "Everyone",
+   "start": 0.5,
+   "end": 0.961,
+   "line": 0
+  },
+  {
+   "text": "knows",
+   "start": 0.961,
+   "end": 1.284,
+   "line": 0
+  },
+  {
+   "text": "this",
+   "start": 1.284,
+   "end": 1.561,
+   "line": 0
+  },
+  {
+   "text": "Viking.",
+   "start": 1.561,
+   "end": 1.93,
+   "line": 0
+  },
+  {
+   "text": "But",
+   "start": 1.93,
+   "end": 2.16,
+   "line": 0
+  },
+  {
+   "text": "he's",
+   "start": 2.16,
+   "end": 2.391,
+   "line": 0
+  },
+  {
+   "text": "made",
+   "start": 2.391,
+   "end": 2.668,
+   "line": 0
+  },
+  {
+   "text": "up.",
+   "start": 2.668,
+   "end": 2.852,
+   "line": 0
+  },
+  {
+   "text": "The",
+   "start": 3.202,
+   "end": 3.407,
+   "line": 1
+  },
+  {
+   "text": "horns?",
+   "start": 3.407,
+   "end": 3.693,
+   "line": 1
+  },
+  {
+   "text": "No",
+   "start": 3.943,
+   "end": 4.112,
+   "line": 2
+  },
+  {
+   "text": "Viking",
+   "start": 4.112,
+   "end": 4.45,
+   "line": 2
+  },
+  {
+   "text": "ever",
+   "start": 4.45,
+   "end": 4.703,
+   "line": 2
+  },
+  {
+   "text": "wore",
+   "start": 4.703,
+   "end": 4.956,
+   "line": 2
+  },
+  {
+   "text": "them.",
+   "start": 4.956,
+   "end": 5.209,
+   "line": 2
+  },
+  {
+   "text": "Over",
+   "start": 5.709,
+   "end": 6.062,
+   "line": 3
+  },
+  {
+   "text": "1,000",
+   "start": 6.062,
+   "end": 6.415,
+   "line": 3
+  },
+  {
+   "text": "years",
+   "start": 6.415,
+   "end": 6.828,
+   "line": 3
+  },
+  {
+   "text": "ago,",
+   "start": 6.828,
+   "end": 7.122,
+   "line": 3
+  },
+  {
+   "text": "the",
+   "start": 7.122,
+   "end": 7.416,
+   "line": 3
+  },
+  {
+   "text": "Vikings",
+   "start": 7.416,
+   "end": 7.946,
+   "line": 3
+  },
+  {
+   "text": "set",
+   "start": 7.946,
+   "end": 8.241,
+   "line": 3
+  },
+  {
+   "text": "sail.",
+   "start": 8.241,
+   "end": 8.594,
+   "line": 3
+  },
+  {
+   "text": "To",
+   "start": 8.594,
+   "end": 8.83,
+   "line": 3
+  },
+  {
+   "text": "England,",
+   "start": 8.83,
+   "end": 9.36,
+   "line": 3
+  },
+  {
+   "text": "France,",
+   "start": 9.36,
+   "end": 9.831,
+   "line": 3
+  },
+  {
+   "text": "even",
+   "start": 9.831,
+   "end": 10.184,
+   "line": 3
+  },
+  {
+   "text": "America.",
+   "start": 10.184,
+   "end": 10.714,
+   "line": 3
+  },
+  {
+   "text": "They",
+   "start": 11.164,
+   "end": 11.419,
+   "line": 4
+  },
+  {
+   "text": "fought",
+   "start": 11.419,
+   "end": 11.76,
+   "line": 4
+  },
+  {
+   "text": "with",
+   "start": 11.76,
+   "end": 12.015,
+   "line": 4
+  },
+  {
+   "text": "axes,",
+   "start": 12.015,
+   "end": 12.27,
+   "line": 4
+  },
+  {
+   "text": "spears",
+   "start": 12.27,
+   "end": 12.611,
+   "line": 4
+  },
+  {
+   "text": "and",
+   "start": 12.611,
+   "end": 12.824,
+   "line": 4
+  },
+  {
+   "text": "round",
+   "start": 12.824,
+   "end": 13.122,
+   "line": 4
+  },
+  {
+   "text": "wooden",
+   "start": 13.122,
+   "end": 13.462,
+   "line": 4
+  },
+  {
+   "text": "shields.",
+   "start": 13.462,
+   "end": 13.845,
+   "line": 4
+  },
+  {
+   "text": "But",
+   "start": 14.245,
+   "end": 14.415,
+   "line": 5
+  },
+  {
+   "text": "horns",
+   "start": 14.415,
+   "end": 14.653,
+   "line": 5
+  },
+  {
+   "text": "on",
+   "start": 14.653,
+   "end": 14.789,
+   "line": 5
+  },
+  {
+   "text": "a",
+   "start": 14.789,
+   "end": 14.891,
+   "line": 5
+  },
+  {
+   "text": "helmet?",
+   "start": 14.891,
+   "end": 15.163,
+   "line": 5
+  },
+  {
+   "text": "In",
+   "start": 15.163,
+   "end": 15.299,
+   "line": 5
+  },
+  {
+   "text": "battle",
+   "start": 15.299,
+   "end": 15.571,
+   "line": 5
+  },
+  {
+   "text": "they'd",
+   "start": 15.571,
+   "end": 15.809,
+   "line": 5
+  },
+  {
+   "text": "just",
+   "start": 15.809,
+   "end": 16.013,
+   "line": 5
+  },
+  {
+   "text": "get",
+   "start": 16.013,
+   "end": 16.183,
+   "line": 5
+  },
+  {
+   "text": "in",
+   "start": 16.183,
+   "end": 16.319,
+   "line": 5
+  },
+  {
+   "text": "the",
+   "start": 16.319,
+   "end": 16.489,
+   "line": 5
+  },
+  {
+   "text": "way.",
+   "start": 16.489,
+   "end": 16.659,
+   "line": 5
+  },
+  {
+   "text": "The",
+   "start": 17.209,
+   "end": 17.55,
+   "line": 6
+  },
+  {
+   "text": "proof?",
+   "start": 17.55,
+   "end": 18.029,
+   "line": 6
+  },
+  {
+   "text": "In",
+   "start": 18.029,
+   "end": 18.302,
+   "line": 6
+  },
+  {
+   "text": "1943,",
+   "start": 18.302,
+   "end": 18.712,
+   "line": 6
+  },
+  {
+   "text": "a",
+   "start": 18.712,
+   "end": 18.917,
+   "line": 6
+  },
+  {
+   "text": "farmer",
+   "start": 18.917,
+   "end": 19.464,
+   "line": 6
+  },
+  {
+   "text": "in",
+   "start": 19.464,
+   "end": 19.737,
+   "line": 6
+  },
+  {
+   "text": "Norway",
+   "start": 19.737,
+   "end": 20.284,
+   "line": 6
+  },
+  {
+   "text": "digs",
+   "start": 20.284,
+   "end": 20.694,
+   "line": 6
+  },
+  {
+   "text": "into",
+   "start": 20.694,
+   "end": 21.104,
+   "line": 6
+  },
+  {
+   "text": "a",
+   "start": 21.104,
+   "end": 21.309,
+   "line": 6
+  },
+  {
+   "text": "mound.",
+   "start": 21.309,
+   "end": 21.787,
+   "line": 6
+  },
+  {
+   "text": "Inside:",
+   "start": 22.237,
+   "end": 22.656,
+   "line": 7
+  },
+  {
+   "text": "a",
+   "start": 22.656,
+   "end": 22.813,
+   "line": 7
+  },
+  {
+   "text": "real",
+   "start": 22.813,
+   "end": 23.128,
+   "line": 7
+  },
+  {
+   "text": "Viking",
+   "start": 23.128,
+   "end": 23.547,
+   "line": 7
+  },
+  {
+   "text": "helmet.",
+   "start": 23.547,
+   "end": 23.966,
+   "line": 7
+  },
+  {
+   "text": "Round,",
+   "start": 23.966,
+   "end": 24.333,
+   "line": 7
+  },
+  {
+   "text": "iron,",
+   "start": 24.333,
+   "end": 24.647,
+   "line": 7
+  },
+  {
+   "text": "with",
+   "start": 24.647,
+   "end": 24.961,
+   "line": 7
+  },
+  {
+   "text": "eye",
+   "start": 24.961,
+   "end": 25.223,
+   "line": 7
+  },
+  {
+   "text": "guards.",
+   "start": 25.223,
+   "end": 25.642,
+   "line": 7
+  },
+  {
+   "text": "And",
+   "start": 26.042,
+   "end": 26.262,
+   "line": 8
+  },
+  {
+   "text": "no",
+   "start": 26.262,
+   "end": 26.439,
+   "line": 8
+  },
+  {
+   "text": "horns.",
+   "start": 26.439,
+   "end": 26.747,
+   "line": 8
+  },
+  {
+   "text": "So",
+   "start": 27.347,
+   "end": 27.473,
+   "line": 9
+  },
+  {
+   "text": "where",
+   "start": 27.473,
+   "end": 27.693,
+   "line": 9
+  },
+  {
+   "text": "does",
+   "start": 27.693,
+   "end": 27.882,
+   "line": 9
+  },
+  {
+   "text": "the",
+   "start": 27.882,
+   "end": 28.039,
+   "line": 9
+  },
+  {
+   "text": "myth",
+   "start": 28.039,
+   "end": 28.227,
+   "line": 9
+  },
+  {
+   "text": "come",
+   "start": 28.227,
+   "end": 28.416,
+   "line": 9
+  },
+  {
+   "text": "from?",
+   "start": 28.416,
+   "end": 28.605,
+   "line": 9
+  },
+  {
+   "text": "From",
+   "start": 28.955,
+   "end": 29.468,
+   "line": 10
+  },
+  {
+   "text": "Germany.",
+   "start": 29.468,
+   "end": 30.239,
+   "line": 10
+  },
+  {
+   "text": "1876,",
+   "start": 30.239,
+   "end": 30.752,
+   "line": 10
+  },
+  {
+   "text": "in",
+   "start": 30.752,
+   "end": 31.095,
+   "line": 10
+  },
+  {
+   "text": "Bayreuth.",
+   "start": 31.095,
+   "end": 31.951,
+   "line": 10
+  },
+  {
+   "text": "Richard",
+   "start": 32.401,
+   "end": 32.839,
+   "line": 11
+  },
+  {
+   "text": "Wagner",
+   "start": 32.839,
+   "end": 33.228,
+   "line": 11
+  },
+  {
+   "text": "stages",
+   "start": 33.228,
+   "end": 33.617,
+   "line": 11
+  },
+  {
+   "text": "his",
+   "start": 33.617,
+   "end": 33.86,
+   "line": 11
+  },
+  {
+   "text": "giant",
+   "start": 33.86,
+   "end": 34.201,
+   "line": 11
+  },
+  {
+   "text": "opera:",
+   "start": 34.201,
+   "end": 34.541,
+   "line": 11
+  },
+  {
+   "text": "The",
+   "start": 34.541,
+   "end": 34.784,
+   "line": 11
+  },
+  {
+   "text": "Ring",
+   "start": 34.784,
+   "end": 35.076,
+   "line": 11
+  },
+  {
+   "text": "of",
+   "start": 35.076,
+   "end": 35.271,
+   "line": 11
+  },
+  {
+   "text": "the",
+   "start": 35.271,
+   "end": 35.514,
+   "line": 11
+  },
+  {
+   "text": "Nibelung.",
+   "start": 35.514,
+   "end": 36.0,
+   "line": 11
+  },
+  {
+   "text": "Costume",
+   "start": 36.4,
+   "end": 36.852,
+   "line": 12
+  },
+  {
+   "text": "designer",
+   "start": 36.852,
+   "end": 37.355,
+   "line": 12
+  },
+  {
+   "text": "Carl",
+   "start": 37.355,
+   "end": 37.656,
+   "line": 12
+  },
+  {
+   "text": "Emil",
+   "start": 37.656,
+   "end": 37.958,
+   "line": 12
+  },
+  {
+   "text": "Doepler",
+   "start": 37.958,
+   "end": 38.41,
+   "line": 12
+  },
+  {
+   "text": "gives",
+   "start": 38.41,
+   "end": 38.761,
+   "line": 12
+  },
+  {
+   "text": "some",
+   "start": 38.761,
+   "end": 39.063,
+   "line": 12
+  },
+  {
+   "text": "characters",
+   "start": 39.063,
+   "end": 39.666,
+   "line": 12
+  },
+  {
+   "text": "horned",
+   "start": 39.666,
+   "end": 40.067,
+   "line": 12
+  },
+  {
+   "text": "helmets.",
+   "start": 40.067,
+   "end": 40.52,
+   "line": 12
+  },
+  {
+   "text": "The",
+   "start": 40.97,
+   "end": 41.21,
+   "line": 13
+  },
+  {
+   "text": "audience",
+   "start": 41.21,
+   "end": 41.69,
+   "line": 13
+  },
+  {
+   "text": "loves",
+   "start": 41.69,
+   "end": 42.026,
+   "line": 13
+  },
+  {
+   "text": "it.",
+   "start": 42.026,
+   "end": 42.218,
+   "line": 13
+  },
+  {
+   "text": "Painters,",
+   "start": 42.218,
+   "end": 42.698,
+   "line": 13
+  },
+  {
+   "text": "books",
+   "start": 42.698,
+   "end": 43.034,
+   "line": 13
+  },
+  {
+   "text": "and",
+   "start": 43.034,
+   "end": 43.274,
+   "line": 13
+  },
+  {
+   "text": "later",
+   "start": 43.274,
+   "end": 43.61,
+   "line": 13
+  },
+  {
+   "text": "movies",
+   "start": 43.61,
+   "end": 43.994,
+   "line": 13
+  },
+  {
+   "text": "copy",
+   "start": 43.994,
+   "end": 44.282,
+   "line": 13
+  },
+  {
+   "text": "it.",
+   "start": 44.282,
+   "end": 44.474,
+   "line": 13
+  },
+  {
+   "text": "Real",
+   "start": 45.024,
+   "end": 45.343,
+   "line": 14
+  },
+  {
+   "text": "horned",
+   "start": 45.343,
+   "end": 45.768,
+   "line": 14
+  },
+  {
+   "text": "helmets?",
+   "start": 45.768,
+   "end": 46.247,
+   "line": 14
+  },
+  {
+   "text": "They",
+   "start": 46.247,
+   "end": 46.565,
+   "line": 14
+  },
+  {
+   "text": "did",
+   "start": 46.565,
+   "end": 46.831,
+   "line": 14
+  },
+  {
+   "text": "exist.",
+   "start": 46.831,
+   "end": 47.203,
+   "line": 14
+  },
+  {
+   "text": "But",
+   "start": 47.503,
+   "end": 47.755,
+   "line": 15
+  },
+  {
+   "text": "in",
+   "start": 47.755,
+   "end": 47.956,
+   "line": 15
+  },
+  {
+   "text": "the",
+   "start": 47.956,
+   "end": 48.208,
+   "line": 15
+  },
+  {
+   "text": "Bronze",
+   "start": 48.208,
+   "end": 48.611,
+   "line": 15
+  },
+  {
+   "text": "Age.",
+   "start": 48.611,
+   "end": 48.863,
+   "line": 15
+  },
+  {
+   "text": "Over",
+   "start": 48.863,
+   "end": 49.165,
+   "line": 15
+  },
+  {
+   "text": "1,500",
+   "start": 49.165,
+   "end": 49.467,
+   "line": 15
+  },
+  {
+   "text": "years",
+   "start": 49.467,
+   "end": 49.82,
+   "line": 15
+  },
+  {
+   "text": "before",
+   "start": 49.82,
+   "end": 50.223,
+   "line": 15
+  },
+  {
+   "text": "the",
+   "start": 50.223,
+   "end": 50.475,
+   "line": 15
+  },
+  {
+   "text": "Vikings.",
+   "start": 50.475,
+   "end": 50.928,
+   "line": 15
+  },
+  {
+   "text": "So",
+   "start": 51.378,
+   "end": 51.551,
+   "line": 16
+  },
+  {
+   "text": "the",
+   "start": 51.551,
+   "end": 51.768,
+   "line": 16
+  },
+  {
+   "text": "world's",
+   "start": 51.768,
+   "end": 52.115,
+   "line": 16
+  },
+  {
+   "text": "most",
+   "start": 52.115,
+   "end": 52.375,
+   "line": 16
+  },
+  {
+   "text": "famous",
+   "start": 52.375,
+   "end": 52.722,
+   "line": 16
+  },
+  {
+   "text": "Viking",
+   "start": 52.722,
+   "end": 53.069,
+   "line": 16
+  },
+  {
+   "text": "comes",
+   "start": 53.069,
+   "end": 53.373,
+   "line": 16
+  },
+  {
+   "text": "from",
+   "start": 53.373,
+   "end": 53.633,
+   "line": 16
+  },
+  {
+   "text": "an",
+   "start": 53.633,
+   "end": 53.807,
+   "line": 16
+  },
+  {
+   "text": "opera.",
+   "start": 53.807,
+   "end": 54.11,
+   "line": 16
+  },
+  {
+   "text": "What",
+   "start": 54.61,
+   "end": 55.025,
+   "line": 17
+  },
+  {
+   "text": "should",
+   "start": 55.025,
+   "end": 55.578,
+   "line": 17
+  },
+  {
+   "text": "I",
+   "start": 55.578,
+   "end": 55.785,
+   "line": 17
+  },
+  {
+   "text": "bust",
+   "start": 55.785,
+   "end": 56.2,
+   "line": 17
+  },
+  {
+   "text": "next?",
+   "start": 56.2,
+   "end": 56.615,
+   "line": 17
+  },
+  {
+   "text": "Goldfish",
+   "start": 56.615,
+   "end": 57.306,
+   "line": 17
+  },
+  {
+   "text": "memory",
+   "start": 57.306,
+   "end": 57.859,
+   "line": 17
+  },
+  {
+   "text": "or",
+   "start": 57.859,
+   "end": 58.136,
+   "line": 17
+  },
+  {
+   "text": "the",
+   "start": 58.136,
+   "end": 58.481,
+   "line": 17
+  },
+  {
+   "text": "10%",
+   "start": 58.481,
+   "end": 58.758,
+   "line": 17
+  },
+  {
+   "text": "brain?",
+   "start": 58.758,
+   "end": 59.242,
+   "line": 17
+  },
+  {
+   "text": "Tell",
+   "start": 59.542,
+   "end": 59.781,
+   "line": 18
+  },
+  {
+   "text": "me",
+   "start": 59.781,
+   "end": 59.941,
+   "line": 18
+  },
+  {
+   "text": "in",
+   "start": 59.941,
+   "end": 60.101,
+   "line": 18
+  },
+  {
+   "text": "the",
+   "start": 60.101,
+   "end": 60.301,
+   "line": 18
+  },
+  {
+   "text": "comments.",
+   "start": 60.301,
+   "end": 60.7,
+   "line": 18
+  }
+ ]
+}

@@ -16,6 +16,7 @@ import {NightGateStill, NightGateScene, GATE_DURATION, NightGateDetail} from './
 import {Flight404, F404_DURATION} from './NightStory';
 import {Flight404DE, F404DE_DURATION} from './NightStoryDE';
 import {ProfilePic} from './ProfilePic';
+import {VikingMyth, VIKING_DURATION} from './VikingMyth';
 import {TrainRef, TrainRefClose} from './NightTrain';
 import {PlatformZero, PZ_DURATION} from './PlatformZero';
 import timingOcean from './timing_ocean.json';
@@ -54,5 +55,6 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="TrainRef" component={TrainRef} durationInFrames={120} fps={60} width={1080} height={1920} />
     <Composition id="TrainRefClose" component={TrainRefClose} durationInFrames={120} fps={60} width={1080} height={1920} />
     <Composition id="PlatformZero" component={PlatformZero} durationInFrames={Math.ceil(PZ_DURATION * 60)} fps={60} width={1080} height={1920} />
+    <Composition id="VikingMyth" component={VikingMyth} durationInFrames={Math.ceil(VIKING_DURATION * 30)} fps={30} width={1080} height={1920} />
   </>
 );
