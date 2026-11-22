@@ -1,0 +1,92 @@
+[
+ {
+  "id": "l01",
+  "text": "Fahr niemals unter Ebene minus drei.",
+  "cap": "NEVER BELOW -3"
+ },
+ {
+  "id": "l02",
+  "text": "Du suchst dein Auto. Kurz nach Mitternacht.",
+  "cap": "YOUR CAR"
+ },
+ {
+  "id": "l03",
+  "text": "Die Rampe führt nach unten. Immer weiter.",
+  "cap": "DOWN",
+  "say": "Die Rammpe führt nach unten. Immer weiter."
+ },
+ {
+  "id": "l04",
+  "text": "Auf dem Schild steht: Minus drei.",
+  "cap": "LEVEL -3"
+ },
+ {
+  "id": "l05",
+  "text": "Und eine Ebene tiefer: wieder minus drei.",
+  "cap": "AGAIN"
+ },
+ {
+  "id": "l06",
+  "text": "Ganz hinten steht jemand. Ohne Gesicht.",
+  "cap": "NO FACE"
+ },
+ {
+  "id": "l07",
+  "text": "Du hast zwei Möglichkeiten.",
+  "cap": "TWO WAYS"
+ },
+ {
+  "id": "l08",
+  "text": "Du nimmst die Treppe. Notausgang.",
+  "cap": "STAIRS"
+ },
+ {
+  "id": "l09",
+  "text": "Hundert Stufen. Die Tür geht auf …",
+  "say": "Hundert Stufen. Die Tür geht auf.",
+  "cap": "100 STEPS"
+ },
+ {
+  "id": "l10",
+  "text": "… auf Ebene minus drei.",
+  "say": "Auf Ebene minus drei.",
+  "cap": "LEVEL -3"
+ },
+ {
+  "id": "l11",
+  "text": "Zurückspulen. Denn Weg zwei ist schlimmer.",
+  "cap": "REWIND"
+ },
+ {
+  "id": "l12",
+  "text": "Du folgst ihm. Bei jedem Flackern steht er näher.",
+  "cap": "CLOSER"
+ },
+ {
+  "id": "l13",
+  "text": "Er hält dir ein Ticket hin.",
+  "cap": "TICKET"
+ },
+ {
+  "id": "l14",
+  "text": "Die Schranke geht hoch. Draußen: Morgen.",
+  "cap": "MORNING"
+ },
+ {
+  "id": "l15",
+  "text": "Du schaust auf das Ticket.",
+  "cap": "LOOK"
+ },
+ {
+  "id": "l16",
+  "text": "Ausfahrt: Ebene minus drei.",
+  "cap": "EXIT: -3",
+  "say": "Aus-fahrt. Ebene minus drei."
+ },
+ {
+  "id": "l17",
+  "text": "Also … fährst du runter?",
+  "say": "Also. Fährst du runter?",
+  "cap": "GO DOWN?"
+ }
+]

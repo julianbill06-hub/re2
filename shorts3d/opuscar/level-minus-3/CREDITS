@@ -1,0 +1,17 @@
+Final Call Stories · Episode 3 „Level -3“ · third-party assets and sources
+
+Original story, characters, set, rules and sound. No existing places, brands, logos or community lore appear.
+Look: Lemo-Opuscar style „Liminal Found Footage“ (library engine techniques: light grid shading, VHS camcorder pass, OSD bitmap font — MIT).
+
+## Voice
+- Piper TTS (piper-tts, run locally) with the voice "Thorsten" de_DE-thorsten-high (rhasspy/piper-voices; dataset Thorsten-Voice by Thorsten Müller, CC0).
+  Speech check: faster-whisper "small" (MIT). Script: voice/lines.json.
+
+## Sound
+- No music. All sound is procedural (library core/audio/sfx.py and mix.py): fluorescent hum, room tone, footsteps, doors, tape, rewind, barrier, car, birds.
+
+## Fonts (SIL Open Font License 1.1)
+- IBM Plex Mono, IBM Plex Sans Condensed (IBM), from the @fontsource npm packages; licence text in fonts/OFL-ibm-plex.txt.
+
+## Code
+- three.js r170 (MIT) from the library's node_modules; post-processing core/three/post.js (library, MIT).
