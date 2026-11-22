@@ -12,14 +12,14 @@ import { drawOSD } from './osd.js';
 
 const Q = new URLSearchParams(location.search), NOSUB = Q.has('nosub');
 for (const f of ["700 30px 'IBM Plex Sans Condensed'", "600 30px 'IBM Plex Sans Condensed'", "600 30px 'IBM Plex Mono'", "700 30px 'IBM Plex Mono'", "500 30px 'IBM Plex Mono'"]) await document.fonts.load(f);
-const W = 1080, H = 1920, SW = 720, SH = 540, BAND = [(H - W * .75) / 2, (H + W * .75) / 2];   // the tape band: y 555 → 1365
+const W = 1080, H = 1920, SW = 540, SH = 960;   // full-screen portrait: the tape picture fills the 9:16 frame
 
 const renderer = new THREE.WebGLRenderer({ antialias: false, preserveDrawingBuffer: true });
 renderer.setPixelRatio(1); renderer.setSize(W, H);
 renderer.toneMapping = THREE.NeutralToneMapping; renderer.toneMappingExposure = .9;
 document.getElementById('stage').appendChild(renderer.domElement);
 const scene = new THREE.Scene(); scene.background = new THREE.Color(0, 0, 0);
-const camera = new THREE.PerspectiveCamera(40, 4 / 3, .03, 180); camera.rotation.order = 'YXZ'; scene.add(camera);
+const camera = new THREE.PerspectiveCamera(40, 9 / 16, .03, 180); camera.rotation.order = 'YXZ'; scene.add(camera);
 const post = makePost(renderer, scene, camera, SW, SH, { ssaa: 1, ao: false });
 post.bloom.strength = .55; post.bloom.radius = .55; post.bloom.threshold = 1.05;
 post.vig.uniforms.amt.value = 0; post.vig.uniforms.contrast.value = 0; post.vig.uniforms.sat.value = 1;
@@ -91,7 +91,7 @@ function render(t) {
   const cp = camPose(tv);
   if (Q.has('cam')) { const c = Q.get('cam').split(',').map(Number); Object.assign(cp, { x: c[0], y: c[1], z: c[2], yaw: c[3], pitch: c[4], roll: 0, fov: 70 }); }
   camera.position.set(cp.x, cp.y, cp.z); camera.rotation.set(cp.pitch, cp.yaw, cp.roll);
-  const hf = cp.fov * Math.PI / 180; camera.fov = 2 * Math.atan(Math.tan(hf / 2) / (4 / 3)) * 180 / Math.PI; camera.updateProjectionMatrix(); camera.updateMatrixWorld();
+  const hf = cp.fov * Math.PI / 180; camera.fov = 2 * Math.atan(Math.tan(hf / 2) / (4 / 3) * 1.45) * 180 / Math.PI;   // the 4:3 framing, opened up vertically for 9:16 camera.updateProjectionMatrix(); camera.updateMatrixWorld();
   shoes.pose({ x: cp.x, y: groundAt(cp.x, cp.z, cp.yaw), z: cp.z, yaw: cp.yaw, phase: cp.ph, amp: cp.amp });
   // the attendant
   const F = figure(tv);
@@ -147,7 +147,7 @@ function pill(x, y, w, h, label, col, a, big = false) {
 }
 function chips(t, big = false) {
   const act = t < T.rewind[0] ? 0 : t < T.followOn[0] ? -1 : 1;
-  const h = big ? 104 : 90, y = big ? 330 : 392, gap = 22;
+  const h = big ? 104 : 90, y = big ? 360 : 250, gap = 22;
   const ws = CHIPS.map(c => { ox.font = `700 ${big ? 50 : 42}px 'IBM Plex Sans Condensed'`; return ox.measureText(c.t).width + h * 1.35; });
   if (big) { ws.forEach((w, i) => pill((W - w) / 2, y + i * (h + gap), w, h, CHIPS[i].t, CHIPS[i].c, 1, true)); return; }
   const tot = ws[0] + ws[1] + gap; let x = (W - tot) / 2;
@@ -162,16 +162,17 @@ function caption(t) {
 }
 function overlay(t) {
   ox.clearRect(0, 0, W, H);
+  { const gt = ox.createLinearGradient(0, 120, 0, 560); gt.addColorStop(0, 'rgba(0,0,0,.55)'); gt.addColorStop(1, 'rgba(0,0,0,0)'); ox.fillStyle = gt; ox.fillRect(0, 120, W, 440); }
   // hook question, top, from frame 0
   if (t < T.hook[1]) { ox.save(); ox.globalAlpha = 1 - ss(seg(t, T.hook[1] - .3, T.hook[1])); ox.fillStyle = '#f4f1ea'; ox.font = "700 92px 'IBM Plex Sans Condensed'"; ox.textAlign = 'center'; ox.textBaseline = 'middle';
-    ox.fillText('WOULD YOU', W / 2, 330); ox.fillText('GO DOWN?', W / 2, 430); ox.restore(); }
+    ox.shadowColor = 'rgba(0,0,0,.8)'; ox.shadowBlur = 18; ox.fillText('WOULD YOU', W / 2, 300); ox.fillText('GO DOWN?', W / 2, 400); ox.restore(); }
   if (t >= T.chips && t < T.end[0]) chips(t);
   if (!NOSUB && t < T.end[0]) caption(t);
   if (t >= T.end[0]) {
     const a = ss(seg(t, T.end[0], T.end[0] + .25));
-    ox.save(); ox.globalAlpha = a; ox.fillStyle = '#f4f1ea'; ox.font = "700 84px 'IBM Plex Sans Condensed'"; ox.textAlign = 'center'; ox.textBaseline = 'middle'; ox.fillText('WHAT WOULD YOU DO?', W / 2, 230);
+    ox.save(); ox.globalAlpha = a; ox.fillStyle = 'rgba(0,0,0,.5)'; ox.fillRect(0, 0, W, H); ox.fillStyle = '#f4f1ea'; ox.font = "700 84px 'IBM Plex Sans Condensed'"; ox.textAlign = 'center'; ox.textBaseline = 'middle'; ox.fillText('WHAT WOULD YOU DO?', W / 2, 270);
     chips(t, true);
-    ox.font = "600 40px 'IBM Plex Mono'"; ox.fillText('COMMENT: STAIRS OR FOLLOW?', W / 2, 1470); ox.restore();
+    ox.font = "600 40px 'IBM Plex Mono'"; ox.fillText('COMMENT: STAIRS OR FOLLOW?', W / 2, 1180); ox.restore();
   }
 }
 

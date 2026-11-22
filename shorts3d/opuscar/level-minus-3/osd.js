@@ -49,13 +49,13 @@ export function drawOSD(cv, o) {
   const s = 3;
   // REC ●
   if (o.rec) {
-    x.fillStyle = 'rgba(0,0,0,.85)'; x.beginPath(); x.arc(58, 55, 10, 0, 7); x.fill();
-    x.fillStyle = '#e8261c'; x.beginPath(); x.arc(58, 55, 8.5, 0, 7); x.fill();
-    text(x, 'REC', 76, 45, s);
+    x.fillStyle = 'rgba(0,0,0,.85)'; x.beginPath(); x.arc(58, 112, 10, 0, 7); x.fill();
+    x.fillStyle = '#e8261c'; x.beginPath(); x.arc(58, 112, 8.5, 0, 7); x.fill();
+    text(x, 'REC', 76, 102, s);
   }
   // Battery
   if (o.bat != null && !(o.batBlink && Math.floor(o.t * 2) % 2)) {
-    const bx = W - 118, by = 44;
+    const bx = W - 150, by = 101;
     x.fillStyle = 'rgba(0,0,0,.85)'; x.fillRect(bx - 2, by - 2, 58, 26); x.fillRect(bx + 54, by + 5, 8, 12);
     x.fillStyle = '#f4f4ee'; x.fillRect(bx, by, 54, 22); x.fillRect(bx + 54, by + 7, 5, 8);
     x.fillStyle = '#111'; x.fillRect(bx + 3, by + 3, 48, 16);
@@ -65,8 +65,8 @@ export function drawOSD(cv, o) {
   // Timecode + date (bottom right)
   if (o.clock) {
     const w1 = width(o.clock, s), w2 = width(o.date, s);
-    text(x, o.clock, W - 50 - w1, H - 92, s);
-    text(x, o.date, W - 50 - w2, H - 58, s);
+    text(x, o.clock, 48, H - 300, s);
+    text(x, o.date, 48, H - 266, s);
   }
   // Tape counter (bottom left)
   if (o.counter) text(x, o.counter, 48, H - 58, s);

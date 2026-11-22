@@ -23,7 +23,7 @@ float h2(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
 float vn1(float x){ float i = floor(x), f = fract(x); f = f*f*(3.-2.*f); return mix(h1(i), h1(i+1.), f); }
 const mat3 toYIQ = mat3(.299, .596, .211, .587, -.274, -.523, .114, -.322, .312);
 const mat3 toRGB = mat3(1., 1., 1., .956, -.272, -1.106, .621, -.647, 1.703);
-vec2 lens(vec2 q){ vec2 p = q - .5; vec2 pa = p * vec2(1.333, 1.); float r2 = dot(pa, pa); p *= 1. + barrel * r2; p *= 1. - barrel * .3; return p + .5; }
+vec2 lens(vec2 q){ vec2 p = q - .5; vec2 pa = p * vec2(.5625, 1.); float r2 = dot(pa, pa); p *= 1. + barrel * r2; p *= 1. - barrel * .3; return p + .5; }
 // Signal = picture (through the lens) + OSD (electronic overlay, not through the lens)
 vec3 sig(vec2 q){
   vec2 ql = lens(q);
@@ -34,9 +34,9 @@ vec3 sig(vec2 q){
 }
 void main(){
   // portrait: the 4:3 tape frame sits as a band across the 9:16 canvas (black above and below)
-  vec2 fc = gl_FragCoord.xy; float bw = res.x, bh = res.x * 3. / 4.; float x0 = 0., y0 = (res.y - bh) * .5;
-  if (fc.y < y0 || fc.y > y0 + bh) { gl_FragColor = vec4(0., 0., 0., 1.); return; }
-  vec2 uv = vec2(fc.x / bw, (fc.y - y0) / bh);
+  // full-screen portrait: the tape picture fills the whole 9:16 frame
+  vec2 fc = gl_FragCoord.xy; float bw = res.x;
+  vec2 uv = fc / res;
   float F = floor(frame);
   // Vertical roll (picture rolls up/down at power-on/during the tear)
   uv.y = fract(uv.y + roll);
@@ -94,7 +94,7 @@ void main(){
   c = c * (1. - black) + black;
   c = mix(c, (1. - exp(-c * 1.6)) / (1. - exp(-1.6)), smoothstep(.55, 1.2, c));   // soft clip only in the highlights
   // Vignette (lens)
-  vec2 d = (uv - .5) * vec2(1.25, 1.); c *= 1. - vig * smoothstep(.2, .85, length(d));
+  vec2 d = (uv - .5) * vec2(.7, 1.); c *= 1. - vig * smoothstep(.2, .85, length(d));
   c = mix(c, vec3(0.), off);
   gl_FragColor = vec4(clamp(c, 0., 1.), 1.);
 }`,

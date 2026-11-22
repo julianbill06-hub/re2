@@ -82,7 +82,7 @@ export function makeAttendant(scene) {
   const brim = new THREE.Mesh(new THREE.CylinderGeometry(.13, .13, .012, 24, 1, false, -Math.PI / 2, Math.PI), cap); brim.position.set(0, 2.14, .03); g.add(brim);
   const band = new THREE.Mesh(new THREE.CylinderGeometry(.117, .117, .022, 24, 1, true), paint({ color: '#1d6b3a' })); band.position.y = 2.155; g.add(band);
   const slit = new THREE.Mesh(new THREE.BoxGeometry(.11, .012, .01), glow('#36ff8a', 7)); slit.position.set(0, 2.07, .108); g.add(slit);
-  const halo = new THREE.Mesh(new THREE.PlaneGeometry(.34, .08), new THREE.MeshBasicMaterial({ color: new THREE.Color('#2bff7a').multiplyScalar(.6), transparent: true, opacity: .5, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }));
+  const halo = new THREE.Mesh(new THREE.PlaneGeometry(.17, .035), new THREE.MeshBasicMaterial({ color: new THREE.Color('#2bff7a').multiplyScalar(.5), transparent: true, opacity: .3, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }));
   halo.position.set(0, 2.07, .12); g.add(halo);
   // long arms, white gloves
   const arms = [0, 1].map(() => { const u = bone(coat, .05), l = bone(coat, .045), h = new THREE.Mesh(new THREE.SphereGeometry(.05, 12, 10), glove); h.scale.set(1, 1.3, .7); g.add(u, l, h); return { u, l, h }; });
